@@ -1,0 +1,11 @@
+C:\Software\eTeller2026\eTellerServer\eTeller.Application\bin\Debug\net9.0\eTeller.Application.deps.json
+C:\Software\eTeller2026\eTellerServer\eTeller.Application\bin\Debug\net9.0\eTeller.Application.dll
+C:\Software\eTeller2026\eTellerServer\eTeller.Application\bin\Debug\net9.0\eTeller.Application.pdb
+C:\Software\eTeller2026\eTellerServer\eTeller.Application\obj\Debug\net9.0\eTeller.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Software\eTeller2026\eTellerServer\eTeller.Application\obj\Debug\net9.0\eTeller.Application.AssemblyInfoInputs.cache
+C:\Software\eTeller2026\eTellerServer\eTeller.Application\obj\Debug\net9.0\eTeller.Application.AssemblyInfo.cs
+C:\Software\eTeller2026\eTellerServer\eTeller.Application\obj\Debug\net9.0\eTeller.Application.csproj.CoreCompileInputs.cache
+C:\Software\eTeller2026\eTellerServer\eTeller.Application\obj\Debug\net9.0\eTeller.Application.dll
+C:\Software\eTeller2026\eTellerServer\eTeller.Application\obj\Debug\net9.0\refint\eTeller.Application.dll
+C:\Software\eTeller2026\eTellerServer\eTeller.Application\obj\Debug\net9.0\eTeller.Application.pdb
+C:\Software\eTeller2026\eTellerServer\eTeller.Application\obj\Debug\net9.0\ref\eTeller.Application.dll

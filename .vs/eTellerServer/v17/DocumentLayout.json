@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Software\\eTeller2026\\eTellerServer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B34525FB-4F35-49CA-B90D-AF323993B77F}|eTeller.Infrastructure\\eTeller.Infrastructure.csproj|c:\\software\\eteller2026\\etellerserver\\eteller.infrastructure\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34525FB-4F35-49CA-B90D-AF323993B77F}|eTeller.Infrastructure\\eTeller.Infrastructure.csproj|solutionrelative:eteller.infrastructure\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34525FB-4F35-49CA-B90D-AF323993B77F}|eTeller.Infrastructure\\eTeller.Infrastructure.csproj|c:\\software\\eteller2026\\etellerserver\\eteller.infrastructure\\repositories\\basesimplerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34525FB-4F35-49CA-B90D-AF323993B77F}|eTeller.Infrastructure\\eTeller.Infrastructure.csproj|solutionrelative:eteller.infrastructure\\repositories\\basesimplerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74179E42-E915-4287-820C-39A0B659F4E4}|eTeller.Application\\eTeller.Application.csproj|c:\\software\\eteller2026\\etellerserver\\eteller.application\\features\\account\\queries\\getaccountsbyaccountidandtype\\getaccountsbyaccountidandtypequeryhandle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74179E42-E915-4287-820C-39A0B659F4E4}|eTeller.Application\\eTeller.Application.csproj|solutionrelative:eteller.application\\features\\account\\queries\\getaccountsbyaccountidandtype\\getaccountsbyaccountidandtypequeryhandle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74179E42-E915-4287-820C-39A0B659F4E4}|eTeller.Application\\eTeller.Application.csproj|c:\\software\\eteller2026\\etellerserver\\eteller.application\\features\\account\\queries\\getaccountsbyaccountidandtype\\getaccountsbyaccountidandtypequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74179E42-E915-4287-820C-39A0B659F4E4}|eTeller.Application\\eTeller.Application.csproj|solutionrelative:eteller.application\\features\\account\\queries\\getaccountsbyaccountidandtype\\getaccountsbyaccountidandtypequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74179E42-E915-4287-820C-39A0B659F4E4}|eTeller.Application\\eTeller.Application.csproj|c:\\software\\eteller2026\\etellerserver\\eteller.application\\features\\storeprocedures\\account\\queries\\gestacountsbycriteria\\getaccountsbycriteriaqueryhandle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74179E42-E915-4287-820C-39A0B659F4E4}|eTeller.Application\\eTeller.Application.csproj|solutionrelative:eteller.application\\features\\storeprocedures\\account\\queries\\gestacountsbycriteria\\getaccountsbycriteriaqueryhandle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74179E42-E915-4287-820C-39A0B659F4E4}|eTeller.Application\\eTeller.Application.csproj|c:\\software\\eteller2026\\etellerserver\\eteller.application\\features\\account\\queries\\getaccountsbyaccid\\getaccountsbyaccidqueryhandle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74179E42-E915-4287-820C-39A0B659F4E4}|eTeller.Application\\eTeller.Application.csproj|solutionrelative:eteller.application\\features\\account\\queries\\getaccountsbyaccid\\getaccountsbyaccidqueryhandle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74179E42-E915-4287-820C-39A0B659F4E4}|eTeller.Application\\eTeller.Application.csproj|c:\\software\\eteller2026\\etellerserver\\eteller.application\\features\\account\\queries\\getaccountsbyaccid\\getaccountsbyaccidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74179E42-E915-4287-820C-39A0B659F4E4}|eTeller.Application\\eTeller.Application.csproj|solutionrelative:eteller.application\\features\\account\\queries\\getaccountsbyaccid\\getaccountsbyaccidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BaseSimpleRepository.cs",
+              "DocumentMoniker": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Infrastructure\\Repositories\\BaseSimpleRepository.cs",
+              "RelativeDocumentMoniker": "eTeller.Infrastructure\\Repositories\\BaseSimpleRepository.cs",
+              "ToolTip": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Infrastructure\\Repositories\\BaseSimpleRepository.cs",
+              "RelativeToolTip": "eTeller.Infrastructure\\Repositories\\BaseSimpleRepository.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAwwDgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T13:37:20.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Infrastructure\\Repositories\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "eTeller.Infrastructure\\Repositories\\UnitOfWork.cs",
+              "ToolTip": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Infrastructure\\Repositories\\UnitOfWork.cs",
+              "RelativeToolTip": "eTeller.Infrastructure\\Repositories\\UnitOfWork.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T13:36:59.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetAccountsByAccountIdAndTypeQueryHandle.cs",
+              "DocumentMoniker": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\Features\\Account\\Queries\\GetAccountsByAccountIdAndType\\GetAccountsByAccountIdAndTypeQueryHandle.cs",
+              "RelativeDocumentMoniker": "eTeller.Application\\Features\\Account\\Queries\\GetAccountsByAccountIdAndType\\GetAccountsByAccountIdAndTypeQueryHandle.cs",
+              "ToolTip": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\Features\\Account\\Queries\\GetAccountsByAccountIdAndType\\GetAccountsByAccountIdAndTypeQueryHandle.cs",
+              "RelativeToolTip": "eTeller.Application\\Features\\Account\\Queries\\GetAccountsByAccountIdAndType\\GetAccountsByAccountIdAndTypeQueryHandle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T13:35:16.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetAccountsByAccountIdAndTypeQuery.cs",
+              "DocumentMoniker": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\Features\\Account\\Queries\\GetAccountsByAccountIdAndType\\GetAccountsByAccountIdAndTypeQuery.cs",
+              "RelativeDocumentMoniker": "eTeller.Application\\Features\\Account\\Queries\\GetAccountsByAccountIdAndType\\GetAccountsByAccountIdAndTypeQuery.cs",
+              "ToolTip": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\Features\\Account\\Queries\\GetAccountsByAccountIdAndType\\GetAccountsByAccountIdAndTypeQuery.cs",
+              "RelativeToolTip": "eTeller.Application\\Features\\Account\\Queries\\GetAccountsByAccountIdAndType\\GetAccountsByAccountIdAndTypeQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T13:35:13.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GetAccountsByAccIdQuery.cs",
+              "DocumentMoniker": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\Features\\Account\\Queries\\GetAccountsByAccId\\GetAccountsByAccIdQuery.cs",
+              "RelativeDocumentMoniker": "eTeller.Application\\Features\\Account\\Queries\\GetAccountsByAccId\\GetAccountsByAccIdQuery.cs",
+              "ToolTip": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\Features\\Account\\Queries\\GetAccountsByAccId\\GetAccountsByAccIdQuery.cs",
+              "RelativeToolTip": "eTeller.Application\\Features\\Account\\Queries\\GetAccountsByAccId\\GetAccountsByAccIdQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T13:25:20.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GetAccountsByAccIdQueryHandle.cs",
+              "DocumentMoniker": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\Features\\Account\\Queries\\GetAccountsByAccId\\GetAccountsByAccIdQueryHandle.cs",
+              "RelativeDocumentMoniker": "eTeller.Application\\Features\\Account\\Queries\\GetAccountsByAccId\\GetAccountsByAccIdQueryHandle.cs",
+              "ToolTip": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\Features\\Account\\Queries\\GetAccountsByAccId\\GetAccountsByAccIdQueryHandle.cs",
+              "RelativeToolTip": "eTeller.Application\\Features\\Account\\Queries\\GetAccountsByAccId\\GetAccountsByAccIdQueryHandle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T13:25:10.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetAccountsByCriteriaQueryHandle.cs",
+              "DocumentMoniker": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\Features\\StoreProcedures\\Account\\Queries\\GestAcountsByCriteria\\GetAccountsByCriteriaQueryHandle.cs",
+              "RelativeDocumentMoniker": "eTeller.Application\\Features\\StoreProcedures\\Account\\Queries\\GestAcountsByCriteria\\GetAccountsByCriteriaQueryHandle.cs",
+              "ToolTip": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\Features\\StoreProcedures\\Account\\Queries\\GestAcountsByCriteria\\GetAccountsByCriteriaQueryHandle.cs",
+              "RelativeToolTip": "eTeller.Application\\Features\\StoreProcedures\\Account\\Queries\\GestAcountsByCriteria\\GetAccountsByCriteriaQueryHandle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T10:59:22.237Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+C:\Software\eTeller2026\eTellerServer\eTeller.Domain\bin\Debug\net10.0\eTeller.Domain.deps.json
+C:\Software\eTeller2026\eTellerServer\eTeller.Domain\bin\Debug\net10.0\eTeller.Domain.dll
+C:\Software\eTeller2026\eTellerServer\eTeller.Domain\bin\Debug\net10.0\eTeller.Domain.pdb
+C:\Software\eTeller2026\eTellerServer\eTeller.Domain\obj\Debug\net10.0\eTeller.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Software\eTeller2026\eTellerServer\eTeller.Domain\obj\Debug\net10.0\eTeller.Domain.AssemblyInfoInputs.cache
+C:\Software\eTeller2026\eTellerServer\eTeller.Domain\obj\Debug\net10.0\eTeller.Domain.AssemblyInfo.cs
+C:\Software\eTeller2026\eTellerServer\eTeller.Domain\obj\Debug\net10.0\eTeller.Domain.csproj.CoreCompileInputs.cache
+C:\Software\eTeller2026\eTellerServer\eTeller.Domain\obj\Debug\net10.0\eTeller.Domain.dll
+C:\Software\eTeller2026\eTellerServer\eTeller.Domain\obj\Debug\net10.0\refint\eTeller.Domain.dll
+C:\Software\eTeller2026\eTellerServer\eTeller.Domain\obj\Debug\net10.0\eTeller.Domain.pdb
+C:\Software\eTeller2026\eTellerServer\eTeller.Domain\obj\Debug\net10.0\ref\eTeller.Domain.dll
+C:\Software\eTeller2026\eTellerServer\eTeller.Domain\obj\Debug\net10.0\eTeller.Domain.sourcelink.json

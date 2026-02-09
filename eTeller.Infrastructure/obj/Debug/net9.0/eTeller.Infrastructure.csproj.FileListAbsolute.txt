@@ -1,0 +1,11 @@
+C:\Software\eTeller2026\eTellerServer\eTeller.Infrastructure\bin\Debug\net9.0\eTeller.Infrastructure.deps.json
+C:\Software\eTeller2026\eTellerServer\eTeller.Infrastructure\bin\Debug\net9.0\eTeller.Infrastructure.dll
+C:\Software\eTeller2026\eTellerServer\eTeller.Infrastructure\bin\Debug\net9.0\eTeller.Infrastructure.pdb
+C:\Software\eTeller2026\eTellerServer\eTeller.Infrastructure\obj\Debug\net9.0\eTeller.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Software\eTeller2026\eTellerServer\eTeller.Infrastructure\obj\Debug\net9.0\eTeller.Infrastructure.AssemblyInfoInputs.cache
+C:\Software\eTeller2026\eTellerServer\eTeller.Infrastructure\obj\Debug\net9.0\eTeller.Infrastructure.AssemblyInfo.cs
+C:\Software\eTeller2026\eTellerServer\eTeller.Infrastructure\obj\Debug\net9.0\eTeller.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Software\eTeller2026\eTellerServer\eTeller.Infrastructure\obj\Debug\net9.0\eTeller.Infrastructure.dll
+C:\Software\eTeller2026\eTellerServer\eTeller.Infrastructure\obj\Debug\net9.0\refint\eTeller.Infrastructure.dll
+C:\Software\eTeller2026\eTellerServer\eTeller.Infrastructure\obj\Debug\net9.0\eTeller.Infrastructure.pdb
+C:\Software\eTeller2026\eTellerServer\eTeller.Infrastructure\obj\Debug\net9.0\ref\eTeller.Infrastructure.dll

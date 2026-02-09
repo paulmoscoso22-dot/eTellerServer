@@ -1,0 +1,127 @@
+[
+  {
+    "ContainingType": "eTeller.Api.Controllers.Account.AccountController",
+    "Method": "GetAccounts",
+    "RelativePath": "api/Account",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Account.AccountController",
+    "Method": "GetAccountsByAccId",
+    "RelativePath": "api/Account/AccId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Account.AccountController",
+    "Method": "GetAccountsByCriteria",
+    "RelativePath": "api/Account/Account_criteria",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accType",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "branch",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "cliId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "currency",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "currencyType",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Account.AccountController",
+    "Method": "GetAccountsByAccountIdAndType",
+    "RelativePath": "api/Account/Account_Type",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "iacAccId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "iacActId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "iacHostprefix",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.AntirecAppearer.AntirecAppearerController",
+    "Method": "GetAppearerByAraId",
+    "RelativePath": "api/AntirecAppearer/by-area/{araId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "araId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[eTeller.Api.WeatherForecast, eTeller.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]
