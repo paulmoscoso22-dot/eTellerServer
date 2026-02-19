@@ -23,8 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\StoreProcedures\Account\Commands\" />
-    <Folder Include="Features\StoreProcedures\Account\Queries\GetAccountByAccId\" />
     <Folder Include="Features\StoreProcedures\AntirecAppearer\Commands\" />
   </ItemGroup>
 

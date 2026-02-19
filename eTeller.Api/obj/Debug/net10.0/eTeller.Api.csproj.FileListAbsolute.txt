@@ -76,7 +76,6 @@ C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\staticwebass
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\staticwebassets.development.json
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\swae.build.ex.cache
-C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\eTeller..099963F6.Up2Date
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\eTeller.Api.dll
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\refint\eTeller.Api.dll
@@ -86,3 +85,5 @@ C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\ref\eTeller.
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Software\eTeller2026\eTellerServer\eTeller.Api\bin\Debug\net10.0\Dapper.dll

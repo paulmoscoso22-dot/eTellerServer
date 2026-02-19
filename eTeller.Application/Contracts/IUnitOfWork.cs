@@ -8,6 +8,10 @@ namespace eTeller.Application.Contracts
     {
         IAccountSpRepository AccountSpRepository { get; }
         IAntirecAppearerSelectRepository AntirecAppearerSelectRepository { get; }
+        ITransactionSpRepository TransactionSpRepository { get; }
+        ITransactionMovSpRepository TransactionMovSpRepository { get; }
+        IGiornaleAntiriciclaggioSpRepository GiornaleAntiriciclaggioSpRepository { get; }
+        ITotalicCassaSpRepository TotalicCassaSpRepository { get; }
         IBaseSimpleRepository<TEntity> Repository<TEntity>() where TEntity : class;
         Task<int> Complete();
     }

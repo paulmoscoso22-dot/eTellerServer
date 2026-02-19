@@ -22,6 +22,19 @@ namespace eTeller.Infrastructure.Repositories
         public IAntirecAppearerSelectRepository AntirecAppearerSelectRepository => _antirecAppearerSelectRepository ??= new AntirecAppearerSelectRepository(_context);
 
 
+        private ITransactionSpRepository _transactionSpRepository;
+        public ITransactionSpRepository TransactionSpRepository => _transactionSpRepository ??= new TransactionSpRepository(_context);
+
+        private ITransactionMovSpRepository _transactionMovSpRepository;
+        public ITransactionMovSpRepository TransactionMovSpRepository => _transactionMovSpRepository ??= new TransactionMovSpRepository(_context);
+
+        private IGiornaleAntiriciclaggioSpRepository _giornaleAntiriciclaggioSpRepository;
+        public IGiornaleAntiriciclaggioSpRepository GiornaleAntiriciclaggioSpRepository => _giornaleAntiriciclaggioSpRepository ??= new GiornaleAntiriciclaggioSpRepository(_context);
+
+        private ITotalicCassaSpRepository _totalicCassaSpRepository;
+        public ITotalicCassaSpRepository TotalicCassaSpRepository => _totalicCassaSpRepository ??= new TotalicCassaSpRepository(_context);
+
+
         public UnitOfWork(eTellerDbContext context)
         {
             _context = context;

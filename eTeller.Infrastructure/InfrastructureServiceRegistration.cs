@@ -1,8 +1,9 @@
 ﻿using eTeller.Application.Contracts;
-using eTeller.Application.Features.StoreProcedures.Account.Queries.GetAccount;
+using eTeller.Application.Contracts.StoreProcedures;
 using eTeller.Application.Mappings;
 using eTeller.Infrastructure.Context;
 using eTeller.Infrastructure.Repositories;
+using eTeller.Infrastructure.Repositories.StoreProcedures.Currency;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,9 +19,10 @@ namespace eTeller.Infrastructure
             services.AddDbContext<eTellerDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("ConnectionStringEteller")));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient(typeof(IBaseSimpleRepository<>), typeof(BaseSimpleRepository<>));
+            services.AddScoped<ICurrencySpRepository, CurrencySpRepository>();
 
             services.AddMediatR(cfg =>
-             cfg.RegisterServicesFromAssembly(typeof(GetAccountQueryHandle).Assembly));
+             cfg.RegisterServicesFromAssembly(typeof(eTeller.Application.Features.StoreProcedures.Account.Queries.GetAccount.GetAccountQueryHandler).Assembly));
 
             services.AddAutoMapper(cfg =>
             {

@@ -2,24 +2,25 @@ using eTeller.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
-// Add services to the container.
-
-//builder.Services.AddCors(options =>
-//{
-//    options.AddPolicy(name: MyAllowSpecificOrigins, policy =>
-//    {
-//        policy
-//            .WithOrigins(
-//                "https://localhost:4094",   // Angular
-//                "http://localhost:5253"     // Vite / React
-//            )
-//            .AllowAnyHeader()
-//            .AllowAnyMethod();
-//    });
-//});
+// Add CORS services
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins, policy =>
+    {
+        policy
+            .WithOrigins(
+                "http://localhost:4200",    // Angular
+                "https://localhost:4200",   // Angular HTTPS
+                "http://localhost:5253",    // Vite / React
+                "https://localhost:5253"    // Vite / React HTTPS
+            )
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -31,9 +32,8 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// Use CORS before other middleware
 app.UseCors(MyAllowSpecificOrigins);
-
-
 
 if (app.Environment.IsDevelopment())
 {

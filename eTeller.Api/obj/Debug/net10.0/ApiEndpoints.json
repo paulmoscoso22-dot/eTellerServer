@@ -88,6 +88,96 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "eTeller.Api.Controllers.Account.AccountController",
+    "Method": "GetAccountsForBalance",
+    "RelativePath": "api/Account/ForBalance",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Account.Queries.GetAccountsForBalance.GetAccountsForBalanceQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Account.AccountController",
+    "Method": "GetAccountsForCheck",
+    "RelativePath": "api/Account/ForCheck",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Account.Queries.GetAccountsForCheck.GetAccountsForCheckQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Account.AccountController",
+    "Method": "GetAccountsByIacId",
+    "RelativePath": "api/Account/IacId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "iacId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Account.AccountController",
+    "Method": "GetAccountMax",
+    "RelativePath": "api/Account/MaxIacId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Account.AccountController",
+    "Method": "GetAccountsByPara",
+    "RelativePath": "api/Account/Para",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Account.Queries.GetAccountsByPara.GetAccountsByParaQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Account.AccountController",
+    "Method": "UpdateAccount",
+    "RelativePath": "api/Account/Update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "eTeller.Application.Features.StoreProcedures.Account.Commands.UpdateAccount.UpdateAccountCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "eTeller.Api.Controllers.AntirecAppearer.AntirecAppearerController",
     "Method": "GetAppearerByAraId",
     "RelativePath": "api/AntirecAppearer/by-area/{araId}",
@@ -98,6 +188,152 @@
       {
         "Name": "araId",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Branch.BranchController",
+    "Method": "GetBranches",
+    "RelativePath": "api/Branch/GetBranches",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Currency.CurrencyController",
+    "Method": "GetCurrency",
+    "RelativePath": "api/Currency",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Currency.CurrencyController",
+    "Method": "GetAllCurrencies",
+    "RelativePath": "api/Currency/All",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.CurrencyType.CurrencyTypeController",
+    "Method": "GetCurrencyTypes",
+    "RelativePath": "api/CurrencyType/GetCurrencyTypes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.StOperation.StOperationController",
+    "Method": "GetStOperations",
+    "RelativePath": "api/StOperation/GetStOperations",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.TotaleCassa.TotaleCassaController",
+    "Method": "GetTotaliCassa",
+    "RelativePath": "api/TotaleCassa/GetTotaliCassa",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.TotalicCassa.Queries.GetTotaliCassa.GetTotaliCassaQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Transaction.TransactionController",
+    "Method": "GetTransactionMovByTrxId",
+    "RelativePath": "api/Transaction/MovByTrxId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.TransactionMov.Queries.GetTransactionMovByTrxId.GetTransactionMovByTrxIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Transaction.TransactionController",
+    "Method": "GetTransactionWaitingForBEF",
+    "RelativePath": "api/Transaction/WaitingForBEF",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Transaction.Queries.GetTransactionWaitingForBef.GetTransactionWaitingForBefQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Transaction.TransactionController",
+    "Method": "GetTransactionWithFilters",
+    "RelativePath": "api/Transaction/WithFilters",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Transaction.Queries.GetTransactionWithFilters.GetTransactionWithFiltersQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Transaction.TransactionController",
+    "Method": "GetTransactionWithFiltersForGiornale",
+    "RelativePath": "api/Transaction/WithFiltersForGiornale",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Transaction.Queries.GetTransactionWithFiltersForGiornale.GetTransactionWithFiltersForGiornaleQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Transaction.TransactionController",
+    "Method": "GetTransactionWithFiltersForGiornaleAntiriciclaggio",
+    "RelativePath": "api/Transaction/WithFiltersForGiornaleAntiriciclaggio",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Transaction.Queries.GetTransactionWithFiltersForGiornaleAntiriciclaggio.GetTransactionWithFiltersForGiornaleAntiriciclaggioQuery",
         "IsRequired": true
       }
     ],
