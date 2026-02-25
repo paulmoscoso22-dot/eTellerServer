@@ -1,4 +1,3 @@
-using eTeller.Application.Features.StoreProcedures.Currency.Queries.GetCurrencies;
 using eTeller.Application.Features.Currency.Queries.GetAllCurrencies;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -16,16 +15,7 @@ namespace eTeller.Api.Controllers.Currency
             _mediator = mediator;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetCurrency()
-        {
-            var query = new GetCurrenciesQuery();
-            var result = await _mediator.Send(query);
-            return Ok(result);
-        }
-
         [HttpPost]
-        [Route("All")]
         public async Task<IActionResult> GetAllCurrencies()
         {
             var query = new GetAllCurrenciesQuery();

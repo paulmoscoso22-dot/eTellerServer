@@ -1,5 +1,6 @@
 ﻿using eTeller.Application.Contracts.StoreProcedures;
 using eTeller.Application.Contracts.StoreProcedures.AntirecAppearer;
+using eTeller.Application.Contracts.StoreProcedures.Vigilanza;
 using static eTeller.Application.Contracts.Commons.IBaseSimpleRepository;
 
 namespace eTeller.Application.Contracts
@@ -12,6 +13,7 @@ namespace eTeller.Application.Contracts
         ITransactionMovSpRepository TransactionMovSpRepository { get; }
         IGiornaleAntiriciclaggioSpRepository GiornaleAntiriciclaggioSpRepository { get; }
         ITotalicCassaSpRepository TotalicCassaSpRepository { get; }
+        IVigilanzaSpRepository VigilanzaSpRepository { get; }
         IBaseSimpleRepository<TEntity> Repository<TEntity>() where TEntity : class;
         Task<int> Complete();
     }

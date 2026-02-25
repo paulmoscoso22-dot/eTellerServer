@@ -42,18 +42,18 @@ namespace eTeller.Infrastructure.Repositories.StoreProcedures.Currency
         {
         }
 
-        public async Task<List<CurModel.Currency>> GetAllCurrencies()
-        {
-            using (var connection = new SqlConnection(_context.Database.GetConnectionString()))
-            {
-                await connection.OpenAsync();
+        //public async Task<List<CurModel.Currency>> GetAllCurrencies()
+        //{
+        //    using (var connection = new SqlConnection(_context.Database.GetConnectionString()))
+        //    {
+        //        await connection.OpenAsync();
 
-                var result = await connection.QueryAsync<CurModel.Currency>(
-                    "dbo.sp_Currency_SelectAll",
-                    commandType: System.Data.CommandType.StoredProcedure);
+        //        var result = await connection.QueryAsync<CurModel.Currency>(
+        //            "dbo.sp_Currency_SelectAll",
+        //            commandType: System.Data.CommandType.StoredProcedure);
 
-                return result.ToList();
-            }
-        }
+        //        return result.ToList();
+        //    }
+        //}
     }
 }

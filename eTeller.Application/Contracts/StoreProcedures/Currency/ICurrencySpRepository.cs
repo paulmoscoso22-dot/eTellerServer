@@ -4,6 +4,6 @@ namespace eTeller.Application.Contracts.StoreProcedures
 {
     public interface ICurrencySpRepository
     {
-        Task<List<Currency>> GetAllCurrencies();
+        //Task<List<Currency>> GetAllCurrencies();
     }
 }

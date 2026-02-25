@@ -205,18 +205,8 @@
   },
   {
     "ContainingType": "eTeller.Api.Controllers.Currency.CurrencyController",
-    "Method": "GetCurrency",
-    "RelativePath": "api/Currency",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "eTeller.Api.Controllers.Currency.CurrencyController",
     "Method": "GetAllCurrencies",
-    "RelativePath": "api/Currency/All",
+    "RelativePath": "api/Currency",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -334,6 +324,22 @@
       {
         "Name": "request",
         "Type": "eTeller.Application.Features.StoreProcedures.Transaction.Queries.GetTransactionWithFiltersForGiornaleAntiriciclaggio.GetTransactionWithFiltersForGiornaleAntiriciclaggioQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Vigilanza.VigilanzaController",
+    "Method": "TransactionsForGiornaleAntiriciclaggio",
+    "RelativePath": "api/Vigilanza/TransactionsForGiornaleAntiriciclaggio",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Vigilanza.Queries.GetTransactionsForGiornaleAntiriciclaggio.GetTransactionsForGiornaleAntiriciclaggioQuery",
         "IsRequired": true
       }
     ],

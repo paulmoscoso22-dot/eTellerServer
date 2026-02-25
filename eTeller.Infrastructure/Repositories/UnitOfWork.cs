@@ -1,9 +1,11 @@
 ﻿using eTeller.Application.Contracts;
 using eTeller.Application.Contracts.StoreProcedures;
 using eTeller.Application.Contracts.StoreProcedures.AntirecAppearer;
+using eTeller.Application.Contracts.StoreProcedures.Vigilanza;
 using eTeller.Infrastructure.Context;
 using eTeller.Infrastructure.Repositories.StoreProcedures;
 using eTeller.Infrastructure.Repositories.StoreProcedures.AntirecAppearer;
+using eTeller.Infrastructure.Repositories.StoreProcedures.Vigilanza;
 using System.Collections;
 using static eTeller.Application.Contracts.Commons.IBaseSimpleRepository;
 
@@ -33,6 +35,9 @@ namespace eTeller.Infrastructure.Repositories
 
         private ITotalicCassaSpRepository _totalicCassaSpRepository;
         public ITotalicCassaSpRepository TotalicCassaSpRepository => _totalicCassaSpRepository ??= new TotalicCassaSpRepository(_context);
+
+        private IVigilanzaSpRepository _vigilanzaSpRepository;
+        public IVigilanzaSpRepository VigilanzaSpRepository => _vigilanzaSpRepository ??= new VigilanzaSpRepository(_context);
 
 
         public UnitOfWork(eTellerDbContext context)
