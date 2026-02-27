@@ -5,10 +5,13 @@ using eTeller.Application.Mappings.Branch;
 using eTeller.Application.Mappings.ST_CurrencyType;
 using eTeller.Application.Mappings.ST_OperationType;
 using eTeller.Application.Mappings.TotalicCassa;
+using eTeller.Application.Mappings.Transaction;
 using eTeller.Application.Mappings.Vigilanza;
 using CurModel = eTeller.Domain.Models;
 using eTeller.Domain.Models.StoredProcedure;
 using eTeller.Domain.Models.View;
+
+using eTeller.Domain.Common;
 
 namespace eTeller.Application.Mappings
 {
@@ -18,8 +21,32 @@ namespace eTeller.Application.Mappings
         {
             CreateMap<CurModel.Account, AccountVm>();
             CreateMap<AntirecAppearerView, AntirecAppearerViewVm>();
-            CreateMap<CurModel.Transaction, TransactionVm>();
+            CreateMap<CurModel.Transaction, TransactionVm>()
+                .ForMember(dest => dest.Genere, opt => opt.MapFrom(src => string.Format("{0}/{1}", src.TrxUsrId, src.TrxCassa)))
+                .ForMember(dest => dest.Tipo, opt => opt.MapFrom<TransactionTipoResolver>())
+                .ForMember(dest => dest.Report, opt => opt.MapFrom<TransactionReportResolver>());
             CreateMap<CurModel.TransactionMov, TransactionMovVm>();
+
+            // Giornale Cassa mapping
+            CreateMap<CurModel.Transaction, TransactionGiornaleCassaVm>()
+                .ForMember(dest => dest.Genere, opt => opt.MapFrom(src => string.Format("{0}/{1}", src.TrxUsrId, src.TrxCassa)))
+                .ForMember(dest => dest.Tipo, opt => opt.MapFrom<GiornaleCassaTipoResolver>())
+                .ForMember(dest => dest.Report, opt => opt.MapFrom<GiornaleCassaReportResolver>())
+                .ForMember(dest => dest.BigliettiBanca, opt => opt.MapFrom(src => src.TrxImpctp.HasValue ? src.TrxImpctp.Value.ToString(FormatConstants.FormatAmount) : null))
+                .ForMember(dest => dest.NonContanti, opt => opt.MapFrom(src => src.TrxCash != true && src.TrxImpope.HasValue ? src.TrxImpope.Value.ToString(FormatConstants.FormatAmount) : null))
+                .ForMember(dest => dest.Contanti, opt => opt.MapFrom(src => src.TrxCash == true && src.TrxImpope.HasValue ? src.TrxImpope.Value.ToString(FormatConstants.FormatAmount) : null))
+                .ForMember(dest => dest.ImpCHF, opt => opt.MapFrom(src => src.TrxImpctv.HasValue ? src.TrxImpctv.Value.ToString(FormatConstants.FormatAmount) : null))
+                .ForMember(dest => dest.Stato, opt => opt.MapFrom<TransactionStatoResolver>());
+
+            // Operazioni Annullate mapping
+            CreateMap<CurModel.Transaction, TransactionOperationAnnullateVm>()
+                .ForMember(dest => dest.Genere, opt => opt.MapFrom(src => string.Format("{0}/{1}", src.TrxUsrId, src.TrxCassa)))
+                .ForMember(dest => dest.Tipo, opt => opt.MapFrom<OperazioniAnnullateTipoResolver>())
+                .ForMember(dest => dest.Report, opt => opt.MapFrom<OperazioniAnnullateReportResolver>())
+                .ForMember(dest => dest.HostTrace, opt => opt.MapFrom(src => src.TrxDatope.HasValue
+                    ? TransactionHelper.GetHostTrace(src.TrxCassa, src.TrxDatope.Value, src.TrxDailySequence)
+                    : null));
+
             CreateMap<GiornaleAntiriciclaggio, GiornaleAntiriciclaggioVm>();
             CreateMap<CurModel.Currency, CurrencyVm>();
             CreateMap<CurModel.Branch, BranchVm>();

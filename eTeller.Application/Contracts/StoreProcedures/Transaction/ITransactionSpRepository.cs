@@ -5,10 +5,10 @@ namespace eTeller.Application.Contracts.StoreProcedures
 {
     public interface ITransactionSpRepository : IBaseSimpleRepository<Transaction>
     {
-        Task<IEnumerable<Transaction>> GetTransactionWaitingForBef(string trxCassa, DateTime trxDataDal, DateTime trxDataAl, int trxStatus, string trxBraId);
+        Task<IEnumerable<Transaction>> GetSpTransactionWaitingForBef(string trxCassa, DateTime trxDataDal, DateTime trxDataAl, int trxStatus, string trxBraId);
 
-        Task<IEnumerable<Transaction>> GetTransactionWithFiltersForGiornale(string trxCassa, DateTime trxDataDal, DateTime trxDataAl, int trxStatus, string trxBraId);
+        Task<IEnumerable<Transaction>> GetSpTransactionWithFiltersForGiornale(string trxCassa, DateTime trxDataDal, DateTime trxDataAl, int trxStatus, string trxBraId);
 
-        Task<IEnumerable<Transaction>> GetTransactionWithFilters(string trxCassa, DateTime trxDataDal, DateTime trxDataAl, int trxStatus, string trxBraId);
+        Task<IEnumerable<Transaction>> GetSpTransactionWithFilters(string trxCassa, DateTime trxDataDal, DateTime trxDataAl, int trxStatus, string trxBraId);
     }
 }

@@ -23,6 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Archivi\Report\StoreProcedure\Queries\GetGiornaleCassa\" />
+    <Folder Include="Features\User\" />
     <Folder Include="Features\StoreProcedures\AntirecAppearer\Commands\" />
     <Folder Include="Features\StoreProcedures\Currency\Queries\GetCurrencies\" />
     <Folder Include="Mappings\Vigilanza\" />

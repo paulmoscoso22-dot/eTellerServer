@@ -3,9 +3,14 @@ using eTeller.Application.Contracts.StoreProcedures;
 using eTeller.Application.Contracts.StoreProcedures.AntirecAppearer;
 using eTeller.Application.Contracts.StoreProcedures.Vigilanza;
 using eTeller.Infrastructure.Context;
+using eTeller.Infrastructure.Repositories.Archivi.Report.StoreProcedure;
+using eTeller.Infrastructure.Repositories.Archivi.Ricerca.StoreProcedures;
 using eTeller.Infrastructure.Repositories.StoreProcedures;
 using eTeller.Infrastructure.Repositories.StoreProcedures.AntirecAppearer;
 using eTeller.Infrastructure.Repositories.StoreProcedures.Vigilanza;
+using eTeller.Application.Contracts.StoreProcedures.ST_CurrencyType;
+using eTeller.Infrastructure.Repositories.StoreProcedures.ST_CurrencyType;
+using eTeller.Infrastructure.Repositories.Archivi;
 using System.Collections;
 using static eTeller.Application.Contracts.Commons.IBaseSimpleRepository;
 
@@ -15,6 +20,15 @@ namespace eTeller.Infrastructure.Repositories
     {
         private Hashtable _repositories;
         private readonly eTellerDbContext _context;
+
+        private IUserRepository _userRepository;
+        public IUserRepository UserRepository => _userRepository ??= new UserRepository(_context);
+
+        private IUserSessionRepository _userSessionRepository;
+        public IUserSessionRepository UserSessionRepository => _userSessionRepository ??= new UserSessionRepository(_context);
+
+        private IClientRepository _clientRepository;
+        public IClientRepository ClientRepository => _clientRepository ??= new ClientRepository(_context);
 
         private IAccountSpRepository _accountSpRepository;
         public IAccountSpRepository AccountSpRepository => _accountSpRepository ??= new AccountSpRepository(_context);
@@ -38,6 +52,9 @@ namespace eTeller.Infrastructure.Repositories
 
         private IVigilanzaSpRepository _vigilanzaSpRepository;
         public IVigilanzaSpRepository VigilanzaSpRepository => _vigilanzaSpRepository ??= new VigilanzaSpRepository(_context);
+
+        private IST_CurrencyTypeSpRepository _stCurrencyTypeSpRepository;
+        public IST_CurrencyTypeSpRepository ST_CurrencyTypeSpRepository => _stCurrencyTypeSpRepository ??= new ST_CurrencyTypeSpRepository(_context);
 
 
         public UnitOfWork(eTellerDbContext context)

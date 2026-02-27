@@ -5,7 +5,7 @@ namespace eTeller.Application.Contracts.StoreProcedures
 {
     public interface IGiornaleAntiriciclaggioSpRepository : IBaseSimpleRepository<GiornaleAntiriciclaggio>
     {
-        Task<List<GiornaleAntiriciclaggio>> GetTransactionWithFiltersForGiornaleAntiriciclaggio(
+        Task<List<GiornaleAntiriciclaggio>> GetSpTransactionWithFiltersForGiornaleAntiriciclaggio(
             string trxCassa,
             string trxLocalita,
             DateTime trxDataDal,

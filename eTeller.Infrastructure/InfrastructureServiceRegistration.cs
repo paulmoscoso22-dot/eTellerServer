@@ -1,5 +1,6 @@
 ﻿using eTeller.Application.Contracts;
 using eTeller.Application.Contracts.StoreProcedures;
+using eTeller.Application.Features.User.Services;
 using eTeller.Application.Mappings;
 using eTeller.Infrastructure.Context;
 using eTeller.Infrastructure.Repositories;
@@ -20,6 +21,9 @@ namespace eTeller.Infrastructure
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient(typeof(IBaseSimpleRepository<>), typeof(BaseSimpleRepository<>));
             services.AddScoped<ICurrencySpRepository, CurrencySpRepository>();
+
+            // Register Authentication Service
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
 
             services.AddMediatR(cfg =>
              cfg.RegisterServicesFromAssembly(typeof(eTeller.Application.Features.StoreProcedures.Account.Queries.GetAccount.GetAccountQueryHandler).Assembly));

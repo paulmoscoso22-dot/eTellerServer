@@ -17,6 +17,9 @@ namespace eTeller.Infrastructure.Context
         public virtual DbSet<ST_CurrencyType> ST_CurrencyType { get; set; }
         public virtual DbSet<ST_OperationType> ST_OperationType { get; set; }
         public virtual DbSet<TotalicCassa> TotalicCassa { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserSession> UserSessions { get; set; }
+        public virtual DbSet<Client> Clients { get; set; }
         public eTellerDbContext(DbContextOptions options) : base(options)
         {
 
@@ -34,6 +37,15 @@ namespace eTeller.Infrastructure.Context
             modelBuilder.Entity<ST_OperationType>().HasNoKey();
             modelBuilder.Entity<TotalicCassa>().HasNoKey();
             //modelBuilder.Entity<GiornaleAntiriciclaggio>().HasNoKey();
+
+            // Configure User entity with primary key
+            modelBuilder.Entity<User>().HasKey(u => u.UsrId);
+            
+            // Configure UserSession entity with primary key
+            modelBuilder.Entity<UserSession>().HasKey(s => s.SessionId);
+            
+            // Configure Client entity with primary key
+            modelBuilder.Entity<Client>().HasKey(c => c.CliId);
         }
     }
 }
