@@ -27,7 +27,6 @@
     <Folder Include="Features\User\" />
     <Folder Include="Features\StoreProcedures\AntirecAppearer\Commands\" />
     <Folder Include="Features\StoreProcedures\Currency\Queries\GetCurrencies\" />
-    <Folder Include="Mappings\Vigilanza\" />
   </ItemGroup>
 
 </Project>

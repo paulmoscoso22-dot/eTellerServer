@@ -16,4 +16,8 @@
     <ProjectReference Include="..\eTeller.Infrastructure\eTeller.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\Vigilanza\" />
+  </ItemGroup>
+
 </Project>

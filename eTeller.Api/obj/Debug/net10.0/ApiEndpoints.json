@@ -256,6 +256,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "eTeller.Api.Controllers.StCountry.StCountryController",
+    "Method": "GetAllCountry",
+    "RelativePath": "api/StCountry/GetAllCountry",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "eTeller.Api.Controllers.StOperation.StOperationController",
     "Method": "GetStOperations",
     "RelativePath": "api/StOperation/GetStOperations",
@@ -263,6 +273,150 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Trace.TraceController",
+    "Method": "InsertTrace",
+    "RelativePath": "api/Trace/InsertTrace",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Trace.Commands.InsertTrace.InsertTraceCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Vigilanza.VigilanzaController",
+    "Method": "DeleteARA",
+    "RelativePath": "api/Vigilanza/DeleteARA",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Vigilanza.Commands.DeleteARA.DeleteARACommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Vigilanza.VigilanzaController",
+    "Method": "GetByAraId",
+    "RelativePath": "api/Vigilanza/GetByAraId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Vigilanza.Queries.GetAppearerAllByAraId.GetAppearerAllByAraIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Vigilanza.VigilanzaController",
+    "Method": "GetByParameters",
+    "RelativePath": "api/Vigilanza/GetByParameters",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Vigilanza.Queries.GetAppearerByParametersWithExpiry.GetAppearerByParametersWithExpiryQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Vigilanza.VigilanzaController",
+    "Method": "GetSpAntirecAppearerByParameters",
+    "RelativePath": "api/Vigilanza/GetSpAntirecAppearerByParameters",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Vigilanza.Queries.GetSpAntirecAppearerByParameters.GetSpAntirecAppearerByParametersQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Vigilanza.VigilanzaController",
+    "Method": "GetSpAntirecRulesParameters",
+    "RelativePath": "api/Vigilanza/GetSpAntirecRulesParameters",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Vigilanza.Queries.GetSpAntirecRulesByParameters.GetSpAntirecRulesByParametersQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Vigilanza.VigilanzaController",
+    "Method": "InsertARA",
+    "RelativePath": "api/Vigilanza/InsertARA",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Vigilanza.Commands.InsertARA.InsertARACommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Vigilanza.VigilanzaController",
+    "Method": "InsertHisAntirecAppearer",
+    "RelativePath": "api/Vigilanza/InsertHisAntirecAppearer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Vigilanza.Commands.InsertHisAntirecAppearer.InsertHisAntirecAppearerCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Vigilanza.VigilanzaController",
+    "Method": "InsertSpAntirecAppearer",
+    "RelativePath": "api/Vigilanza/InsertSpAntirecAppearer",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Vigilanza.Commands.InsertSpAntirecAppearer.InsertSpAntirecAppearerCommand",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -276,6 +430,38 @@
       {
         "Name": "request",
         "Type": "eTeller.Application.Features.StoreProcedures.Vigilanza.Queries.GetTransactionsForGiornaleAntiriciclaggio.GetTransactionsForGiornaleAntiriciclaggioQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Vigilanza.VigilanzaController",
+    "Method": "UpdateARA",
+    "RelativePath": "api/Vigilanza/UpdateARA",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Vigilanza.Commands.UpdateARA.UpdateARACommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Vigilanza.VigilanzaController",
+    "Method": "UpdateSpAntirecAppearer",
+    "RelativePath": "api/Vigilanza/UpdateSpAntirecAppearer",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.StoreProcedures.Vigilanza.Commands.UpdateSpAntirecAppearer.UpdateSpAntirecAppearerCommand",
         "IsRequired": true
       }
     ],

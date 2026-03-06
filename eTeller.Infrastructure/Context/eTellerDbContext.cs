@@ -16,6 +16,7 @@ namespace eTeller.Infrastructure.Context
         public virtual DbSet<Branch> Branch { get; set; }
         public virtual DbSet<ST_CurrencyType> ST_CurrencyType { get; set; }
         public virtual DbSet<ST_OperationType> ST_OperationType { get; set; }
+        public virtual DbSet<ST_COUNTRY> ST_COUNTRY { get; set; }
         public virtual DbSet<TotalicCassa> TotalicCassa { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserSession> UserSessions { get; set; }
@@ -35,6 +36,7 @@ namespace eTeller.Infrastructure.Context
             modelBuilder.Entity<Branch>().HasNoKey();
             modelBuilder.Entity<ST_CurrencyType>().HasNoKey();
             modelBuilder.Entity<ST_OperationType>().HasNoKey();
+            modelBuilder.Entity<ST_COUNTRY>().HasNoKey();
             modelBuilder.Entity<TotalicCassa>().HasNoKey();
             //modelBuilder.Entity<GiornaleAntiriciclaggio>().HasNoKey();
 

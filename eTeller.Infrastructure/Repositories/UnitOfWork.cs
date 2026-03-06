@@ -1,12 +1,14 @@
 ﻿using eTeller.Application.Contracts;
 using eTeller.Application.Contracts.StoreProcedures;
 using eTeller.Application.Contracts.StoreProcedures.AntirecAppearer;
+using eTeller.Application.Contracts.StoreProcedures.Trace;
 using eTeller.Application.Contracts.StoreProcedures.Vigilanza;
 using eTeller.Infrastructure.Context;
 using eTeller.Infrastructure.Repositories.Archivi.Report.StoreProcedure;
 using eTeller.Infrastructure.Repositories.Archivi.Ricerca.StoreProcedures;
 using eTeller.Infrastructure.Repositories.StoreProcedures;
 using eTeller.Infrastructure.Repositories.StoreProcedures.AntirecAppearer;
+using eTeller.Infrastructure.Repositories.StoreProcedures.Trace;
 using eTeller.Infrastructure.Repositories.StoreProcedures.Vigilanza;
 using eTeller.Application.Contracts.StoreProcedures.ST_CurrencyType;
 using eTeller.Infrastructure.Repositories.StoreProcedures.ST_CurrencyType;
@@ -55,6 +57,9 @@ namespace eTeller.Infrastructure.Repositories
 
         private IST_CurrencyTypeSpRepository _stCurrencyTypeSpRepository;
         public IST_CurrencyTypeSpRepository ST_CurrencyTypeSpRepository => _stCurrencyTypeSpRepository ??= new ST_CurrencyTypeSpRepository(_context);
+
+        private ITraceSpRepository _traceSpRepository;
+        public ITraceSpRepository TraceSpRepository => _traceSpRepository ??= new TraceSpRepository(_context);
 
 
         public UnitOfWork(eTellerDbContext context)

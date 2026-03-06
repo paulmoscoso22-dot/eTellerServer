@@ -1,0 +1,1 @@
+all name properties initial tetters with initialize with capital letter and the form camel case name.

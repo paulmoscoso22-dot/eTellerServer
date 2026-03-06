@@ -2,7 +2,6 @@ using eTeller.Application.Contracts;
 using eTeller.Application.Features.User.Commands;
 using eTeller.Application.Features.User.DTOs;
 using eTeller.Application.Features.User.Handlers;
-using eTeller.Domain.Common;
 
 namespace eTeller.Application.Features.User.Services
 {

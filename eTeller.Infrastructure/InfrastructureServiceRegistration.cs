@@ -8,7 +8,6 @@ using eTeller.Infrastructure.Repositories.StoreProcedures.Currency;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
 using static eTeller.Application.Contracts.Commons.IBaseSimpleRepository;
 
 namespace eTeller.Infrastructure

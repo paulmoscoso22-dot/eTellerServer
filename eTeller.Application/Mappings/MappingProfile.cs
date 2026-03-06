@@ -4,6 +4,7 @@ using eTeller.Application.Mappings.Currency;
 using eTeller.Application.Mappings.Branch;
 using eTeller.Application.Mappings.ST_CurrencyType;
 using eTeller.Application.Mappings.ST_OperationType;
+using eTeller.Application.Mappings.StCountry;
 using eTeller.Application.Mappings.TotalicCassa;
 using eTeller.Application.Mappings.Transaction;
 using eTeller.Application.Mappings.Vigilanza;
@@ -26,6 +27,9 @@ namespace eTeller.Application.Mappings
                 .ForMember(dest => dest.Tipo, opt => opt.MapFrom<TransactionTipoResolver>())
                 .ForMember(dest => dest.Report, opt => opt.MapFrom<TransactionReportResolver>());
             CreateMap<CurModel.TransactionMov, TransactionMovVm>();
+
+            // ST_COUNTRY mapping
+            CreateMap<CurModel.ST_COUNTRY, StCountryVm>();
 
             // Giornale Cassa mapping
             CreateMap<CurModel.Transaction, TransactionGiornaleCassaVm>()
@@ -66,6 +70,10 @@ namespace eTeller.Application.Mappings
                 .ForMember(dest => dest.OptDes, opt => opt.MapFrom<OperationTypeResolver>())
                 .ForMember(dest => dest.BeneficiaryName, opt => opt.MapFrom(src => string.IsNullOrEmpty(src.AraName) ? "" : src.AraName))
                 .ForMember(dest => dest.StaDes, opt => opt.MapFrom<TransactionStatusResolver>());
+
+            CreateMap<SpAntirecRules, SpAntirecRulesVm>();
+            CreateMap<CurModel.AppearerAll, AppearerAllVm>();
+            CreateMap<CurModel.HisAntirecAppearer, HisAntirecAppearerVm>();
         }
     }
 }

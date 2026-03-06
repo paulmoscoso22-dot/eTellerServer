@@ -1,6 +1,7 @@
 ﻿using eTeller.Application.Contracts.StoreProcedures;
 using eTeller.Application.Contracts.StoreProcedures.AntirecAppearer;
 using eTeller.Application.Contracts.StoreProcedures.ST_CurrencyType;
+using eTeller.Application.Contracts.StoreProcedures.Trace;
 using eTeller.Application.Contracts.StoreProcedures.Vigilanza;
 using static eTeller.Application.Contracts.Commons.IBaseSimpleRepository;
 
@@ -16,6 +17,7 @@ namespace eTeller.Application.Contracts
         ITotalicCassaSpRepository TotalicCassaSpRepository { get; }
         IVigilanzaSpRepository VigilanzaSpRepository { get; }
         IST_CurrencyTypeSpRepository ST_CurrencyTypeSpRepository { get; }
+        ITraceSpRepository TraceSpRepository { get; }
         IUserRepository UserRepository { get; }
         IUserSessionRepository UserSessionRepository { get; }
         IClientRepository ClientRepository { get; }
