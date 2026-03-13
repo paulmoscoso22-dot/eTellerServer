@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using Dapper;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection;
+using Microsoft.Extensions.Logging;
+using eTeller.Application.DTOs;
 
 namespace eTeller.Infrastructure.Repositories.StoreProcedures.Vigilanza
 {
@@ -14,6 +16,7 @@ namespace eTeller.Infrastructure.Repositories.StoreProcedures.Vigilanza
     {
         private const string FunctionCodeARA = "ARA";
         private const string TableNameAntirecAppearer = "ANTIREC_APPEARER";
+        private readonly ILogger<VigilanzaSpRepository> _logger;
 
         static VigilanzaSpRepository()
         {
@@ -90,8 +93,315 @@ namespace eTeller.Infrastructure.Repositories.StoreProcedures.Vigilanza
                 }));
         }
 
-        public VigilanzaSpRepository(eTellerDbContext dbContext) : base(dbContext)
+        public VigilanzaSpRepository(eTellerDbContext dbContext, ILogger<VigilanzaSpRepository> logger) 
+            : base(dbContext)
         {
+            _logger = logger;
+        }
+
+        // ── READ ──────────────────────────────────────────────────────────────────
+
+        /// <inheritdoc/>
+        public async Task<Antirecycling?> GetByTrxIdAsync(
+            int trxId,
+            CancellationToken cancellationToken = default)
+        {
+            _logger.LogDebug("ANTIRECYCLING_ByTrxId_Select TrxId={TrxId}", trxId);
+
+            var results = await _context.AntiRecyclings
+                .FromSqlRaw(
+                    "EXEC [dbo].[ANTIRECYCLING_ByTrxId_Select] @ARC_TRX_ID = {0}",
+                    trxId)
+                .AsNoTracking()
+                .ToListAsync(cancellationToken);
+
+            return results.FirstOrDefault();
+        }
+
+        // ── WRITE ─────────────────────────────────────────────────────────────────
+
+        /// <inheritdoc/>
+        /// EF Core non supporta OUTPUT con sintassi {0}: serve SqlParameter esplicito.
+        public async Task<SalvaAntiRecyclingResult> SalvaAsync(
+            int trxId,
+            int appearerId,
+            int beneficiaryId,
+            bool forced,
+            string? motivation,
+            CancellationToken cancellationToken = default)
+        {
+            _logger.LogDebug(
+                "ANTIRECYCLING_Insert TrxId={TrxId} AppearerId={AppearerId} BeneficiaryId={BeneficiaryId}",
+                trxId, appearerId, beneficiaryId);
+
+            var pTrxId         = new SqlParameter("@ARC_TRX_ID",        trxId);
+            var pAppearerId    = new SqlParameter("@ARC_APPEARER_ID",    appearerId);
+            var pBeneficiaryId = new SqlParameter("@ARC_BENEFICIARY_ID", beneficiaryId);
+            var pForced        = new SqlParameter("@ARC_FORCED",         forced);
+            var pMotivation    = new SqlParameter("@ARC_MOTIVATION",
+                (object?)motivation ?? DBNull.Value);
+            var pArcId = new SqlParameter
+            {
+                ParameterName = "@ARC_ID",
+                SqlDbType     = System.Data.SqlDbType.Int,
+                Direction     = System.Data.ParameterDirection.Output
+            };
+
+            await _context.Database.ExecuteSqlRawAsync(
+                "EXEC [dbo].[ANTIRECYCLING_Insert] " +
+                "@ARC_TRX_ID, @ARC_APPEARER_ID, @ARC_BENEFICIARY_ID, " +
+                "@ARC_FORCED, @ARC_MOTIVATION, @ARC_ID OUTPUT",
+                pTrxId, pAppearerId, pBeneficiaryId,
+                pForced, pMotivation, pArcId,
+                cancellationToken);
+
+            var arcId = (int)pArcId.Value;
+
+            _logger.LogInformation(
+                "ANTIRECYCLING_Insert: ARC_ID={ArcId} per TrxId={TrxId}", arcId, trxId);
+
+            return new SalvaAntiRecyclingResult(arcId);
+        }
+
+        /// <inheritdoc/>
+        public async Task DeleteByTrxIdAsync(
+            int trxId,
+            CancellationToken cancellationToken = default)
+        {
+            _logger.LogDebug("ANTIRECYCLING_Delete_ByTrxId TrxId={TrxId}", trxId);
+
+            await _context.Database.ExecuteSqlRawAsync(
+                "EXEC [dbo].[ANTIRECYCLING_Delete_ByTrxId] @ARC_TRX_ID = {0}",
+                new object[] { trxId },
+                cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        public async Task SalvaHistoryAsync(
+            SalvaHistoryAntiRecyclingRequest request,
+            CancellationToken cancellationToken = default)
+        {
+            _logger.LogDebug(
+                "HIS_ANTIREC_SUBJECTS_Insert HisAnsId={HisAnsId} AnsId={AnsId}",
+                request.HisAnsId, request.AnsId);
+
+            await _context.Database.ExecuteSqlRawAsync(
+                "EXEC [dbo].[HIS_ANTIREC_SUBJECTS_Insert] @HIS_ANS_ID = {0}, @ANS_ID = {1}",
+                new object[] { request.HisAnsId, request.AnsId },
+                cancellationToken);
+        }
+
+        /// <inheritdoc/>
+        /// <summary>
+        /// Salva i dati antiriciclaggio per una transazione risolvendo l'AppearerId
+        /// dal nome e documento forniti, quindi inserisce ANTIRECYCLING e ne registra lo storico.
+        /// </summary>
+        public async Task<SalvaAntiRecyclingResult> SalvaAntiRecyclingAsync(
+            string userId,
+            string codiceCassa,
+            int    trxId,
+            string nomeComparente,
+            string documentoTipo,
+            string documentoNumero,
+            CancellationToken cancellationToken = default)
+        {
+            _logger.LogDebug(
+                "SalvaAntiRecyclingAsync UserId={UserId} Cassa={Cassa} TrxId={TrxId} " +
+                "Comparente='{Comparente}' DocTipo={DocTipo} DocNum={DocNum}",
+                userId, codiceCassa, trxId, nomeComparente, documentoTipo, documentoNumero);
+
+            try
+            {
+                // STEP 1: Risolvi AppearerId dal nome/documento
+                int appearerId = await ResolveAppearerIdAsync(nomeComparente, documentoNumero, cancellationToken);
+
+                _logger.LogDebug(
+                    "AppearerId risolto: {AppearerId} per Comparente='{Comparente}'",
+                    appearerId, nomeComparente);
+
+                // STEP 2: Salva antirecycling usando il metodo esistente
+                var result = await SalvaAsync(
+                    trxId: trxId,
+                    appearerId: appearerId,
+                    beneficiaryId: 0,  // Default: no beneficiary
+                    forced: false,
+                    motivation: null,
+                    cancellationToken: cancellationToken);
+
+                // STEP 3: Registra lo storico comparente usando il metodo esistente
+                var historyRequest = new SalvaHistoryAntiRecyclingRequest(
+                    HisAnsId: result.ArcId,
+                    AnsId: appearerId);
+
+                await SalvaHistoryAsync(historyRequest, cancellationToken);
+
+                _logger.LogInformation(
+                    "SalvaAntiRecyclingAsync completato: ARC_ID={ArcId} TrxId={TrxId} AppearerId={AppearerId}",
+                    result.ArcId, trxId, appearerId);
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(
+                    ex,
+                    "Errore durante SalvaAntiRecyclingAsync: UserId={UserId} TrxId={TrxId} Comparente='{Comparente}'",
+                    userId, trxId, nomeComparente);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Risolve l'AppearerId dal nome e documento forniti tramite stored procedure.
+        /// SP: ANTIREC_SUBJECTS_GetOrCreate @ANS_NAME, @ANS_IDDOCNUM → OUTPUT @ANS_ID
+        /// </summary>
+        private async Task<int> ResolveAppearerIdAsync(
+            string nomeComparente,
+            string? documentoNumero,
+            CancellationToken cancellationToken)
+        {
+            var pAnsName = new SqlParameter("@ANS_NAME", nomeComparente);
+            var pAnsDocNum = new SqlParameter("@ANS_IDDOCNUM", documentoNumero ?? (object)DBNull.Value);
+            var pAnsId = new SqlParameter
+            {
+                ParameterName = "@ANS_ID",
+                SqlDbType = System.Data.SqlDbType.Int,
+                Direction = System.Data.ParameterDirection.Output
+            };
+
+            await _context.Database.ExecuteSqlRawAsync(
+                "EXEC [dbo].[ANTIREC_SUBJECTS_GetOrCreate] " +
+                "@ANS_NAME, @ANS_IDDOCNUM, @ANS_ID OUTPUT",
+                pAnsName, pAnsDocNum, pAnsId,
+                cancellationToken);
+
+            return (int)pAnsId.Value;
+        }
+
+        // ── VALIDAZIONE ───────────────────────────────────────────────────────────
+
+        /// <inheritdoc/>
+        ///
+        /// FASE 10 del vecchio btnCarica_Click — due step:
+        ///
+        ///   STEP 1 — ValidateAntiRecyclingRules(...)
+        ///     Interroga la logica DB per determinare se la vigilanza è obbligatoria
+        ///     (required) o forzata (forced) per questa operazione.
+        ///     Nel vecchio codice questo metodo impostava i flag sul user control
+        ///     wucAntiRecycling.required e wucAntiRecycling.forced.
+        ///
+        ///   STEP 2 — wucAntiRecycling.IsValid()
+        ///     Se required o forced: verifica che i dati siano presenti (nomeComparente).
+        ///
+        /// NOTA IMPLEMENTATIVA:
+        ///   Il codice sorgente di ValidateAntiRecyclingRules non è disponibile.
+        ///   L'implementazione legge le regole tramite la SP [dbo].[ANTIREC_RULES_Select].
+        ///   Se nel DB legacy la logica è inline in un'altra SP o tabella,
+        ///   il nome della SP va adattato di conseguenza.
+        public async Task<bool> IsVigilanzaValidaAsync(
+            string   tipoOperazione,
+            string   tipoDivisa,
+            decimal  importoControvalore,
+            string   numeroConto,
+            string   categoriaCliente,
+            string   dataOperazione,
+            string?  nomeComparente,
+            CancellationToken cancellationToken = default)
+        {
+            // ── STEP 1: Leggi le regole di vigilanza dal DB ───────────────────────
+            //
+            // SP: [dbo].[ANTIREC_RULES_Select]
+            //   Parametri IN:
+            //     @OPT_ID    = tipoOperazione   ("DEP" / "WITH")
+            //     @CUT_ID    = tipoDivisa       ("DV")
+            //     @IMPCTV    = importoControvalore (CHF)
+            //     @ACCOUNT   = numeroConto
+            //     @CATEGORY  = categoriaCliente
+            //     @DATOPE    = dataOperazione   ("dd.MM.yyyy")
+            //   Parametri OUT:
+            //     @RULE_REQUIRED  bit  — vigilanza obbligatoria per soglia/categoria
+            //     @RULE_FORCED    bit  — vigilanza sempre forzata (ignora soglia)
+            //
+            // NOTA: se la SP non esiste e la logica è inline, sostituire con
+            //       la chiamata corretta (es. SELECT from tabella regole, altra SP, ecc.)
+
+            _logger.LogDebug(
+                "ANTIREC_RULES_Select TipoOp={TipoOp} TipoDivisa={TipoDivisa} " +
+                "ImportoCTV={ImportoCTV} Conto={Conto} Categoria={Categoria} Data={Data}",
+                tipoOperazione, tipoDivisa, importoControvalore,
+                numeroConto, categoriaCliente, dataOperazione);
+
+            var pOptId    = new SqlParameter("@OPT_ID",   tipoOperazione);
+            var pCutId    = new SqlParameter("@CUT_ID",   tipoDivisa);
+            var pImpCtv   = new SqlParameter("@IMPCTV",   importoControvalore);
+            var pAccount  = new SqlParameter("@ACCOUNT",  numeroConto);
+            var pCategory = new SqlParameter("@CATEGORY", categoriaCliente);
+            var pDatOpe   = new SqlParameter("@DATOPE",   dataOperazione);
+
+            var pRequired = new SqlParameter
+            {
+                ParameterName = "@RULE_REQUIRED",
+                SqlDbType     = System.Data.SqlDbType.Bit,
+                Direction     = System.Data.ParameterDirection.Output
+            };
+            var pForced = new SqlParameter
+            {
+                ParameterName = "@RULE_FORCED",
+                SqlDbType     = System.Data.SqlDbType.Bit,
+                Direction     = System.Data.ParameterDirection.Output
+            };
+
+            await _context.Database.ExecuteSqlRawAsync(
+                "EXEC [dbo].[ANTIREC_RULES_Select] " +
+                "@OPT_ID, @CUT_ID, @IMPCTV, @ACCOUNT, @CATEGORY, @DATOPE, " +
+                "@RULE_REQUIRED OUTPUT, @RULE_FORCED OUTPUT",
+                pOptId, pCutId, pImpCtv,
+                pAccount, pCategory, pDatOpe,
+                pRequired, pForced,
+                cancellationToken);
+
+            bool ruleRequired = pRequired.Value is not DBNull && Convert.ToBoolean(pRequired.Value);
+            bool ruleForced   = pForced.Value   is not DBNull && Convert.ToBoolean(pForced.Value);
+
+            _logger.LogDebug(
+                "ANTIREC_RULES_Select risultato: Required={Required} Forced={Forced}",
+                ruleRequired, ruleForced);
+
+            // ── STEP 2: Vigilanza non richiesta → ok, procedi ────────────────────
+            //
+            // Equivalente: if (!wucAntiRecycling.required && !wucAntiRecycling.forced) { ... }
+            if (!ruleRequired && !ruleForced)
+            {
+                _logger.LogDebug(
+                    "Vigilanza non richiesta per Conto={Conto} TipoOp={TipoOp}",
+                    numeroConto, tipoOperazione);
+                return true;
+            }
+
+            // ── STEP 3: Vigilanza richiesta → wucAntiRecycling.IsValid() ─────────
+            //
+            // Il controllo minimo esposto dall'handler è nomeComparente.
+            // Nel vecchio user control IsValid() verificava anche che il comparente
+            // fosse selezionato nell'elenco soggetti (AppearerId > 0), ma questo
+            // controllo avveniva lato UI prima della chiamata; qui validiamo
+            // il nome come guard finale (stesso effetto).
+            if (string.IsNullOrWhiteSpace(nomeComparente))
+            {
+                _logger.LogWarning(
+                    "Vigilanza richiesta ma NomeComparente mancante — " +
+                    "Conto={Conto} TipoOp={TipoOp} → errore 9024",
+                    numeroConto, tipoOperazione);
+
+                // false = l'handler restituirà errore 9024
+                return false;
+            }
+
+            _logger.LogDebug(
+                "Vigilanza valida: Conto={Conto} TipoOp={TipoOp} Comparente='{Comparente}'",
+                numeroConto, tipoOperazione, nomeComparente);
+
+            // true = saveAntiRecycling = true nel vecchio codice
+            return true;
         }
 
         public async Task<List<SpTransactionGiornaleAntiriciclagio>> GetTransactionsForGiornaleAntiriciclaggio(

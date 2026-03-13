@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eTeller.Domain.Models
 {
-    public class Antirrecycling
+    public class _Antirrecycling
     {
         [Column("ARC_ID")]
         public int ArcId { get; set; }

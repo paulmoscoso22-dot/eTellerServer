@@ -25,7 +25,7 @@ namespace eTeller.Application.Features.StoreProcedures.Account.Queries.GestAcoun
             _logger.LogInformation("Handling {QueryName} with parameters AccType={AccType}, Branch={Branch}, CliId={CliId}, Currency={Currency}, CurrencyType={CurrencyType}",
                 nameof(GetAccountsByCriteriaQuery), request.accType, request.branch, request.cliId, request.currency, request.currencyType);
 
-            var accounts = await _unitOfWork.AccountSpRepository.GetAccountByCriteria(
+            var accounts = await _unitOfWork.AccountSpRepository.GetContoCassaAsync(
                 request.accType,
                 request.branch,
                 request.cliId,

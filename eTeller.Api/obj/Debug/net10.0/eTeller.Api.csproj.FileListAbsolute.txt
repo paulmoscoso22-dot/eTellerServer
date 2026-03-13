@@ -68,7 +68,6 @@ C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\eTeller.Api.
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\eTeller.Api.AssemblyInfoInputs.cache
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\eTeller.Api.AssemblyInfo.cs
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\eTeller.Api.csproj.CoreCompileInputs.cache
-C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\eTeller.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\eTeller.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\eTeller.Api.sourcelink.json
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\rjimswa.dswa.cache.json
@@ -87,3 +86,5 @@ C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\eTeller.Api.
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\eTeller.Api.genruntimeconfig.cache
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\ref\eTeller.Api.dll
 C:\Software\eTeller2026\eTellerServer\eTeller.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Software\eTeller2026\eTellerServer\eTeller.Api\bin\Debug\net10.0\FluentValidation.dll
+C:\Software\eTeller2026\eTellerServer\eTeller.Api\bin\Debug\net10.0\FluentResults.dll

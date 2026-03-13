@@ -19,6 +19,22 @@ namespace eTeller.Application.Contracts.Commons
                                            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
                                            List<Expression<Func<T, object>>> includes = null,
                                            bool disableTracking = true);
+
+            /// <summary>
+            /// Aggiunge una nuova entità al contesto per l'inserimento nel database.
+            /// La persistenza avviene al prossimo <see cref="IUnitOfWork.Complete"/>.
+            /// </summary>
+            /// <param name="entity">Entità da inserire</param>
+            /// <param name="cancellationToken">Token di cancellazione</param>
+            Task AddAsync(T entity, CancellationToken cancellationToken = default);
+
+            /// <summary>
+            /// Aggiorna un'entità esistente nel contesto.
+            /// La persistenza avviene al prossimo <see cref="IUnitOfWork.Complete"/>.
+            /// </summary>
+            /// <param name="entity">Entità da aggiornare</param>
+            /// <param name="cancellationToken">Token di cancellazione</param>
+            Task UpdateAsync(T entity, CancellationToken cancellationToken = default);
         }
     }
 }

@@ -66,5 +66,28 @@ namespace eTeller.Infrastructure.Repositories
             }
             return await query.ToListAsync();
         }
+
+        /// <summary>
+        /// Aggiunge una nuova entità al contesto per l'inserimento nel database.
+        /// La persistenza avviene al prossimo <see cref="IUnitOfWork.Complete"/>.
+        /// </summary>
+        /// <param name="entity">Entità da inserire</param>
+        /// <param name="cancellationToken">Token di cancellazione</param>
+        public async Task AddAsync(TEntity entity, CancellationToken cancellationToken = default)
+        {
+            await _context.Set<TEntity>().AddAsync(entity, cancellationToken);
+        }
+
+        /// <summary>
+        /// Aggiorna un'entità esistente nel contesto.
+        /// La persistenza avviene al prossimo <see cref="IUnitOfWork.Complete"/>.
+        /// </summary>
+        /// <param name="entity">Entità da aggiornare</param>
+        /// <param name="cancellationToken">Token di cancellazione</param>
+        public async Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default)
+        {
+            _context.Set<TEntity>().Update(entity);
+            await Task.CompletedTask;
+        }
     }
 }

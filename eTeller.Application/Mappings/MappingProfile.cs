@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using eTeller.Application.Features.StoreProcedures.AntirecAppearer.Mapping;
+using eTeller.Application.Mappings.Prelievo;
 using eTeller.Application.Mappings.Currency;
 using eTeller.Application.Mappings.Branch;
 using eTeller.Application.Mappings.ST_CurrencyType;
@@ -12,6 +13,7 @@ using CurModel = eTeller.Domain.Models;
 using eTeller.Domain.Models.StoredProcedure;
 using eTeller.Domain.Models.View;
 
+using eTeller.Application.Mappings.Account;
 using eTeller.Domain.Common;
 
 namespace eTeller.Application.Mappings
@@ -21,6 +23,7 @@ namespace eTeller.Application.Mappings
         public MappingProfile()
         {
             CreateMap<CurModel.Account, AccountVm>();
+            CreateMap<CurModel.CustomerAccount, CustomerAccountVm>();
             CreateMap<AntirecAppearerView, AntirecAppearerViewVm>();
             CreateMap<CurModel.Transaction, TransactionVm>()
                 .ForMember(dest => dest.Genere, opt => opt.MapFrom(src => string.Format("{0}/{1}", src.TrxUsrId, src.TrxCassa)))
@@ -57,6 +60,7 @@ namespace eTeller.Application.Mappings
             CreateMap<CurModel.ST_CurrencyType, ST_CurrencyTypeVm>();
             CreateMap<CurModel.ST_OperationType, ST_OperationTypeVm>();
             CreateMap<CurModel.TotalicCassa, TotalicCassaVm>();
+            CreateMap<PrelievoView, PrelievoViewVm>();
             
             // Vigilanza mappings
             CreateMap<SpTransactionGiornaleAntiriciclagio, SpTransactionGiornaleAntiriciclagioVm>()

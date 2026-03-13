@@ -22,9 +22,9 @@ namespace eTeller.Infrastructure.Repositories.StoreProcedures
                         .ToListAsync();
         }
 
-        public async Task<IEnumerable<Account>> GetAccountByCriteria(string accType, string branch, string cliId, string currency, string currencyType)
+        public async Task<Account?> GetContoCassaAsync(string accType, string branch, string cliId, string currency, string currencyType, CancellationToken cancellationToken = default)
         {
-            return await _context.Account
+            var result = await _context.Account
                     .FromSqlInterpolated($@"
                         EXEC dbo.sp_Account_SelectByCriteria
                             @AccType = {accType},
@@ -34,7 +34,8 @@ namespace eTeller.Infrastructure.Repositories.StoreProcedures
                             @CurrencyType = {currencyType}
                     ")
                     .AsNoTracking()
-                    .ToListAsync();
+                    .ToListAsync(cancellationToken);
+            return result.FirstOrDefault();
         }
 
         public async Task<IEnumerable<Account>> GetAccountByIacId(int iacId)
@@ -104,6 +105,27 @@ namespace eTeller.Infrastructure.Repositories.StoreProcedures
                         @IAC_BRA_ID = {iacBraId},
                         @IAC_HOSTPREFIX = {iacHostprefix}");
             return result;
+        }
+
+        public async Task<CustomerAccount?> GetAccountInfoAsync(string accId)
+        {
+            var result = await _context.CustomerAccount
+                .FromSqlInterpolated($@"EXEC dbo.sp_CustomerAccounts_SelectByAccID @AccID = {accId}")
+                .AsNoTracking()
+                .ToListAsync();
+            return result.FirstOrDefault();
+        }
+
+        public async Task<bool> UsaSpreadAsync(string accountId, string categoryId, CancellationToken cancellationToken)
+        {
+            var category = await _context.ST_Categories
+                .FromSqlInterpolated($@"EXEC dbo.St_Categories_SelectByAccountId 
+                    @ACA_ID = {accountId}, 
+                    @ACA_CURTYP = {categoryId}")
+                .AsNoTracking()
+                .FirstOrDefaultAsync(cancellationToken);
+
+            return category?.AcaUsespread ?? false;
         }
     }
 }

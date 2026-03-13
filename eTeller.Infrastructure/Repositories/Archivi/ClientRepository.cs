@@ -11,6 +11,11 @@ namespace eTeller.Infrastructure.Repositories.Archivi
         {
         }
 
+        public Task<string> GetNextCounterAsync(string clientId, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Client?> WhoIsLogged(string ip)
         {
             return await _context.Clients

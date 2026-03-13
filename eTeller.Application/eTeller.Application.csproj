@@ -19,6 +19,8 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="16.0.0" />
+    <PackageReference Include="FluentResults" Version="4.0.0" />
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
     <PackageReference Include="MediatR" Version="14.0.0" />
   </ItemGroup>
 
@@ -27,6 +29,7 @@
     <Folder Include="Features\User\" />
     <Folder Include="Features\StoreProcedures\AntirecAppearer\Commands\" />
     <Folder Include="Features\StoreProcedures\Currency\Queries\GetCurrencies\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
 
 </Project>

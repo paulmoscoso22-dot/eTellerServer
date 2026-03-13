@@ -8,7 +8,7 @@ namespace eTeller.Application.Contracts.StoreProcedures
     {
         Task<IEnumerable<Account>> GetAccountAsync();
 
-        Task<IEnumerable<Account>> GetAccountByCriteria(string accType, string branch, string cliId, string currency, string currencyType);
+        Task<Account?> GetContoCassaAsync(string accType, string branch, string cliId, string currency, string currencyType, CancellationToken cancellationToken = default);
 
         Task<IEnumerable<Account>> GetAccountByIacId(int iacId);
 
@@ -21,5 +21,9 @@ namespace eTeller.Application.Contracts.StoreProcedures
         Task<int> GetAccountMaxIacId();
 
         Task<int> UpdateAccount(int iacId, string iacAccId, string iacCutId, string iacCurId, string iacDes, string iacActId, string iacCliCassa, string iacBraId, string iacHostprefix);
+
+        Task<CustomerAccount?> GetAccountInfoAsync(string accId);
+
+        Task<bool> UsaSpreadAsync(string accountId, string categoryId, CancellationToken cancellationToken);
     }
 }

@@ -160,6 +160,41 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "eTeller.Api.Controllers.ContiCorrenti.Prelievo.PrelievoController",
+    "Method": "ValidaCarica",
+    "RelativePath": "api/Prelievo/valida-carica",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Mappings.Prelievo.PrelievoViewVm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "eTeller.Application.Validators.ValidationErrorResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "eTeller.Application.Validators.CaricaValidataResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "eTeller.Api.Controllers.Pages.Archivi.report.ReportController",
     "Method": "GetSpGiornaleCassa",
     "RelativePath": "api/Report/GetSpGiornaleCassa",
