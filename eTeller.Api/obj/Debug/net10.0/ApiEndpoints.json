@@ -160,6 +160,118 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "eTeller.Api.Controllers.Customer.CustomerController",
+    "Method": "GetCustomerAccountsByCliId",
+    "RelativePath": "api/Customer/GetCustomerAccountsByCliId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.StoreProcedures.CustomerAccounts.Queries.GetCustomerAccountsByCliId.GetCustomerAccountsByCliIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Customer.CustomerController",
+    "Method": "GetCustomerByCriteria",
+    "RelativePath": "api/Customer/GetCustomerByCriteria",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.StoreProcedures.Customers.Queries.GetCustomersByCriteria.GetCustomersByCriteriaQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
+    "Method": "GetAllUsersByUsrId",
+    "RelativePath": "api/Manager/GetAllUsersByUsrId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Queries.GetAllUsersByUsrId.GetAllUsersByUsrIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
+    "Method": "GetSysFunctions",
+    "RelativePath": "api/Manager/GetSysFunctions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Queries.GetSysFunctions.GetSysFunctionsQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
+    "Method": "GetSysRoleByFunId",
+    "RelativePath": "api/Manager/GetSysRoleByFunId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Queries.GetSysRoleByFunId.GetSysRoleByFunIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
+    "Method": "GetUsersAllAccess",
+    "RelativePath": "api/Manager/GetUsersAllAccess",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Queries.GetUsersAllAccess.GetUsersAllAccessQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
+    "Method": "GetUsersRoleFunId",
+    "RelativePath": "api/Manager/GetUsersRoleFunId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Queries.GetUsersRoleFunId.GetUsersRoleFunIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "eTeller.Api.Controllers.ContiCorrenti.Prelievo.PrelievoController",
     "Method": "ValidaCarica",
     "RelativePath": "api/Prelievo/valida-carica",

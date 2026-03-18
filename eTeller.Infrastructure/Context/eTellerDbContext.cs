@@ -9,6 +9,7 @@ namespace eTeller.Infrastructure.Context
     {
         public virtual DbSet<Account> Account { get; set; }
         public virtual DbSet<CustomerAccount> CustomerAccount { get; set; }
+        public virtual DbSet<Customers> Customers { get; set; }
         public virtual DbSet<AntirecAppearerView> AntirecAppearerView { get; set; }
         public virtual DbSet<Transaction> Transaction { get; set; }
         public virtual DbSet<TransactionMov> TransactionMov { get; set; }
@@ -25,6 +26,12 @@ namespace eTeller.Infrastructure.Context
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<ErrorCode> ErrorCodes { get; set; }
         public virtual DbSet<Antirecycling> AntiRecyclings { get; set; }
+        public virtual DbSet<InfoAutorizzazioneUtente> InfoAutorizzazioneUtente { get; set; }
+        public virtual DbSet<SysFunctions> SysFunctions { get; set; }
+        public virtual DbSet<sys_ROLE> SysRoles { get; set; }
+        public virtual DbSet<UsersRoleFunction> UsersRoleFunction { get; set; }
+
+        public virtual DbSet<USERS_AllAccess> OperationTypes { get; set; }
         public eTellerDbContext(DbContextOptions options) : base(options)
         {
 
@@ -34,6 +41,7 @@ namespace eTeller.Infrastructure.Context
         {
             modelBuilder.Entity<Account>().HasNoKey();
             modelBuilder.Entity<CustomerAccount>().HasNoKey();
+            modelBuilder.Entity<Customers>().HasNoKey();
             modelBuilder.Entity<AntirecAppearerView>().HasNoKey();
             modelBuilder.Entity<Transaction>().HasNoKey();
             modelBuilder.Entity<TransactionMov>().HasNoKey();
@@ -44,7 +52,12 @@ namespace eTeller.Infrastructure.Context
             modelBuilder.Entity<ST_OperationType>().HasNoKey();
             modelBuilder.Entity<ST_COUNTRY>().HasNoKey();
             modelBuilder.Entity<TotalicCassa>().HasNoKey();
-            //modelBuilder.Entity<GiornaleAntiriciclaggio>().HasNoKey();
+            modelBuilder.Entity<InfoAutorizzazioneUtente>().HasNoKey();
+            modelBuilder.Entity<SysFunctions>().HasNoKey();
+            modelBuilder.Entity<UsersRoleFunction>().HasNoKey();
+            // Configure sys_ROLE entity with primary key
+            modelBuilder.Entity<sys_ROLE>().HasKey(r => r.RoleId);
+            modelBuilder.Entity<USERS_AllAccess>().HasNoKey();
 
             // Configure User entity with primary key
             modelBuilder.Entity<User>().HasKey(u => u.UsrId);

@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Software\\eTeller2026\\eTellerServer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CB947DBF-E7E3-4A5F-9DB8-DC561C1B2969}|eTeller.Api\\eTeller.Api.csproj|c:\\software\\eteller2026\\etellerserver\\eteller.api\\controllers\\conticorrenti\\prelievo\\prelievocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB947DBF-E7E3-4A5F-9DB8-DC561C1B2969}|eTeller.Api\\eTeller.Api.csproj|solutionrelative:eteller.api\\controllers\\conticorrenti\\prelievo\\prelievocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{74179E42-E915-4287-820C-39A0B659F4E4}|eTeller.Application\\eTeller.Application.csproj|c:\\software\\eteller2026\\etellerserver\\eteller.application\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74179E42-E915-4287-820C-39A0B659F4E4}|eTeller.Application\\eTeller.Application.csproj|solutionrelative:eteller.application\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34525FB-4F35-49CA-B90D-AF323993B77F}|eTeller.Infrastructure\\eTeller.Infrastructure.csproj|c:\\software\\eteller2026\\etellerserver\\eteller.infrastructure\\repositories\\storeprocedures\\manager\\managersprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34525FB-4F35-49CA-B90D-AF323993B77F}|eTeller.Infrastructure\\eTeller.Infrastructure.csproj|solutionrelative:eteller.infrastructure\\repositories\\storeprocedures\\manager\\managersprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34525FB-4F35-49CA-B90D-AF323993B77F}|eTeller.Infrastructure\\eTeller.Infrastructure.csproj|c:\\software\\eteller2026\\etellerserver\\eteller.infrastructure\\context\\etellerdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34525FB-4F35-49CA-B90D-AF323993B77F}|eTeller.Infrastructure\\eTeller.Infrastructure.csproj|solutionrelative:eteller.infrastructure\\context\\etellerdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74179E42-E915-4287-820C-39A0B659F4E4}|eTeller.Application\\eTeller.Application.csproj|c:\\software\\eteller2026\\etellerserver\\eteller.application\\features\\storeprocedures\\manager\\queries\\getallusersbyusrid\\getallusersbyusridqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74179E42-E915-4287-820C-39A0B659F4E4}|eTeller.Application\\eTeller.Application.csproj|solutionrelative:eteller.application\\features\\storeprocedures\\manager\\queries\\getallusersbyusrid\\getallusersbyusridqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB947DBF-E7E3-4A5F-9DB8-DC561C1B2969}|eTeller.Api\\eTeller.Api.csproj|c:\\software\\eteller2026\\etellerserver\\eteller.api\\controllers\\manager\\managercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB947DBF-E7E3-4A5F-9DB8-DC561C1B2969}|eTeller.Api\\eTeller.Api.csproj|solutionrelative:eteller.api\\controllers\\manager\\managercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +35,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PrelievoController.cs",
-              "DocumentMoniker": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Api\\Controllers\\ContiCorrenti\\Prelievo\\PrelievoController.cs",
-              "RelativeDocumentMoniker": "eTeller.Api\\Controllers\\ContiCorrenti\\Prelievo\\PrelievoController.cs",
-              "ToolTip": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Api\\Controllers\\ContiCorrenti\\Prelievo\\PrelievoController.cs",
-              "RelativeToolTip": "eTeller.Api\\Controllers\\ContiCorrenti\\Prelievo\\PrelievoController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAARAAAAAAAAAA==",
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\Mappings\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "eTeller.Application\\Mappings\\MappingProfile.cs",
+              "ToolTip": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\Mappings\\MappingProfile.cs",
+              "RelativeToolTip": "eTeller.Application\\Mappings\\MappingProfile.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAgwEgAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T14:25:51.007Z",
+              "WhenOpened": "2026-03-18T15:19:29.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ManagerSpRepository.cs",
+              "DocumentMoniker": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Infrastructure\\Repositories\\StoreProcedures\\Manager\\ManagerSpRepository.cs",
+              "RelativeDocumentMoniker": "eTeller.Infrastructure\\Repositories\\StoreProcedures\\Manager\\ManagerSpRepository.cs",
+              "ToolTip": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Infrastructure\\Repositories\\StoreProcedures\\Manager\\ManagerSpRepository.cs",
+              "RelativeToolTip": "eTeller.Infrastructure\\Repositories\\StoreProcedures\\Manager\\ManagerSpRepository.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowCMAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T13:09:06.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "eTellerDbContext.cs",
+              "DocumentMoniker": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Infrastructure\\Context\\eTellerDbContext.cs",
+              "RelativeDocumentMoniker": "eTeller.Infrastructure\\Context\\eTellerDbContext.cs",
+              "ToolTip": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Infrastructure\\Context\\eTellerDbContext.cs",
+              "RelativeToolTip": "eTeller.Infrastructure\\Context\\eTellerDbContext.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA0wBkAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T11:51:39.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetAllUsersByUsrIdQueryHandler.cs",
+              "DocumentMoniker": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\Features\\StoreProcedures\\Manager\\Queries\\GetAllUsersByUsrId\\GetAllUsersByUsrIdQueryHandler.cs",
+              "RelativeDocumentMoniker": "eTeller.Application\\Features\\StoreProcedures\\Manager\\Queries\\GetAllUsersByUsrId\\GetAllUsersByUsrIdQueryHandler.cs",
+              "ToolTip": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\Features\\StoreProcedures\\Manager\\Queries\\GetAllUsersByUsrId\\GetAllUsersByUsrIdQueryHandler.cs",
+              "RelativeToolTip": "eTeller.Application\\Features\\StoreProcedures\\Manager\\Queries\\GetAllUsersByUsrId\\GetAllUsersByUsrIdQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T15:37:37.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ManagerController.cs",
+              "DocumentMoniker": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Api\\Controllers\\Manager\\ManagerController.cs",
+              "RelativeDocumentMoniker": "eTeller.Api\\Controllers\\Manager\\ManagerController.cs",
+              "ToolTip": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Api\\Controllers\\Manager\\ManagerController.cs",
+              "RelativeToolTip": "eTeller.Api\\Controllers\\Manager\\ManagerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T15:35:46.054Z",
               "EditorCaption": ""
             }
           ]

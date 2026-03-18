@@ -1,5 +1,6 @@
 ﻿using eTeller.Application.Contracts.StoreProcedures;
 using eTeller.Application.Contracts.StoreProcedures.AntirecAppearer;
+using eTeller.Application.Contracts.StoreProcedures.Manager;
 using eTeller.Application.Contracts.StoreProcedures.Operazioni.ContoCorrenti.Prelievo;
 using eTeller.Application.Contracts.StoreProcedures.ST_CurrencyType;
 using eTeller.Application.Contracts.StoreProcedures.Trace;
@@ -23,8 +24,11 @@ namespace eTeller.Application.Contracts
         IUserRepository UserRepository { get; }
         IUserSessionRepository UserSessionRepository { get; }
         IClientRepository ClientRepository { get; }
+        ICustomersSpRepository CustomersSpRepository { get; }
+        ICustomerAccountSpRepository CustomerAccountSpRepository { get; }
         global::eTeller.Application.Contracts.StoreProcedures.Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository ErrorCodeRepository { get; }
         ITransazioneRepository TransazioneRepository { get; }
+        IManagerSpRepository ManagerSpRepository { get; }
         IBaseSimpleRepository<TEntity> Repository<TEntity>() where TEntity : class;
         Task<int> Complete();
         Task Rollback();

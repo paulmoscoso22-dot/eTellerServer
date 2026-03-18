@@ -35,21 +35,15 @@ var app = builder.Build();
 // Use CORS before other middleware
 app.UseCors(MyAllowSpecificOrigins);
 
+// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "eTeller API v1");
+        c.RoutePrefix = "swagger";
     });
-}
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-    //app.MapOpenApi();
 }
 
 app.UseHttpsRedirection();

@@ -1,6 +1,7 @@
 ﻿using eTeller.Application.Contracts;
 using eTeller.Application.Contracts.StoreProcedures;
 using eTeller.Application.Contracts.StoreProcedures.AntirecAppearer;
+using eTeller.Application.Contracts.StoreProcedures.Manager;
 using eTeller.Application.Contracts.StoreProcedures.Trace;
 using eTeller.Application.Contracts.StoreProcedures.Vigilanza;
 using eTeller.Application.Features.ContiCorrenti.Prelievo;
@@ -9,6 +10,7 @@ using eTeller.Infrastructure.Repositories.Archivi.Report.StoreProcedure;
 using eTeller.Infrastructure.Repositories.Archivi.Ricerca.StoreProcedures;
 using eTeller.Infrastructure.Repositories.StoreProcedures;
 using eTeller.Infrastructure.Repositories.StoreProcedures.AntirecAppearer;
+using eTeller.Infrastructure.Repositories.StoreProcedures.Manager;
 using eTeller.Infrastructure.Repositories.StoreProcedures.Operazioni.ContoCorrenti.Prelievo;
 using eTeller.Infrastructure.Repositories.StoreProcedures.Trace;
 using eTeller.Infrastructure.Repositories.StoreProcedures.Vigilanza;
@@ -74,8 +76,17 @@ namespace eTeller.Infrastructure.Repositories
         private ITraceSpRepository? _traceSpRepository;
         public ITraceSpRepository TraceSpRepository => _traceSpRepository ??= new TraceSpRepository(_context);
 
+        private ICustomersSpRepository? _customersSpRepository;
+        public ICustomersSpRepository CustomersSpRepository => _customersSpRepository ??= new CustomersSpRepository(_context);
+
+        private ICustomerAccountSpRepository? _customerAccountSpRepository;
+        public ICustomerAccountSpRepository CustomerAccountSpRepository => _customerAccountSpRepository ??= new eTeller.Infrastructure.Repositories.StoreProcedures.CustomerAccount.CustomerAccountSpRepository(_context);
+
         private ITransazioneRepository? _transazioneRepository;
         public ITransazioneRepository TransazioneRepository => _transazioneRepository ??= new TransazioneRepository(_context);
+
+        private IManagerSpRepository? _managerSpRepository;
+        public IManagerSpRepository ManagerSpRepository => _managerSpRepository ??= new ManagerSpRepository(_context);
 
         private Application.Contracts.StoreProcedures.Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository? _errorCodeRepository;
         public Application.Contracts.StoreProcedures.Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository ErrorCodeRepository => _errorCodeRepository ??= new ErrorCodeRepository(

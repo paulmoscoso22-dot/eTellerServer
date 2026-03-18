@@ -14,6 +14,7 @@ using eTeller.Domain.Models.StoredProcedure;
 using eTeller.Domain.Models.View;
 
 using eTeller.Application.Mappings.Account;
+using eTeller.Application.Mappings.Manager;
 using eTeller.Domain.Common;
 
 namespace eTeller.Application.Mappings
@@ -24,6 +25,7 @@ namespace eTeller.Application.Mappings
         {
             CreateMap<CurModel.Account, AccountVm>();
             CreateMap<CurModel.CustomerAccount, CustomerAccountVm>();
+            CreateMap<CurModel.Customers, CustomersVm>();
             CreateMap<AntirecAppearerView, AntirecAppearerViewVm>();
             CreateMap<CurModel.Transaction, TransactionVm>()
                 .ForMember(dest => dest.Genere, opt => opt.MapFrom(src => string.Format("{0}/{1}", src.TrxUsrId, src.TrxCassa)))
@@ -78,6 +80,11 @@ namespace eTeller.Application.Mappings
             CreateMap<SpAntirecRules, SpAntirecRulesVm>();
             CreateMap<CurModel.AppearerAll, AppearerAllVm>();
             CreateMap<CurModel.HisAntirecAppearer, HisAntirecAppearerVm>();
+            CreateMap<InfoAutorizzazioneUtente, InfoAutorizzazioneUtenteVm>();
+            CreateMap<CurModel.SysFunctions, SysFunctionsVm>();
+            CreateMap<CurModel.sys_ROLE, SysRoleVm>();
+            CreateMap<UsersRoleFunction, UsersRoleFunctionVm>();
+            CreateMap<USERS_AllAccess, USERS_AllAccessVm>();
         }
     }
 }

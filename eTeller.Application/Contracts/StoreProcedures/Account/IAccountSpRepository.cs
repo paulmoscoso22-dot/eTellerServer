@@ -1,6 +1,7 @@
 ﻿using eTeller.Domain.Models;
 using eTeller.Domain.Models.View;
 using static eTeller.Application.Contracts.Commons.IBaseSimpleRepository;
+using CustomerAccountModel = eTeller.Domain.Models.CustomerAccount;
 
 namespace eTeller.Application.Contracts.StoreProcedures
 {
@@ -22,7 +23,7 @@ namespace eTeller.Application.Contracts.StoreProcedures
 
         Task<int> UpdateAccount(int iacId, string iacAccId, string iacCutId, string iacCurId, string iacDes, string iacActId, string iacCliCassa, string iacBraId, string iacHostprefix);
 
-        Task<CustomerAccount?> GetAccountInfoAsync(string accId);
+        Task<CustomerAccountModel?> GetAccountInfoAsync(string accId);
 
         Task<bool> UsaSpreadAsync(string accountId, string categoryId, CancellationToken cancellationToken);
     }

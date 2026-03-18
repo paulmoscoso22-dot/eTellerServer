@@ -4,6 +4,7 @@ using eTeller.Domain.Models.View;
 using eTeller.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using CustomerAccountModel = eTeller.Domain.Models.CustomerAccount;
 
 namespace eTeller.Infrastructure.Repositories.StoreProcedures
 {
@@ -107,7 +108,7 @@ namespace eTeller.Infrastructure.Repositories.StoreProcedures
             return result;
         }
 
-        public async Task<CustomerAccount?> GetAccountInfoAsync(string accId)
+        public async Task<CustomerAccountModel?> GetAccountInfoAsync(string accId)
         {
             var result = await _context.CustomerAccount
                 .FromSqlInterpolated($@"EXEC dbo.sp_CustomerAccounts_SelectByAccID @AccID = {accId}")
