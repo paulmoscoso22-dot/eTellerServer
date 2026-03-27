@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("eTeller.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d747d35f9621eb524e133b19c729b08a1498dad1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b7a5993ac847c95da2779c7c58ec11e27ef2256")]
 [assembly: System.Reflection.AssemblyProductAttribute("eTeller.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("eTeller.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

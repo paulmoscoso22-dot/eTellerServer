@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eTeller.Domain.Models
 {
+    [Table("TRACE")]
     public class Trace
     {
         [Column("TRA_ID")]

@@ -3,6 +3,7 @@ using eTeller.Application.Contracts.StoreProcedures.AntirecAppearer;
 using eTeller.Application.Contracts.StoreProcedures.Manager;
 using eTeller.Application.Contracts.StoreProcedures.Operazioni.ContoCorrenti.Prelievo;
 using eTeller.Application.Contracts.StoreProcedures.ST_CurrencyType;
+using eTeller.Application.Contracts.StoreProcedures.Tabella;
 using eTeller.Application.Contracts.StoreProcedures.Trace;
 using eTeller.Application.Contracts.StoreProcedures.Vigilanza;
 using eTeller.Application.Features.ContiCorrenti.Prelievo;
@@ -20,6 +21,7 @@ namespace eTeller.Application.Contracts
         ITotalicCassaSpRepository TotalicCassaSpRepository { get; }
         IVigilanzaSpRepository VigilanzaSpRepository { get; }
         IST_CurrencyTypeSpRepository ST_CurrencyTypeSpRepository { get; }
+        ITabellaRepository TabellaRepository { get; }
         ITraceSpRepository TraceSpRepository { get; }
         IUserRepository UserRepository { get; }
         IUserSessionRepository UserSessionRepository { get; }

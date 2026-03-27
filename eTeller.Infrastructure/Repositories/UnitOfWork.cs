@@ -15,7 +15,9 @@ using eTeller.Infrastructure.Repositories.StoreProcedures.Operazioni.ContoCorren
 using eTeller.Infrastructure.Repositories.StoreProcedures.Trace;
 using eTeller.Infrastructure.Repositories.StoreProcedures.Vigilanza;
 using eTeller.Application.Contracts.StoreProcedures.ST_CurrencyType;
+using eTeller.Application.Contracts.StoreProcedures.Tabella;
 using eTeller.Infrastructure.Repositories.StoreProcedures.ST_CurrencyType;
+using eTeller.Infrastructure.Repositories.StoreProcedures.Tabella;
 using eTeller.Infrastructure.Repositories.Archivi;
 using System.Collections;
 using static eTeller.Application.Contracts.Commons.IBaseSimpleRepository;
@@ -72,6 +74,9 @@ namespace eTeller.Infrastructure.Repositories
 
         private IST_CurrencyTypeSpRepository? _stCurrencyTypeSpRepository;
         public IST_CurrencyTypeSpRepository ST_CurrencyTypeSpRepository => _stCurrencyTypeSpRepository ??= new ST_CurrencyTypeSpRepository(_context);
+
+        private ITabellaRepository? _tabellaRepository;
+        public ITabellaRepository TabellaRepository => _tabellaRepository ??= new TabellaRepository(_context);
 
         private ITraceSpRepository? _traceSpRepository;
         public ITraceSpRepository TraceSpRepository => _traceSpRepository ??= new TraceSpRepository(_context);

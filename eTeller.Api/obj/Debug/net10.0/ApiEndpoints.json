@@ -124,6 +124,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "eTeller.Api.Controllers.Client.ClientController",
+    "Method": "GetClient",
+    "RelativePath": "api/Client/GetClient",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "eTeller.Api.Controllers.Currency.CurrencyController",
     "Method": "GetAllCurrencies",
     "RelativePath": "api/Currency",
@@ -193,6 +203,22 @@
   },
   {
     "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
+    "Method": "DeleteSysFunction",
+    "RelativePath": "api/Manager/DeleteSysFunction",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Commands.DeleteSysFunction.DeleteSysFunctionCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
     "Method": "GetAllUsersByUsrId",
     "RelativePath": "api/Manager/GetAllUsersByUsrId",
     "HttpMethod": "POST",
@@ -202,6 +228,22 @@
       {
         "Name": "query",
         "Type": "eTeller.Application.Features.StoreProcedures.Manager.Queries.GetAllUsersByUsrId.GetAllUsersByUsrIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
+    "Method": "GetSysFunctionByFunId",
+    "RelativePath": "api/Manager/GetSysFunctionByFunId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Queries.GetSysFunctionByFunId.GetSysFunctionByFunIdQuery",
         "IsRequired": true
       }
     ],
@@ -266,6 +308,38 @@
       {
         "Name": "query",
         "Type": "eTeller.Application.Features.StoreProcedures.Manager.Queries.GetUsersRoleFunId.GetUsersRoleFunIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
+    "Method": "InsertSysFunction",
+    "RelativePath": "api/Manager/InsertSysFunction",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Commands.InsertSysFunction.InsertSysFunctionCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
+    "Method": "UpdateSysFunction",
+    "RelativePath": "api/Manager/UpdateSysFunction",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Commands.UpdateSysFunction.UpdateSysFunctionCommand",
         "IsRequired": true
       }
     ],
@@ -423,6 +497,64 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "eTeller.Api.Controllers.Tabella.TabellaController",
+    "Method": "GetTabellaServVarchar",
+    "RelativePath": "api/Tabella/GetTabellaServVarchar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.Tabella.Queries.GetTabellaServVarchar.GetTabellaServVarcharQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Tabella.TabellaController",
+    "Method": "GetTabellaServVarcharById",
+    "RelativePath": "api/Tabella/GetTabellaServVarcharById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.Tabella.Queries.GetTabellaServVarcharById.GetTabellaServVarcharByIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Trace.TraceController",
+    "Method": "GetTraceAll",
+    "RelativePath": "api/Trace/GetTraceAll",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.Trace.Queries.GetTraceAll.GetTraceAllQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Trace.TraceController",
+    "Method": "GetTraceFunction",
+    "RelativePath": "api/Trace/GetTraceFunction",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "eTeller.Api.Controllers.Trace.TraceController",
     "Method": "InsertTrace",
     "RelativePath": "api/Trace/InsertTrace",
@@ -436,6 +568,32 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Trace.TraceController",
+    "Method": "TraceById",
+    "RelativePath": "api/Trace/TraceById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "eTeller.Application.Features.Trace.Queries.GetTraceById.GetTraceByIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.User.UserController",
+    "Method": "GetActiveAndBlockedUsers",
+    "RelativePath": "api/User/GetActiveAndBlockedUsers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

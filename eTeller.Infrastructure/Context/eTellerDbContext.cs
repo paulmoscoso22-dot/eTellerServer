@@ -30,8 +30,10 @@ namespace eTeller.Infrastructure.Context
         public virtual DbSet<SysFunctions> SysFunctions { get; set; }
         public virtual DbSet<sys_ROLE> SysRoles { get; set; }
         public virtual DbSet<UsersRoleFunction> UsersRoleFunction { get; set; }
-
+        public virtual DbSet<ST_TRACE_FUNCTION> ST_TRACE_FUNCTION { get; set; }
+        public virtual DbSet<Na_TabellaServVarchar> Na_TabellaServVarchar { get; set; }
         public virtual DbSet<USERS_AllAccess> OperationTypes { get; set; }
+        public virtual DbSet<Trace> Traces { get; set; }
         public eTellerDbContext(DbContextOptions options) : base(options)
         {
 
@@ -55,6 +57,9 @@ namespace eTeller.Infrastructure.Context
             modelBuilder.Entity<InfoAutorizzazioneUtente>().HasNoKey();
             modelBuilder.Entity<SysFunctions>().HasNoKey();
             modelBuilder.Entity<UsersRoleFunction>().HasNoKey();
+            modelBuilder.Entity<ST_TRACE_FUNCTION>().HasNoKey();
+            modelBuilder.Entity<Na_TabellaServVarchar>().HasNoKey();
+            modelBuilder.Entity<Trace>().HasNoKey();
             // Configure sys_ROLE entity with primary key
             modelBuilder.Entity<sys_ROLE>().HasKey(r => r.RoleId);
             modelBuilder.Entity<USERS_AllAccess>().HasNoKey();

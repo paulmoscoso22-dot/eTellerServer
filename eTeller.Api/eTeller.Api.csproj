@@ -17,6 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\Client\" />
+    <Folder Include="Controllers\Tabella\" />
+    <Folder Include="Controllers\User\" />
     <Folder Include="Controllers\Vigilanza\" />
   </ItemGroup>
 

@@ -1,6 +1,11 @@
 using eTeller.Application.Features.StoreProcedures.Manager.Queries.GetAllUsersByUsrId;
+using eTeller.Application.Features.StoreProcedures.Manager.Queries.GetSysFunctionByFunId;
+using eTeller.Application.Features.StoreProcedures.Manager.Commands.InsertSysFunction;
+using eTeller.Application.Features.StoreProcedures.Manager.Commands.UpdateSysFunction;
+using eTeller.Application.Features.StoreProcedures.Manager.Commands.DeleteSysFunction;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using eTeller.Application.Features.StoreProcedures.Manager.Queries.GetSysFunctions;
 
 namespace eTeller.Api.Controllers.Manager
 {
@@ -25,9 +30,41 @@ namespace eTeller.Api.Controllers.Manager
 
         [HttpPost]
         [Route("GetSysFunctions")]
-        public async Task<IActionResult> GetSysFunctions(eTeller.Application.Features.StoreProcedures.Manager.Queries.GetSysFunctions.GetSysFunctionsQuery query)
+        public async Task<IActionResult> GetSysFunctions(GetSysFunctionsQuery query)
         {
             var result = await _mediator.Send(query);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [Route("GetSysFunctionByFunId")]
+        public async Task<IActionResult> GetSysFunctionByFunId(GetSysFunctionByFunIdQuery query)
+        {
+            var result = await _mediator.Send(query);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [Route("InsertSysFunction")]
+        public async Task<IActionResult> InsertSysFunction(InsertSysFunctionCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpPut]
+        [Route("UpdateSysFunction")]
+        public async Task<IActionResult> UpdateSysFunction(UpdateSysFunctionCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpDelete]
+        [Route("DeleteSysFunction")]
+        public async Task<IActionResult> DeleteSysFunction(DeleteSysFunctionCommand command)
+        {
+            var result = await _mediator.Send(command);
             return Ok(result);
         }
 

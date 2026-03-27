@@ -15,6 +15,11 @@ using eTeller.Domain.Models.View;
 
 using eTeller.Application.Mappings.Account;
 using eTeller.Application.Mappings.Manager;
+using eTeller.Application.Mappings.Trace;
+using eTeller.Application.Mappings.Client;
+using eTeller.Application.Mappings.Tabella;
+using eTeller.Application.Mappings.User;
+using CurModelTrace = eTeller.Domain.Models;
 using eTeller.Domain.Common;
 
 namespace eTeller.Application.Mappings
@@ -82,6 +87,11 @@ namespace eTeller.Application.Mappings
             CreateMap<CurModel.HisAntirecAppearer, HisAntirecAppearerVm>();
             CreateMap<InfoAutorizzazioneUtente, InfoAutorizzazioneUtenteVm>();
             CreateMap<CurModel.SysFunctions, SysFunctionsVm>();
+            CreateMap<CurModel.Trace, TraceVm>();
+            CreateMap<CurModelTrace.ST_TRACE_FUNCTION, ST_TRACE_FUNCTIONVm>();
+            CreateMap<CurModel.Client, ClientVm>();
+            CreateMap<CurModel.Na_TabellaServVarchar, TabellaServVarcharVm>();
+            CreateMap<CurModel.User, SysUsersActiveAndBlockedVm>();
             CreateMap<CurModel.sys_ROLE, SysRoleVm>();
             CreateMap<UsersRoleFunction, UsersRoleFunctionVm>();
             CreateMap<USERS_AllAccess, USERS_AllAccessVm>();
