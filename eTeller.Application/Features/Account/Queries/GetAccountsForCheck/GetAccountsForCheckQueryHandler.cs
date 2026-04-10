@@ -19,7 +19,7 @@ namespace eTeller.Application.Features.StoreProcedures.Account.Queries.GetAccoun
         public async Task<int> Handle(GetAccountsForCheckQuery request, CancellationToken cancellationToken)
         {
             _logger.LogInformation("Handling {QueryName} with request {@Request}", nameof(GetAccountsForCheckQuery), request);
-            var count = await _unitOfWork.AccountSpRepository.GetAccountForCheck(
+            var count = await _unitOfWork.AccountRepository.GetAccountForCheck(
                 request.iacCutId,
                 request.iacCurId,
                 request.iacActId,

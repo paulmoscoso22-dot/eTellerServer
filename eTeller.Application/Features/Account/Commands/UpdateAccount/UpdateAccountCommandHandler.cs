@@ -14,7 +14,7 @@ namespace eTeller.Application.Features.StoreProcedures.Account.Commands.UpdateAc
 
         public async Task<int> Handle(UpdateAccountCommand request, CancellationToken cancellationToken)
         {
-            var result = await _unitOfWork.AccountSpRepository.UpdateAccount(
+            var result = await _unitOfWork.AccountRepository.UpdateAccount(
                 request.iacId,
                 request.iacAccId,
                 request.iacCutId,

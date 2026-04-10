@@ -1,4 +1,5 @@
 using eTeller.Application.Features.Branch.Queries.GetBranches;
+using eTeller.Application.Features.Branch.Queries.GetBranchById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +21,14 @@ namespace eTeller.Api.Controllers.Branch
         public async Task<IActionResult> GetBranches()
         {
             var query = new GetBranchesQuery();
+            var result = await _mediator.Send(query);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [Route("GetBranchById")]
+        public async Task<IActionResult> GetBranchById([FromBody] GetBranchByIdQuery query)
+        {
             var result = await _mediator.Send(query);
             return Ok(result);
         }

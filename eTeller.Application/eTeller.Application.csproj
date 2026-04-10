@@ -24,13 +24,17 @@
     <PackageReference Include="AutoMapper" Version="16.0.0" />
     <PackageReference Include="FluentResults" Version="4.0.0" />
     <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
     <PackageReference Include="MediatR" Version="14.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Features\Archivi\Report\StoreProcedure\Queries\GetGiornaleCassa\" />
+    <Folder Include="Features\Language\Commands\" />
+    <Folder Include="Features\Manager\Commands\Users\" />
     <Folder Include="Features\User\" />
     <Folder Include="Exceptions\" />
+    <Folder Include="Shared\" />
   </ItemGroup>
 
 </Project>

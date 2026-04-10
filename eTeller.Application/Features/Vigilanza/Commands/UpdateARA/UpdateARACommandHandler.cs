@@ -23,7 +23,7 @@ namespace eTeller.Application.Features.StoreProcedures.Vigilanza.Commands.Update
 
             try
             {
-                var result = await _unitOfWork.VigilanzaSpRepository.UpdateARA(
+                var result = await _unitOfWork.VigilanzaRepository.UpdateARA(
                     request.TraUser,
                     request.TraStation,
                     request.AraId,

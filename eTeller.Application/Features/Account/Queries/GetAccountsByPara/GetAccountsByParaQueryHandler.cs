@@ -24,7 +24,7 @@ namespace eTeller.Application.Features.StoreProcedures.Account.Queries.GetAccoun
         {
             _logger.LogInformation("Handling {QueryName} with request {@Request}", nameof(GetAccountsByParaQuery), request);
 
-            var accounts = await _unitOfWork.AccountSpRepository.GetAccountByPara(
+            var accounts = await _unitOfWork.AccountRepository.GetAccountByPara(
                 request.iacAccId,
                 request.iacCutId,
                 request.iacCurId,

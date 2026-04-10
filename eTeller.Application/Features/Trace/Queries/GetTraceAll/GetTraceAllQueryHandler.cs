@@ -24,7 +24,7 @@ namespace eTeller.Application.Features.Trace.Queries.GetTraceAll
             _logger.LogInformation("Handling {QueryName} with filters: User={TraUser}, FunCode={TraFunCode}, TabNam={TraTabNam}",
                 nameof(GetTraceAllQuery), request.TraUser, request.TraFunCode, request.TraTabNam);
 
-            var results = await _unitOfWork.TraceSpRepository.GetTraceAll(
+            var results = await _unitOfWork.TraceRepository.GetTraceAll(
                 request.TraUser,
                 request.TraFunCode,
                 request.TraStation,

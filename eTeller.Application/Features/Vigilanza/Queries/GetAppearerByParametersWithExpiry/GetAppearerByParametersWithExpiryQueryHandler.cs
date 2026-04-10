@@ -25,7 +25,7 @@ namespace eTeller.Application.Features.StoreProcedures.Vigilanza.Queries.GetAppe
                 "Handling {QueryName} with parameters AraName={AraName}, AraBirthdate={AraBirthdate}, AraRecComplete={AraRecComplete}, ShowExpiredRecords={ShowExpiredRecords}, RecordValidityDays={RecordValidityDays}",
                 nameof(GetAppearerByParametersWithExpiryQuery), request.AraName, request.AraBirthdate, request.AraRecComplete, request.ShowExpiredRecords, request.RecordValidityDays);
 
-            var appearers = await _unitOfWork.VigilanzaSpRepository.GetAppearerByParametersWithExpiry(
+            var appearers = await _unitOfWork.VigilanzaRepository.GetAppearerByParametersWithExpiry(
                 request.AraName,
                 request.AraBirthdate,
                 request.AraRecComplete,

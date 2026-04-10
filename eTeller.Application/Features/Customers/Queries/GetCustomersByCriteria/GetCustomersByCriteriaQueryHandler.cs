@@ -24,7 +24,7 @@ namespace eTeller.Application.Features.StoreProcedures.Customers.Queries.GetCust
             _logger.LogInformation("Handling {QueryName} with parameters CliId={CliId}, Descrizione={Descrizione}",
                 nameof(GetCustomersByCriteriaQuery), request.CliId, request.Descrizione);
 
-            var customers = await _unitOfWork.CustomersSpRepository.GetCustomersByCriteriaAsync(
+            var customers = await _unitOfWork.CustomersRepository.GetCustomersByCriteriaAsync(
                 request.CliId,
                 request.Descrizione);
 

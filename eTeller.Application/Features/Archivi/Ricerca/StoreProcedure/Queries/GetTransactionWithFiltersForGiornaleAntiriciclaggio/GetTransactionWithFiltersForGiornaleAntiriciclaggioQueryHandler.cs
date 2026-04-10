@@ -27,7 +27,7 @@ namespace eTeller.Application.Features.Archivi.Ricerca.StoreProcedure.Queries.Ge
             var dateFrom = NormalizeDateFrom(request.trxDataDal);
             var dateTo = NormalizeDateTo(request.trxDataAl);
 
-            var giornaleData = await _unitOfWork.GiornaleAntiriciclaggioSpRepository.GetSpTransactionWithFiltersForGiornaleAntiriciclaggio(
+            var giornaleData = await _unitOfWork.GiornaleAntiriciclaggioRepository.GetSpTransactionWithFiltersForGiornaleAntiriciclaggio(
                 request.trxCassa,
                 request.trxLocalita,
                 dateFrom,

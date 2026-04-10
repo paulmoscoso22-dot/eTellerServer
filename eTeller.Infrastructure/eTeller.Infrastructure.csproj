@@ -17,8 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\StoreProcedures\Tabella\" />
-    <Folder Include="Repositories\StoreProcedures\User\" />
+    <Folder Include="Repositories\Tabella\" />
   </ItemGroup>
 
 </Project>

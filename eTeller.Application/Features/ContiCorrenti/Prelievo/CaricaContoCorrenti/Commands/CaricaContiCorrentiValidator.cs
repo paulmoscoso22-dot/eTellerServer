@@ -1,7 +1,7 @@
 using eTeller.Application.Contracts;
 using eTeller.Domain.Services;
 using FluentValidation;
-using IErrorCodeRepository = eTeller.Application.Contracts.StoreProcedures.Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository;
+using IErrorCodeRepository = eTeller.Application.Contracts.Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository;
 
 namespace eTeller.Application.Features.ContiCorrenti.Commands.Carica;
 

@@ -23,7 +23,7 @@ namespace eTeller.Application.Features.StoreProcedures.Account.Queries.GetAccoun
         public async Task<IEnumerable<AccountVm>> Handle(GetAccountQuery request, CancellationToken cancellationToken)
         {
             _logger.LogInformation("Handling {QueryName}", nameof(GetAccountQuery));
-            var accounts = await _unitOfWork.AccountSpRepository.GetAccountAsync();
+            var accounts = await _unitOfWork.AccountRepository.GetAccountAsync();
             var accountVms = _mapper.Map<IEnumerable<AccountVm>>(accounts);
             _logger.LogInformation("Handled {QueryName}, returned {Count} items", nameof(GetAccountQuery), accountVms?.Count() ?? 0);
             return accountVms;

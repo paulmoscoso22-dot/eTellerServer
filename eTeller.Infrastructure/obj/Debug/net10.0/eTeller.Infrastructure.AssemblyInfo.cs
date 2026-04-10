@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("eTeller.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b7a5993ac847c95da2779c7c58ec11e27ef2256")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e278cfce799a4f32189a8b925d833c9dcf0b015f")]
 [assembly: System.Reflection.AssemblyProductAttribute("eTeller.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("eTeller.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

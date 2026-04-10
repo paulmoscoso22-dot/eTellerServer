@@ -1,0 +1,22 @@
+using eTeller.Domain.Models.StoredProcedure;
+using static eTeller.Application.Contracts.Commons.IBaseSimpleRepository;
+
+namespace eTeller.Application.Contracts
+{
+    public interface IGiornaleAntiriciclaggioRepository : IBaseSimpleRepository<GiornaleAntiriciclaggio>
+    {
+        Task<List<GiornaleAntiriciclaggio>> GetSpTransactionWithFiltersForGiornaleAntiriciclaggio(
+            string trxCassa,
+            string trxLocalita,
+            DateTime trxDataDal,
+            DateTime trxDataAl,
+            bool? trxReverse,
+            string trxCutId,
+            string trxOptId,
+            string trxDivope,
+            decimal? trxImpopeDA,
+            decimal? trxImpopeA,
+            string arcAppName,
+            bool? arcForced);
+    }
+}

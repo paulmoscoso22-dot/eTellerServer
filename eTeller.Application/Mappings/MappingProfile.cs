@@ -10,8 +10,10 @@ using eTeller.Application.Mappings.TotalicCassa;
 using eTeller.Application.Mappings.Transaction;
 using eTeller.Application.Mappings.Vigilanza;
 using CurModel = eTeller.Domain.Models;
+using CurModelSp = eTeller.Domain.Models.StoredProcedure;
 using eTeller.Domain.Models.StoredProcedure;
 using eTeller.Domain.Models.View;
+using eTeller.Application.Mappings.Manager;
 
 using eTeller.Application.Mappings.Account;
 using eTeller.Application.Mappings.Manager;
@@ -19,8 +21,11 @@ using eTeller.Application.Mappings.Trace;
 using eTeller.Application.Mappings.Client;
 using eTeller.Application.Mappings.Tabella;
 using eTeller.Application.Mappings.User;
+using eTeller.Application.Mappings.Personalisation;
 using CurModelTrace = eTeller.Domain.Models;
 using eTeller.Domain.Common;
+using eTeller.Application.Mappings.Language;
+using eTeller.Application.Mappings.StatoEntita;
 
 namespace eTeller.Application.Mappings
 {
@@ -89,12 +94,20 @@ namespace eTeller.Application.Mappings
             CreateMap<CurModel.SysFunctions, SysFunctionsVm>();
             CreateMap<CurModel.Trace, TraceVm>();
             CreateMap<CurModelTrace.ST_TRACE_FUNCTION, ST_TRACE_FUNCTIONVm>();
+                CreateMap<CurModel.ST_STATOENTITA, STStatoEntitaVm>();
             CreateMap<CurModel.Client, ClientVm>();
             CreateMap<CurModel.Na_TabellaServVarchar, TabellaServVarcharVm>();
             CreateMap<CurModel.User, SysUsersActiveAndBlockedVm>();
+            CreateMap<CurModel.User, SysUserByIdVm>();
+            CreateMap<CurModel.User, InsertUserVm>();
+            CreateMap<CurModel.ST_LANGUAGE, STLanguageVm>();
             CreateMap<CurModel.sys_ROLE, SysRoleVm>();
+            CreateMap<CurModelSp.UserSelectRole, UserSelectRoleVm>();
+            CreateMap<CurModelSp.FunctionRole, FunctionRoleVm>();
             CreateMap<UsersRoleFunction, UsersRoleFunctionVm>();
             CreateMap<USERS_AllAccess, USERS_AllAccessVm>();
+            CreateMap<CurModel.Personalisation, PersonalisationVm>();
+            CreateMap<CurModel.StFunAcctyp, StFunAcctypVm>();
         }
     }
 }

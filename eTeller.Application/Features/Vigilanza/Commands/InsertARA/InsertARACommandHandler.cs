@@ -23,7 +23,7 @@ namespace eTeller.Application.Features.StoreProcedures.Vigilanza.Commands.Insert
 
             try
             {
-                var result = await _unitOfWork.VigilanzaSpRepository.InsertARA(
+                var result = await _unitOfWork.VigilanzaRepository.InsertARA(
                     request.TraUser,
                     request.TraStation,
                     request.AraRecdate,

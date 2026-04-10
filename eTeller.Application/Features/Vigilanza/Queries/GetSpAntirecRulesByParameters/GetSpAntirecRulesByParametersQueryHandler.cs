@@ -24,7 +24,7 @@ namespace eTeller.Application.Features.StoreProcedures.Vigilanza.Queries.GetSpAn
             _logger.LogInformation("Handling {QueryName} with parameters OpTypeId={OpTypeId}, CurTypeId={CurTypeId}, AcctId={AcctId}, AcctType={AcctType}",
                 nameof(GetSpAntirecRulesByParametersQuery), request.arlOpTypeId, request.arlCurTypeId, request.arlAcctId, request.arlAcctType);
 
-            var antirecRules = await _unitOfWork.VigilanzaSpRepository.GetAntirecRulesByParameters(
+            var antirecRules = await _unitOfWork.VigilanzaRepository.GetAntirecRulesByParameters(
                 request.arlOpTypeId,
                 request.arlCurTypeId,
                 request.arlAcctId,

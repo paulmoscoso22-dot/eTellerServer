@@ -20,7 +20,7 @@ namespace eTeller.Application.Features.StoreProcedures.Trace.Commands.InsertTrac
             _logger.LogInformation("Handling {CommandName} for User={TraUser}, FunCode={TraFunCode}, TabNam={TraTabNam}",
                 nameof(InsertTraceCommand), request.TraUser, request.TraFunCode, request.TraTabNam);
 
-            var result = await _unitOfWork.TraceSpRepository.InsertTrace(
+            var result = await _unitOfWork.TraceRepository.InsertTrace(
                 request.TraTime,
                 request.TraUser,
                 request.TraFunCode,

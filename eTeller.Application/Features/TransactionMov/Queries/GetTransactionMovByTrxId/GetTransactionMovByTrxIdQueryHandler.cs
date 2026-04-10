@@ -24,7 +24,7 @@ namespace eTeller.Application.Features.StoreProcedures.TransactionMov.Queries.Ge
         {
             _logger.LogInformation("Handling {QueryName} with TrxId={TrxId}", nameof(GetTransactionMovByTrxIdQuery), request.trxId);
 
-            var transactionMovs = await _unitOfWork.TransactionMovSpRepository.GetTransactionMovByTrxId(request.trxId);
+            var transactionMovs = await _unitOfWork.TransactionMovRepository.GetTransactionMovByTrxId(request.trxId);
 
             var transactionMovVms = _mapper.Map<IEnumerable<TransactionMovVm>>(transactionMovs);
             _logger.LogInformation("Handled {QueryName}, returned {Count} items", nameof(GetTransactionMovByTrxIdQuery), transactionMovVms?.Count() ?? 0);

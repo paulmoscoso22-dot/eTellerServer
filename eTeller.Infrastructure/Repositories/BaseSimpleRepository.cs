@@ -1,11 +1,13 @@
 ﻿using eTeller.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using System.Threading;
+using System.Threading.Tasks;
 using static eTeller.Application.Contracts.Commons.IBaseSimpleRepository;
 
 namespace eTeller.Infrastructure.Repositories
 {
-    public class BaseSimpleRepository<TEntity> : IBaseSimpleRepository<TEntity> where TEntity : class
+    public class BaseSimpleRepository<T> : IBaseSimpleRepository<T> where T : class
     {
         protected readonly eTellerDbContext _context;
 
@@ -13,81 +15,105 @@ namespace eTeller.Infrastructure.Repositories
         {
             _context = dbContext;
         }
-        public async Task<IReadOnlyList<TEntity>> GetAllAsync()
+        public async Task<IReadOnlyList<T>> GetAllAsync()
         {
-            return await _context.Set<TEntity>().ToListAsync();
+            return await _context.Set<T>().ToListAsync();
         }
 
-        public async Task<IReadOnlyList<TEntity>> GetAsync(Expression<Func<TEntity, bool>> predicate)
+        public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate)
         {
-            return await _context.Set<TEntity>().Where(predicate).ToListAsync();
+            return await _context.Set<T>().Where(predicate).ToListAsync();
         }
 
-        public async Task<IReadOnlyList<TEntity>> GetAsync(Expression<Func<TEntity, bool>> predicate = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeString = null, bool disableTracking = true)
+        public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate = null,
+                                       Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+                                       string includeString = null,
+                                       bool disableTracking = true)
         {
-            IQueryable<TEntity> query = _context.Set<TEntity>();
-            if (disableTracking)
-            {
-                query = query.AsNoTracking();
-            }
-            if (!string.IsNullOrWhiteSpace(includeString))
-            {
-                query = query.Include(includeString);
-            }
-            if (predicate != null)
-            {
-                query = query.Where(predicate);
-            }
+            IQueryable<T> query = _context.Set<T>();
+            if (disableTracking) query = query.AsNoTracking();
+
+            if (!string.IsNullOrWhiteSpace(includeString)) query = query.Include(includeString);
+
+            if (predicate != null) query = query.Where(predicate);
+
             if (orderBy != null)
-            {
                 return await orderBy(query).ToListAsync();
-            }
+
+
             return await query.ToListAsync();
         }
 
-        public async Task<IReadOnlyList<TEntity>> GetAsync(Expression<Func<TEntity, bool>> predicate = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, List<Expression<Func<TEntity, object>>> includes = null, bool disableTracking = true)
+        public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate = null,
+                                     Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+                                     List<Expression<Func<T, object>>> includes = null,
+                                     bool disableTracking = true)
         {
-            IQueryable<TEntity> query = _context.Set<TEntity>();
-            if (disableTracking)
-            {
-                query = query.AsNoTracking();
-            }
-            if (includes != null)
-            {
-                query = includes.Aggregate(query, (current, include) => current.Include(include));
-            }
-            if (predicate != null)
-            {
-                query = query.Where(predicate);
-            }
+
+            IQueryable<T> query = _context.Set<T>();
+            if (disableTracking) query = query.AsNoTracking();
+
+            if (includes != null) query = includes.Aggregate(query, (current, include) => current.Include(include));
+
+            if (predicate != null) query = query.Where(predicate);
+
             if (orderBy != null)
-            {
                 return await orderBy(query).ToListAsync();
-            }
+
+
             return await query.ToListAsync();
         }
 
-        /// <summary>
-        /// Aggiunge una nuova entità al contesto per l'inserimento nel database.
-        /// La persistenza avviene al prossimo <see cref="IUnitOfWork.Complete"/>.
-        /// </summary>
-        /// <param name="entity">Entità da inserire</param>
-        /// <param name="cancellationToken">Token di cancellazione</param>
-        public async Task AddAsync(TEntity entity, CancellationToken cancellationToken = default)
+        public virtual async Task<T> GetByIdAsync(int id)
         {
-            await _context.Set<TEntity>().AddAsync(entity, cancellationToken);
+            return await _context.Set<T>().FindAsync(id);
         }
 
-        /// <summary>
-        /// Aggiorna un'entità esistente nel contesto.
-        /// La persistenza avviene al prossimo <see cref="IUnitOfWork.Complete"/>.
-        /// </summary>
-        /// <param name="entity">Entità da aggiornare</param>
-        /// <param name="cancellationToken">Token di cancellazione</param>
-        public async Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default)
+        public async Task<T> AddAsync(T entity, CancellationToken cancellationToken = default)
         {
-            _context.Set<TEntity>().Update(entity);
-            await Task.CompletedTask;
+            _context.Set<T>().Add(entity);
+            await _context.SaveChangesAsync(cancellationToken);
+            return entity;
+        }
+
+        public async Task<T> UpdateAsync(T entity, CancellationToken cancellationToken = default)
+        {
+            _context.Set<T>().Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
+            await _context.SaveChangesAsync(cancellationToken);
+            return entity;
+        }
+
+        public async Task DeleteAsync(T entity)
+        {
+            _context.Set<T>().Remove(entity);
+            await _context.SaveChangesAsync();
+        }
+        //using with unit of work pattern
+        public void AddEntity(T entity)
+        {
+            _context.Set<T>().Add(entity);
+        }
+
+        public void AddRangeEntity(IEnumerable<T> entities)
+        {
+            _context.Set<T>().AddRange(entities);
+        }
+
+        public void DeleteRangeEntity(IEnumerable<T> entities)
+        {
+            _context.Set<T>().RemoveRange(entities);
+        }
+
+        public void UpdateEntity(T entity)
+        {
+            _context.Set<T>().Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
+        }
+
+        public void DeleteEntity(T entity)
+        {
+            _context.Set<T>().Remove(entity);
         }
     }
 }

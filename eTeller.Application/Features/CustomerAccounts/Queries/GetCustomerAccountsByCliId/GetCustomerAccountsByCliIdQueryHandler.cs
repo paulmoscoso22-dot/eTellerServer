@@ -24,7 +24,7 @@ namespace eTeller.Application.Features.StoreProcedures.CustomerAccounts.Queries.
             _logger.LogInformation("Handling {QueryName} with parameters CliId={CliId}",
                 nameof(GetCustomerAccountsByCliIdQuery), request.CliId);
 
-            var customerAccounts = await _unitOfWork.CustomerAccountSpRepository.GetCustomerAccountsByCliIdAsync(request.CliId);
+            var customerAccounts = await _unitOfWork.CustomerAccountRepository.GetCustomerAccountsByCliIdAsync(request.CliId);
 
             var customerAccountVms = _mapper.Map<IEnumerable<CustomerAccountVm>>(customerAccounts);
             _logger.LogInformation("Handled {QueryName}, returned {Count} items", nameof(GetCustomerAccountsByCliIdQuery), customerAccountVms?.Count() ?? 0);

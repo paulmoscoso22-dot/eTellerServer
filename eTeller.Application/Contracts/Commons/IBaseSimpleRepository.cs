@@ -1,4 +1,6 @@
 ﻿using System.Linq.Expressions;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace eTeller.Application.Contracts.Commons
 {
@@ -20,21 +22,26 @@ namespace eTeller.Application.Contracts.Commons
                                            List<Expression<Func<T, object>>> includes = null,
                                            bool disableTracking = true);
 
-            /// <summary>
-            /// Aggiunge una nuova entità al contesto per l'inserimento nel database.
-            /// La persistenza avviene al prossimo <see cref="IUnitOfWork.Complete"/>.
-            /// </summary>
-            /// <param name="entity">Entità da inserire</param>
-            /// <param name="cancellationToken">Token di cancellazione</param>
-            Task AddAsync(T entity, CancellationToken cancellationToken = default);
 
-            /// <summary>
-            /// Aggiorna un'entità esistente nel contesto.
-            /// La persistenza avviene al prossimo <see cref="IUnitOfWork.Complete"/>.
-            /// </summary>
-            /// <param name="entity">Entità da aggiornare</param>
-            /// <param name="cancellationToken">Token di cancellazione</param>
-            Task UpdateAsync(T entity, CancellationToken cancellationToken = default);
+            Task<T> GetByIdAsync(int id);
+
+            Task<T> AddAsync(T entity, CancellationToken cancellationToken = default);
+
+            Task<T> UpdateAsync(T entity, CancellationToken cancellationToken = default);
+
+            Task DeleteAsync(T entity);
+
+
+            void AddEntity(T entity);
+
+            void AddRangeEntity(IEnumerable<T> entities);
+
+            void DeleteRangeEntity(IEnumerable<T> entities);
+
+            void UpdateEntity(T entity);
+
+            void DeleteEntity(T entity);
+
         }
     }
 }

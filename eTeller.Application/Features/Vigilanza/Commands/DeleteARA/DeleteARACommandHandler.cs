@@ -23,7 +23,7 @@ namespace eTeller.Application.Features.StoreProcedures.Vigilanza.Commands.Delete
 
             try
             {
-                var result = await _unitOfWork.VigilanzaSpRepository.DeleteARA(
+                var result = await _unitOfWork.VigilanzaRepository.DeleteARA(
                     request.TraUser,
                     request.TraStation,
                     request.AraId

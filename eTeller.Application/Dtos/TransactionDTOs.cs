@@ -1,7 +1,7 @@
 namespace eTeller.Application.DTOs;
 
 // ─────────────────────────────────────────────────────────────────────────────
-// DTOs per ITransactionSpRepository
+// DTOs per ITransactionRepository
 // ─────────────────────────────────────────────────────────────────────────────
 
 /// <summary>

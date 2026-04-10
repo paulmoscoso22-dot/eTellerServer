@@ -1,11 +1,11 @@
 namespace eTeller.Application.DTOs;
 
 // ─────────────────────────────────────────────────────────────────────────────
-// DTOs per IVigilanzaSpRepository
+// DTOs per IVigilanzaRepository
 // ─────────────────────────────────────────────────────────────────────────────
 
 /// <summary>
-/// Input per <see cref="IVigilanzaSpRepository.SalvaAntiRecyclingAsync"/>.
+/// Input per <see cref="IVigilanzaRepository.SalvaAntiRecyclingAsync"/>.
 ///
 /// Corrisponde ai parametri passati da wucAntiRecycling.saveAntiRecycling()
 /// nel vecchio ContiCorrenti.aspx.cs — FASE 12.
@@ -30,7 +30,7 @@ public sealed record SalvaAntiRecyclingRequest(
 );
 
 /// <summary>
-/// Output di <see cref="IVigilanzaSpRepository.SalvaAntiRecyclingAsync"/>:
+/// Output di <see cref="IVigilanzaRepository.SalvaAntiRecyclingAsync"/>:
 /// contiene l'ARC_ID del record ANTIRECYCLING generato (SCOPE_IDENTITY).
 /// </summary>
 public sealed record SalvaAntiRecyclingResult(

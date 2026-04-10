@@ -24,7 +24,7 @@ namespace eTeller.Application.Features.StoreProcedures.Vigilanza.Queries.GetAppe
             _logger.LogInformation("Handling {QueryName} with AraId={AraId}",
                 nameof(GetAppearerAllByAraIdQuery), request.AraId);
 
-            var appearer = await _unitOfWork.VigilanzaSpRepository.GetAppearerAllByAraId(request.AraId);
+            var appearer = await _unitOfWork.VigilanzaRepository.GetAppearerAllByAraId(request.AraId);
 
             if (appearer == null)
             {

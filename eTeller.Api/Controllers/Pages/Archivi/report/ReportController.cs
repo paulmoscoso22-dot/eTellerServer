@@ -19,11 +19,6 @@ namespace eTeller.Api.Controllers.Pages.Archivi.report
             _mediator = mediator;
         }
 
-        //Nota: pagine  
-        //attesa - benefondo
-        //giornale cassa
-        //operazioni annullate
-
         [HttpPost]
         [Route("WithFilters")]
         public async Task<IActionResult> GetSpTransactionWithFilters([FromBody] GetSpTransactionWithFiltersQuery request)

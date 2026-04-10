@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  eteller-api:
+    build:
+      context: .
+      dockerfile: eTeller.Api/Dockerfile
+    ports:
+      - "5000:8080"
+      - "5001:8081"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__ConnectionStringEteller=Data Source=192.168.1.100;Initial Catalog=eTeller;Integrated Security=True;TrustServerCertificate=True;
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - eteller-network
+
+networks:
+  eteller-network:
+    driver: bridge

@@ -2,6 +2,7 @@
 using eTeller.Domain.Models.StoredProcedure;
 using eTeller.Domain.Models.View;
 using Microsoft.EntityFrameworkCore;
+using static Dapper.SqlMapper;
 
 namespace eTeller.Infrastructure.Context
 {
@@ -20,6 +21,8 @@ namespace eTeller.Infrastructure.Context
         public virtual DbSet<ST_CurrencyType> ST_CurrencyType { get; set; }
         public virtual DbSet<ST_OperationType> ST_OperationType { get; set; }
         public virtual DbSet<ST_COUNTRY> ST_COUNTRY { get; set; }
+        public virtual DbSet<ST_LANGUAGE> ST_LANGUAGE { get; set; }
+        public virtual DbSet<ST_STATOENTITA> ST_STATOENTITA { get; set; }
         public virtual DbSet<TotalicCassa> TotalicCassa { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserSession> UserSessions { get; set; }
@@ -34,6 +37,12 @@ namespace eTeller.Infrastructure.Context
         public virtual DbSet<Na_TabellaServVarchar> Na_TabellaServVarchar { get; set; }
         public virtual DbSet<USERS_AllAccess> OperationTypes { get; set; }
         public virtual DbSet<Trace> Traces { get; set; }
+        public virtual DbSet<Personalisation> Personalisation { get; set; }
+        public virtual DbSet<eTeller.Domain.Models.StoredProcedure.UserSelectRole> UserSelectRole { get; set; }
+        public virtual DbSet<FunctionRole> FunctionRole { get; set; }
+        public virtual DbSet<StFunAcctyp> StFunAcctyp { get; set; }
+        public virtual DbSet<UserRole> UserRole { get; set; }
+
         public eTellerDbContext(DbContextOptions options) : base(options)
         {
 
@@ -53,6 +62,8 @@ namespace eTeller.Infrastructure.Context
             modelBuilder.Entity<ST_CurrencyType>().HasNoKey();
             modelBuilder.Entity<ST_OperationType>().HasNoKey();
             modelBuilder.Entity<ST_COUNTRY>().HasNoKey();
+            modelBuilder.Entity<ST_LANGUAGE>().HasNoKey();
+            modelBuilder.Entity<ST_STATOENTITA>().HasNoKey();
             modelBuilder.Entity<TotalicCassa>().HasNoKey();
             modelBuilder.Entity<InfoAutorizzazioneUtente>().HasNoKey();
             modelBuilder.Entity<SysFunctions>().HasNoKey();
@@ -76,8 +87,36 @@ namespace eTeller.Infrastructure.Context
             // Configure ErrorCode entity with primary key
             modelBuilder.Entity<ErrorCode>().HasKey(e => e.ErrId);
 
-            // Configure Antirecycling entity with primary key
+            // Configure Antirecycling entity with primary keyu
             modelBuilder.Entity<Antirecycling>().HasKey(a => a.ArcId);
+
+            // Configure Personalisation entity with primary key
+            modelBuilder.Entity<Personalisation>().HasKey(p => p.ParId);
+
+            // Configure UserSelectRole entity
+            modelBuilder.Entity<eTeller.Domain.Models.StoredProcedure.UserSelectRole>().HasNoKey();
+
+            // Configure FunctionRole entity
+            modelBuilder.Entity<FunctionRole>().HasNoKey();
+
+            // Configure StFunAcctyp entity
+            modelBuilder.Entity<StFunAcctyp>().HasNoKey();
+
+            //UserRole entity configuration
+            modelBuilder.Entity<UserRole>().HasKey(e => new { e.UserId, e.RoleId });
+
+            // Colonna USER_ID
+            modelBuilder.Entity<UserRole>().Property(e => e.UserId)
+                .HasColumnName("USER_ID")
+                .HasMaxLength(20)
+                .IsRequired();
+
+            // Colonna ROLE_ID
+            modelBuilder.Entity<UserRole>().Property(e => e.RoleId)
+                .HasColumnName("ROLE_ID")
+                .IsRequired();
+            //fine user role configuration
+
         }
     }
 }

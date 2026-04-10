@@ -24,7 +24,7 @@ namespace eTeller.Application.Features.StoreProcedures.Vigilanza.Queries.GetSpAn
             _logger.LogInformation("Handling {QueryName} with parameters Nome1={Nome1}, Nome2={Nome2}, Nome3={Nome3}, Nome4={Nome4}, AraBirthdate={AraBirthdate}, AraRecComplete={AraRecComplete}, MinRecdate={MinRecdate}",
                 nameof(GetSpAntirecAppearerByParametersQuery), request.Nome1, request.Nome2, request.Nome3, request.Nome4, request.AraBirthdate, request.AraRecComplete, request.MinRecdate);
 
-            var appearers = await _unitOfWork.VigilanzaSpRepository.GetAppearerByParameters(
+            var appearers = await _unitOfWork.VigilanzaRepository.GetAppearerByParameters(
                 request.Nome1,
                 request.Nome2,
                 request.Nome3,

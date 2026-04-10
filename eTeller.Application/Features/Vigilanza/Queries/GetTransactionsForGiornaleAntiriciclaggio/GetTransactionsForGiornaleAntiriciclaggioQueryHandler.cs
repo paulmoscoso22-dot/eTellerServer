@@ -24,7 +24,7 @@ namespace eTeller.Application.Features.StoreProcedures.Vigilanza.Queries.GetTran
             _logger.LogInformation("Handling {QueryName} with parameters Cassa={Cassa}, Localita={Localita}, DataDal={DataDal}, DataAl={DataAl}",
                 nameof(GetTransactionsForGiornaleAntiriciclaggioQuery), request.trxCassa, request.trxLocalita, request.trxDataDal, request.trxDataAl);
 
-            var transactions = await _unitOfWork.VigilanzaSpRepository.GetTransactionsForGiornaleAntiriciclaggio(
+            var transactions = await _unitOfWork.VigilanzaRepository.GetTransactionsForGiornaleAntiriciclaggio(
                 request.trxCassa,
                 request.trxLocalita,
                 request.trxDataDal,

@@ -24,7 +24,7 @@ namespace eTeller.Application.Features.Archivi.Report.StoreProcedure.Queries.Get
             _logger.LogInformation("Handling {QueryName} with Cassa={Cassa}, DataDal={DataDal}, DataAl={DataAl}, Status={Status}, BraId={BraId}",
                 nameof(GetSpOperazioniAnnullateQuery), request.trxCassa, request.trxDataDal, request.trxDataAl, request.trxStatus, request.trxBraId);
 
-            var transactions = await _unitOfWork.TransactionSpRepository.GetSpTransactionWithFilters(
+            var transactions = await _unitOfWork.TransazioneRepository.GetSpTransactionWithFilters(
                 request.trxCassa,
                 request.trxDataDal,
                 request.trxDataAl,

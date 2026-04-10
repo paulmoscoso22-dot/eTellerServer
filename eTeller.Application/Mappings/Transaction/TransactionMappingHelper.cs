@@ -25,7 +25,7 @@ namespace eTeller.Application.Mappings.Transaction
             if (string.IsNullOrEmpty(source.TrxCutId))
                 return string.Empty;
 
-            var currencyType = unitOfWork.ST_CurrencyTypeSpRepository
+            var currencyType = unitOfWork.ST_CurrencyTypeRepository
                 .GetByCutID(source.TrxCutId).Result;
 
             return currencyType?.CutDes ?? string.Empty;

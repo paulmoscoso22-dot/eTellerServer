@@ -115,6 +115,22 @@
   },
   {
     "ContainingType": "eTeller.Api.Controllers.Branch.BranchController",
+    "Method": "GetBranchById",
+    "RelativePath": "api/Branch/GetBranchById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.Branch.Queries.GetBranchById.GetBranchByIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Branch.BranchController",
     "Method": "GetBranches",
     "RelativePath": "api/Branch/GetBranches",
     "HttpMethod": "POST",
@@ -202,148 +218,538 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
+    "ContainingType": "eTeller.Api.Controllers.Language.LanguageController",
+    "Method": "GetLanguageById",
+    "RelativePath": "api/Language/GetLanguageById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.Language.Queries.GetLanguagesById.GetLanguageByIIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Language"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Language.LanguageController",
+    "Method": "GetLanguages",
+    "RelativePath": "api/Language/GetLanguages",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Language"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.Function.FunctionController",
     "Method": "DeleteSysFunction",
-    "RelativePath": "api/Manager/DeleteSysFunction",
+    "RelativePath": "api/manager/Function/DeleteSysFunction",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "command",
-        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Commands.DeleteSysFunction.DeleteSysFunctionCommand",
+        "Type": "eTeller.Application.Features.Manager.Commands.Functions.DeleteSysFunction.DeleteSysFunctionCommand",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Function"
+    ]
   },
   {
-    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
-    "Method": "GetAllUsersByUsrId",
-    "RelativePath": "api/Manager/GetAllUsersByUsrId",
+    "ContainingType": "eTeller.Api.Controllers.Manager.Function.FunctionController",
+    "Method": "GetFuncAccType",
+    "RelativePath": "api/manager/Function/GetFuncAccType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Function"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.Function.FunctionController",
+    "Method": "GetFunctionRoleByRoleId",
+    "RelativePath": "api/manager/Function/GetFunctionRoleByRoleId",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "query",
-        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Queries.GetAllUsersByUsrId.GetAllUsersByUsrIdQuery",
+        "Type": "eTeller.Application.Features.Manager.Queries.Functions.GetFunctionRoleByRoleId.GetFunctionRoleByRoleIdQuery",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Function"
+    ]
   },
   {
-    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
+    "ContainingType": "eTeller.Api.Controllers.Manager.Function.FunctionController",
     "Method": "GetSysFunctionByFunId",
-    "RelativePath": "api/Manager/GetSysFunctionByFunId",
+    "RelativePath": "api/manager/Function/GetSysFunctionByFunId",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "query",
-        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Queries.GetSysFunctionByFunId.GetSysFunctionByFunIdQuery",
+        "Type": "eTeller.Application.Features.Manager.Queries.Functions.GetSysFunctionByFunId.GetSysFunctionByFunIdQuery",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Function"
+    ]
   },
   {
-    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
+    "ContainingType": "eTeller.Api.Controllers.Manager.Function.FunctionController",
     "Method": "GetSysFunctions",
-    "RelativePath": "api/Manager/GetSysFunctions",
+    "RelativePath": "api/manager/Function/GetSysFunctions",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "query",
-        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Queries.GetSysFunctions.GetSysFunctionsQuery",
+        "Type": "eTeller.Application.Features.Manager.Queries.Functions.GetSysFunctions.GetSysFunctionsQuery",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Function"
+    ]
   },
   {
-    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
-    "Method": "GetSysRoleByFunId",
-    "RelativePath": "api/Manager/GetSysRoleByFunId",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "query",
-        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Queries.GetSysRoleByFunId.GetSysRoleByFunIdQuery",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
-    "Method": "GetUsersAllAccess",
-    "RelativePath": "api/Manager/GetUsersAllAccess",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "query",
-        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Queries.GetUsersAllAccess.GetUsersAllAccessQuery",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
-    "Method": "GetUsersRoleFunId",
-    "RelativePath": "api/Manager/GetUsersRoleFunId",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "query",
-        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Queries.GetUsersRoleFunId.GetUsersRoleFunIdQuery",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
+    "ContainingType": "eTeller.Api.Controllers.Manager.Function.FunctionController",
     "Method": "InsertSysFunction",
-    "RelativePath": "api/Manager/InsertSysFunction",
+    "RelativePath": "api/manager/Function/InsertSysFunction",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "command",
-        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Commands.InsertSysFunction.InsertSysFunctionCommand",
+        "Type": "eTeller.Application.Features.Manager.Commands.Functions.InsertSysFunction.InsertSysFunctionCommand",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Function"
+    ]
   },
   {
-    "ContainingType": "eTeller.Api.Controllers.Manager.ManagerController",
+    "ContainingType": "eTeller.Api.Controllers.Manager.Function.FunctionController",
     "Method": "UpdateSysFunction",
-    "RelativePath": "api/Manager/UpdateSysFunction",
+    "RelativePath": "api/manager/Function/UpdateSysFunction",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "command",
-        "Type": "eTeller.Application.Features.StoreProcedures.Manager.Commands.UpdateSysFunction.UpdateSysFunctionCommand",
+        "Type": "eTeller.Application.Features.Manager.Commands.Functions.UpdateSysFunction.UpdateSysFunctionCommand",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Function"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.Role.RoleController",
+    "Method": "DeleteRole",
+    "RelativePath": "api/manager/Role/DeleteRole",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "eTeller.Application.Features.Manager.Commands.Roles.DeleteRole.DeleteRoleCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Role"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.Role.RoleController",
+    "Method": "GetAllRole",
+    "RelativePath": "api/manager/Role/GetAllRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Role"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.Role.RoleController",
+    "Method": "GetRoleByName",
+    "RelativePath": "api/manager/Role/GetRoleByName",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.Manager.Queries.Roles.GetRoleByName.GetRoleByNameQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Role"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.Role.RoleController",
+    "Method": "GetRoleByUsrId",
+    "RelativePath": "api/manager/Role/GetRoleByUsrId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.Manager.Queries.Roles.GetRoleByUsrId.GetRoleByUsrIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Role"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.Role.RoleController",
+    "Method": "GetRoleNotForUsrId",
+    "RelativePath": "api/manager/Role/GetRoleNotForUsrId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.Manager.Queries.Roles.GetRoleNotForUsrId.GetRoleNotForUsrIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Role"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.Role.RoleController",
+    "Method": "GetSysRoleByFunId",
+    "RelativePath": "api/manager/Role/GetSysRoleByFunId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.Manager.Queries.Roles.GetSysRoleByFunId.GetSysRoleByFunIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Role"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.Role.RoleController",
+    "Method": "GetUserByRole",
+    "RelativePath": "api/manager/Role/GetUserByRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.Manager.Queries.Roles.GetUserByRole.GetUserByRoleQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Role"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.Role.RoleController",
+    "Method": "GetUsersRoleFunId",
+    "RelativePath": "api/manager/Role/GetUsersRoleFunId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.Manager.Queries.Users.GetUsersRoleFunId.GetUsersRoleFunIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Role"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.Role.RoleController",
+    "Method": "InsertRole",
+    "RelativePath": "api/manager/Role/InsertRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "eTeller.Application.Features.Manager.Commands.Roles.InsertRole.InsertRoleCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Role"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.Role.RoleController",
+    "Method": "UpdateRole",
+    "RelativePath": "api/manager/Role/UpdateRole",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "eTeller.Application.Features.Manager.Commands.Roles.UpdateRole.UpdateRoleCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Role"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.User.UserController",
+    "Method": "GetActiveAndBlockedUsers",
+    "RelativePath": "api/manager/User/GetActiveAndBlockedUsers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/User"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.User.UserController",
+    "Method": "GetAllUsersByUsrId",
+    "RelativePath": "api/manager/User/GetAllUsersByUsrId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.Manager.Queries.Users.GetAllUsersByUsrId.GetAllUsersByUsrIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/User"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.User.UserController",
+    "Method": "GetUserByHostId",
+    "RelativePath": "api/manager/User/GetUserByHostId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.Manager.Queries.Users.GetUserByHostId.GetUserByHostIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/User"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.User.UserController",
+    "Method": "GetUsersActiveBlocked",
+    "RelativePath": "api/manager/User/GetUsersActiveBlocked",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/User"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.User.UserController",
+    "Method": "GetUsersAllAccess",
+    "RelativePath": "api/manager/User/GetUsersAllAccess",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.Manager.Queries.Users.GetUsersAllAccess.GetUsersAllAccessQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/User"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.User.UserController",
+    "Method": "GetUsersByUserId",
+    "RelativePath": "api/manager/User/GetUsersByUserId",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.Manager.Queries.Users.GetUsersByUserId.GetUsersByUserIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/User"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.User.UserController",
+    "Method": "InsertUser",
+    "RelativePath": "api/manager/User/InsertUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "eTeller.Application.Features.Manager.Commands.Users.InsertUser.InsertUserCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/User"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.User.UserController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/manager/User/ResetPassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "eTeller.Application.Features.Manager.Commands.Users.ResetPassword.ResetPasswordCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/User"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.User.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/manager/User/UpdateUser",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "eTeller.Application.Features.Manager.Commands.Users.UpdateUser.UpdateUserCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/User"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.Personalisation.PersonalisationController",
+    "Method": "GetPersonalisation",
+    "RelativePath": "api/Personalisation/GetPersonalisation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Personalisation"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.Manager.Personalisation.PersonalisationController",
+    "Method": "UpdatePersonalisation",
+    "RelativePath": "api/Personalisation/UpdatePersonalisation",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "eTeller.Application.Features.Manager.Commands.Pesonalisation.UpdatePersonalisation.UpdatePersonalisationCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "Manager/Personalisation"
+    ]
   },
   {
     "ContainingType": "eTeller.Api.Controllers.ContiCorrenti.Prelievo.PrelievoController",
@@ -477,6 +883,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "eTeller.Api.Controllers.StatoEntita.StatoEntitaController",
+    "Method": "GetAllStatiEntita",
+    "RelativePath": "api/StatoEntita/GetAllStatiEntita",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "Tags": [
+      "StatoEntita"
+    ]
+  },
+  {
+    "ContainingType": "eTeller.Api.Controllers.StatoEntita.StatoEntitaController",
+    "Method": "GetStatoEntitaById",
+    "RelativePath": "api/StatoEntita/GetStatoEntitaById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "eTeller.Application.Features.StatoEntita.GetStatoEntita.GetStatoEntitaQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [],
+    "Tags": [
+      "StatoEntita"
+    ]
+  },
+  {
     "ContainingType": "eTeller.Api.Controllers.StCountry.StCountryController",
     "Method": "GetAllCountry",
     "RelativePath": "api/StCountry/GetAllCountry",
@@ -584,16 +1022,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "eTeller.Api.Controllers.User.UserController",
-    "Method": "GetActiveAndBlockedUsers",
-    "RelativePath": "api/User/GetActiveAndBlockedUsers",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   },
   {

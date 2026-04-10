@@ -1,38 +1,41 @@
-﻿using eTeller.Application.Contracts.StoreProcedures;
-using eTeller.Application.Contracts.StoreProcedures.AntirecAppearer;
-using eTeller.Application.Contracts.StoreProcedures.Manager;
-using eTeller.Application.Contracts.StoreProcedures.Operazioni.ContoCorrenti.Prelievo;
-using eTeller.Application.Contracts.StoreProcedures.ST_CurrencyType;
-using eTeller.Application.Contracts.StoreProcedures.Tabella;
-using eTeller.Application.Contracts.StoreProcedures.Trace;
-using eTeller.Application.Contracts.StoreProcedures.Vigilanza;
-using eTeller.Application.Features.ContiCorrenti.Prelievo;
+using eTeller.Application.Contracts;
+using eTeller.Application.Contracts.AntirecAppearer;
+using eTeller.Application.Contracts.Manager;
+using eTeller.Application.Contracts.Operazioni.ContoCorrenti.Prelievo;
+using eTeller.Application.Contracts.Personalisation;
+using eTeller.Application.Contracts.ST_CurrencyType;
+using eTeller.Application.Contracts.Tabella;
+using eTeller.Application.Contracts.Trace;
+using eTeller.Application.Contracts.Vigilanza;
 using static eTeller.Application.Contracts.Commons.IBaseSimpleRepository;
 
 namespace eTeller.Application.Contracts
 {
     public interface IUnitOfWork
     {
-        IAccountSpRepository AccountSpRepository { get; }
+        IAccountRepository AccountRepository { get; }
         IAntirecAppearerSelectRepository AntirecAppearerSelectRepository { get; }
-        ITransactionSpRepository TransactionSpRepository { get; }
-        ITransactionMovSpRepository TransactionMovSpRepository { get; }
-        IGiornaleAntiriciclaggioSpRepository GiornaleAntiriciclaggioSpRepository { get; }
-        ITotalicCassaSpRepository TotalicCassaSpRepository { get; }
-        IVigilanzaSpRepository VigilanzaSpRepository { get; }
-        IST_CurrencyTypeSpRepository ST_CurrencyTypeSpRepository { get; }
+        ITransazioneRepository TransazioneRepository { get; }
+        ITransactionMovRepository TransactionMovRepository { get; }
+        IGiornaleAntiriciclaggioRepository GiornaleAntiriciclaggioRepository { get; }
+        ITotalicCassaRepository TotalicCassaRepository { get; }
+        IVigilanzaRepository VigilanzaRepository { get; }
+        IST_CurrencyTypeRepository ST_CurrencyTypeRepository { get; }
         ITabellaRepository TabellaRepository { get; }
-        ITraceSpRepository TraceSpRepository { get; }
+        ITraceRepository TraceRepository { get; }
         IUserRepository UserRepository { get; }
         IUserSessionRepository UserSessionRepository { get; }
         IClientRepository ClientRepository { get; }
-        ICustomersSpRepository CustomersSpRepository { get; }
-        ICustomerAccountSpRepository CustomerAccountSpRepository { get; }
-        global::eTeller.Application.Contracts.StoreProcedures.Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository ErrorCodeRepository { get; }
-        ITransazioneRepository TransazioneRepository { get; }
-        IManagerSpRepository ManagerSpRepository { get; }
+        ICustomersRepository CustomersRepository { get; }
+        ICustomerAccountRepository CustomerAccountRepository { get; }
+        Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository ErrorCodeRepository { get; }
+        IManagerRepository ManagerRepository { get; }
+        IPersonalisationRepository PersonalisationRepository { get; }
         IBaseSimpleRepository<TEntity> Repository<TEntity>() where TEntity : class;
+        Task BeginTransactionAsync();
         Task<int> Complete();
+
+        Task CommitAsync();
         Task Rollback();
     }
 }

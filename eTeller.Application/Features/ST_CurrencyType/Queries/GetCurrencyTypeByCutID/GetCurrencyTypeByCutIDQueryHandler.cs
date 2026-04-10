@@ -23,7 +23,7 @@ namespace eTeller.Application.Features.ST_CurrencyType.Queries.GetCurrencyTypeBy
         {
             _logger.LogInformation("Handling {QueryName} with CutID={CutID}", nameof(GetCurrencyTypeByCutIDQuery), request.CutID);
 
-            var currencyType = await _unitOfWork.ST_CurrencyTypeSpRepository.GetByCutID(request.CutID);
+            var currencyType = await _unitOfWork.ST_CurrencyTypeRepository.GetByCutID(request.CutID);
 
             var currencyTypeVm = _mapper.Map<ST_CurrencyTypeVm>(currencyType);
 

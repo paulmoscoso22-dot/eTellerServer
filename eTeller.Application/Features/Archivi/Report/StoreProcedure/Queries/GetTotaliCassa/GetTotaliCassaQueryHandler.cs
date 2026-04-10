@@ -24,7 +24,7 @@ namespace eTeller.Application.Features.Archivi.Report.StoreProcedure.Queries.Get
             _logger.LogInformation("Handling {QueryName} with parameters CliID={CliID}, Data={Data}, CutID={CutID}, BraID={BraID}",
                 nameof(GetSpTotaliCassaQuery), request.tocCliId, request.tocData, request.tocCutId, request.tocBraId);
 
-            var totalicassas = await _unitOfWork.TotalicCassaSpRepository.GetTotaliCassaByClientIDAndDataAndCutID(
+            var totalicassas = await _unitOfWork.TotalicCassaRepository.GetTotaliCassaByClientIDAndDataAndCutID(
                 request.tocCliId,
                 request.tocData,
                 request.tocCutId,

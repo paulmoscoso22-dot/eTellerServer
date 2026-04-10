@@ -1,4 +1,8 @@
+using eTeller.Api.Middleware;
+using eTeller.Application.Behaviours;
+using eTeller.Application.Features.Manager.Commands.Users.InsertUser;
 using eTeller.Infrastructure;
+using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +16,7 @@ builder.Services.AddCors(options =>
         policy
             .WithOrigins(
                 "http://localhost:4200",    // Angular
-                "https://localhost:4200",   // Angular HTTPS
+                "http://localhost:84",   // Angular Prod
                 "http://localhost:5253",    // Vite / React
                 "https://localhost:5253"    // Vite / React HTTPS
             )
@@ -45,6 +49,8 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = "swagger";
     });
 }
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 

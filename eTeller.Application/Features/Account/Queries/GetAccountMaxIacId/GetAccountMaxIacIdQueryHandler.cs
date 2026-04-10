@@ -18,7 +18,7 @@ namespace eTeller.Application.Features.StoreProcedures.Account.Queries.GetAccoun
         public async Task<int> Handle(GetAccountMaxIacIdQuery request, CancellationToken cancellationToken)
         {
             _logger.LogInformation("Handling {QueryName}", nameof(GetAccountMaxIacIdQuery));
-            var result = await _unitOfWork.AccountSpRepository.GetAccountMaxIacId();
+            var result = await _unitOfWork.AccountRepository.GetAccountMaxIacId();
             _logger.LogInformation("Handled {QueryName}, result={Result}", nameof(GetAccountMaxIacIdQuery), result);
             return result;
         }

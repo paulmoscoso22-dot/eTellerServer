@@ -20,7 +20,7 @@ namespace eTeller.Application.Features.StoreProcedures.Vigilanza.Commands.Insert
             _logger.LogInformation("Handling {CommandName} for AraId={AraId}, AraName={AraName}",
                 nameof(InsertSpAntirecAppearerCommand), request.AraId, request.AraName);
 
-            var hisId = await _unitOfWork.VigilanzaSpRepository.InsertHisAntirecAppearer(
+            var hisId = await _unitOfWork.VigilanzaRepository.InsertHisAntirecAppearer(
                 request.HisDate,
                 request.AraId,
                 request.AraRecdate,
