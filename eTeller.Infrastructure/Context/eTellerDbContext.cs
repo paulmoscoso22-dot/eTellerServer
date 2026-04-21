@@ -34,6 +34,7 @@ namespace eTeller.Infrastructure.Context
         public virtual DbSet<sys_ROLE> SysRoles { get; set; }
         public virtual DbSet<UsersRoleFunction> UsersRoleFunction { get; set; }
         public virtual DbSet<ST_TRACE_FUNCTION> ST_TRACE_FUNCTION { get; set; }
+        public virtual DbSet<SysUsersUseClient> SysUsersUseClients { get; set; }
         public virtual DbSet<Na_TabellaServVarchar> Na_TabellaServVarchar { get; set; }
         public virtual DbSet<USERS_AllAccess> OperationTypes { get; set; }
         public virtual DbSet<Trace> Traces { get; set; }
@@ -120,4 +121,3 @@ namespace eTeller.Infrastructure.Context
         }
     }
 }
-

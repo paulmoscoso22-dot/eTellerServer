@@ -14,5 +14,10 @@ namespace eTeller.Application.Shared
             }
             return s.ToString();
         }
+
+        public static bool VerifyPassword(string oldPassword, string confermPassword)
+        {
+            return CifraPass(oldPassword) == CifraPass(confermPassword);
+        }
     }
 }

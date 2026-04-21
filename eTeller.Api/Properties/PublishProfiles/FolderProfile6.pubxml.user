@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\release</_PublishTargetUrl>
+    <History>True|2026-04-15T08:53:52.3056040Z||;True|2026-04-15T10:46:21.8078582+02:00||;True|2026-04-15T10:38:32.3308395+02:00||;True|2026-04-15T10:06:40.8666941+02:00||;True|2026-04-15T09:57:47.8129731+02:00||;True|2026-04-15T09:52:11.4731657+02:00||;True|2026-04-15T09:44:09.8027375+02:00||;True|2026-04-15T09:28:52.8493714+02:00||;True|2026-04-14T18:17:10.0865080+02:00||;True|2026-04-14T18:13:50.6168403+02:00||;True|2026-04-14T17:58:05.9488081+02:00||;True|2026-04-14T17:44:18.8666985+02:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

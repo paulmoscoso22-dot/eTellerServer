@@ -25,7 +25,7 @@ namespace eTeller.Application.Features.Manager.Commands.Functions.InsertSysFunct
                 request.FunName,
                 request.FunDescription,
                 request.FunHostcode,
-request.Offline,
+                request.Offline,
                 cancellationToken);
 
             if (!result)

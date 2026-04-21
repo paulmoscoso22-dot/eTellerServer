@@ -10,13 +10,13 @@
 //using eTeller.Application.Features.StoreProcedures.Account.Queries.GestAcountsByCriteria;
 //using eTeller.Application.Features.StoreProcedures.Account.Commands.UpdateAccount;
 //using MediatR;
-//using Microsoft.AspNetCore.Mvc;
-//namespace eTeller.Api.Controllers.Account
-//{
-//    [Route("api/[controller]")]
-//    [ApiController]
-//    public class AccountController : ControllerBase
-//    {
+using Microsoft.AspNetCore.Mvc;
+namespace eTeller.Api.Controllers.Account
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class AccountController : ControllerBase
+    {
 //        private readonly IMediator _mediator;
 //        public AccountController(IMediator mediator)
 //        {
@@ -106,5 +106,5 @@
 //            var result = await _mediator.Send(query);
 //            return Ok(result);
 //        }
-//    }
-//}
+    }
+}

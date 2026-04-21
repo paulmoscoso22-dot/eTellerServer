@@ -1,11 +1,5 @@
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\net10.0\.msCoverageSourceRootsMapping_eTeller.Application.UnitTests
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\net10.0\CoverletSourceRootsMapping_eTeller.Application.UnitTests
-C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\eTeller.Application.UnitTests.csproj.AssemblyReference.cache
-C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\eTeller.Application.UnitTests.GeneratedMSBuildEditorConfig.editorconfig
-C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\eTeller.Application.UnitTests.AssemblyInfoInputs.cache
-C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\eTeller.Application.UnitTests.AssemblyInfo.cs
-C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\eTeller.Application.UnitTests.csproj.CoreCompileInputs.cache
-C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\eTeller.Application.UnitTests.sourcelink.json
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\net10.0\testhost.dll
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\net10.0\xunit.abstractions.dll
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\net10.0\testhost.exe
@@ -18,6 +12,7 @@ C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\ne
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\net10.0\Castle.Core.dll
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\net10.0\FluentResults.dll
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\net10.0\FluentValidation.dll
+C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\net10.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\net10.0\MediatR.dll
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\net10.0\MediatR.Contracts.dll
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\net10.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
@@ -113,10 +108,15 @@ C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\ne
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\net10.0\eTeller.Domain.dll
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\net10.0\eTeller.Application.pdb
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\net10.0\eTeller.Domain.pdb
+C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\eTeller.Application.UnitTests.csproj.AssemblyReference.cache
+C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\eTeller.Application.UnitTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\eTeller.Application.UnitTests.AssemblyInfoInputs.cache
+C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\eTeller.Application.UnitTests.AssemblyInfo.cs
+C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\eTeller.Application.UnitTests.csproj.CoreCompileInputs.cache
+C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\eTeller.Application.UnitTests.sourcelink.json
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\eTeller..4D9D675F.Up2Date
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\eTeller.Application.UnitTests.dll
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\refint\eTeller.Application.UnitTests.dll
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\eTeller.Application.UnitTests.pdb
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\eTeller.Application.UnitTests.genruntimeconfig.cache
 C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\obj\Debug\net10.0\ref\eTeller.Application.UnitTests.dll
-C:\Software\eTeller2026\eTellerServer\eTeller.Application.UnitTests\bin\Debug\net10.0\FluentValidation.DependencyInjectionExtensions.dll

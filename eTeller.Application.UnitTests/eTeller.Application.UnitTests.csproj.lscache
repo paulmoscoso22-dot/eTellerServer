@@ -2,12 +2,10 @@ version=1
 
 # This file caches language service data to improve the performance of C# Dev Kit.
 # It is not intended for manual editing. It can safely be deleted and will be
-# regenerated automatically.
+# regenerated automatically. For more information, see https://aka.ms/lscache
 #
-# To exclude from version control, add *.lscache to your .gitignore file.
-#
-# To disable caching, add the following to your VS Code settings:
-#   "dotnet.projectsystem.enableLanguageServiceCache": false
+# To control where cache files are stored, use the following VS Code setting:
+#   "dotnet.projectsystem.cacheInProjectFolder": true
 
 [project]
 language=C#
@@ -57,11 +55,15 @@ TemporaryDependencyNodeTargetIdentifier=net10.0
 
 [sourceFiles]
 <NUGET>/microsoft.net.test.sdk/17.14.1/build/net8.0/Microsoft.NET.Test.Sdk.Program.cs
-Feature/Manager/
- Commands/Roles/InsertRoleCommandHandlerXUnitTests.cs
- Queries/Roles/
-  GetAllRoleQueryHandlerXUnitTests.cs
-  GetRoleByNameQueryHandlerXUnitTests.cs
+Feature/Manager/Commands/Functions/
+ DeleteSysFunctionCommandHandlerUnitTests.cs
+ InsertSysFunctionCommandHandlerXUnitTests.cs
+Feature/Manager/Commands/
+ Personalisation/UpdatePersonalisationCommandHandlerUnixTests.cs
+ Roles/InsertRoleCommandHandlerXUnitTests.cs
+Feature/Manager/Queries/Roles/
+ GetAllRoleQueryHandlerXUnitTests.cs
+ GetRoleByNameQueryHandlerXUnitTests.cs
 obj/Debug/net10.0/
  .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
  eTeller.Application.UnitTests.AssemblyInfo.cs
@@ -71,7 +73,7 @@ obj/Debug/net10.0/
 ../
  eTeller.Application/obj/Debug/net10.0/ref/eTeller.Application.dll
  eTeller.Domain/obj/Debug/net10.0/ref/eTeller.Domain.dll
-<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.5/ref/net10.0/
+<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.6/ref/net10.0/
  Microsoft.CSharp.dll
  Microsoft.VisualBasic.Core.dll
  Microsoft.VisualBasic.dll
@@ -240,9 +242,10 @@ obj/Debug/net10.0/
  System.Xml.XPath.XDocument.dll
  WindowsBase.dll
 <NUGET>/
- automapper/16.0.0/lib/net10.0/AutoMapper.dll
+ automapper/16.1.1/lib/net10.0/AutoMapper.dll
  castle.core/5.1.1/lib/net6.0/Castle.Core.dll
  fluentresults/4.0.0/lib/net9.0/FluentResults.dll
+ fluentvalidation.dependencyinjectionextensions/12.1.1/lib/net8.0/FluentValidation.DependencyInjectionExtensions.dll
  fluentvalidation/12.1.1/lib/net8.0/FluentValidation.dll
  mediatr.contracts/2.0.1/lib/netstandard2.0/MediatR.Contracts.dll
  mediatr/14.0.0/lib/net10.0/MediatR.dll
@@ -273,14 +276,14 @@ obj/Debug/net10.0/
  xunit.extensibility.execution/2.9.3/lib/netstandard1.1/xunit.execution.dotnet.dll
 
 [analyzerReferences]
-<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.5/analyzers/dotnet/cs/
+<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.6/analyzers/dotnet/cs/
  Microsoft.Interop.ComInterfaceGenerator.dll
  Microsoft.Interop.JavaScript.JSImportGenerator.dll
  Microsoft.Interop.LibraryImportGenerator.dll
  Microsoft.Interop.SourceGeneration.dll
  System.Text.Json.SourceGeneration.dll
  System.Text.RegularExpressions.Generator.dll
-<DOTNET>/sdk/10.0.201/Sdks/Microsoft.NET.Sdk/analyzers/
+<DOTNET>/sdk/10.0.202/Sdks/Microsoft.NET.Sdk/analyzers/
  Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
  Microsoft.CodeAnalysis.NetAnalyzers.dll
 <NUGET>/
@@ -291,5 +294,5 @@ obj/Debug/net10.0/
   xunit.analyzers.fixes.dll
 
 [analyzerConfigFiles]
-<DOTNET>/sdk/10.0.201/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_10_default.globalconfig
+<DOTNET>/sdk/10.0.202/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_10_default.globalconfig
 obj/Debug/net10.0/eTeller.Application.UnitTests.GeneratedMSBuildEditorConfig.editorconfig

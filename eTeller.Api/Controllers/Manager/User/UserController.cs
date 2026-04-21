@@ -1,9 +1,12 @@
 ﻿using eTeller.Application.Features.Manager.Commands.Users.InsertUser;
 using eTeller.Application.Features.Manager.Commands.Users.ResetPassword;
 using eTeller.Application.Features.Manager.Commands.Users.UpdateUser;
+using eTeller.Application.Features.Manager.Commands.Users.UpdateUserClientExit;
 using eTeller.Application.Features.Manager.Queries.Users.GetAllUsersByUsrId;
 using eTeller.Application.Features.Manager.Queries.Users.GetUserByHostId;
 using eTeller.Application.Features.Manager.Queries.Users.GetUsersActiveAndBlocked;
+using eTeller.Application.Features.User.Queries.GetUserUseClient;
+using eTeller.Application.Features.Manager.Queries.Users.GetSysUsersUseClient;
 using eTeller.Application.Features.Manager.Queries.Users.GetUsersAllAccess;
 using eTeller.Application.Features.Manager.Queries.Users.GetUsersByUserId;
 using eTeller.Application.Features.User.Queries.GetActiveAndBlockedUsers;
@@ -24,6 +27,24 @@ namespace eTeller.Api.Controllers.Manager.User
         public UserController(IMediator mediator, IValidator<InsertUserCommand> validator) {
             _mediator = mediator;
             _validator = validator;
+        }
+
+        [HttpPost]
+        [Route("GetUserUseClient")]
+        public async Task<IActionResult> GetUserUseClient()
+        {
+            var query = new GetUserUseClientQuery();
+            var result = await _mediator.Send(query);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [Route("GetSysUsersUseClient")]
+        public async Task<IActionResult> GetSysUsersUseClient()
+        {
+            var query = new GetSysUsersUseClientQuery();
+            var result = await _mediator.Send(query);
+            return Ok(result);
         }
 
         [HttpPost]
@@ -90,9 +111,17 @@ namespace eTeller.Api.Controllers.Manager.User
             return Ok(result);
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("ResetPassword")]
         public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpPut]
+        [Route("UpdateUserClientExit")]
+        public async Task<IActionResult> UpdateUserClientExit([FromBody] UpdateUserClientExitCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);

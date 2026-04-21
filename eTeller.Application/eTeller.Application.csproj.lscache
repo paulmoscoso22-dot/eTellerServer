@@ -2,12 +2,10 @@ version=1
 
 # This file caches language service data to improve the performance of C# Dev Kit.
 # It is not intended for manual editing. It can safely be deleted and will be
-# regenerated automatically.
+# regenerated automatically. For more information, see https://aka.ms/lscache
 #
-# To exclude from version control, add *.lscache to your .gitignore file.
-#
-# To disable caching, add the following to your VS Code settings:
-#   "dotnet.projectsystem.enableLanguageServiceCache": false
+# To control where cache files are stored, use the following VS Code setting:
+#   "dotnet.projectsystem.cacheInProjectFolder": true
 
 [project]
 language=C#
@@ -71,9 +69,7 @@ Contracts/
  GiornaleAntiriciclaggio/IGiornaleAntiriciclaggioRepository.cs
  IErrorCodeRepository.cs
  IHostCommunicationService.cs
- ITransazioneRepository.cs
  IUnitOfWork.cs
- IUserRepository.cs
  IUserSessionRepository.cs
  Manager/IManagerRepository.cs
  Operazioni/ContoCorrenti/Prelievo/IErrorCodeRepository.cs
@@ -82,8 +78,9 @@ Contracts/
  Tabella/ITabellaRepository.cs
  TotalicCassa/ITotalicCassaRepository.cs
  Trace/ITraceRepository.cs
- Transaction/ITransactionRepository.cs
+ Transaction/ITransazioneRepository.cs
  TransactionMov/ITransactionMovRepository.cs
+ User/IUserSpRepository.cs
  Vigilanza/IVigilanzaRepository.cs
 Dtos/
  AntiRecyclingDTOs.cs
@@ -198,6 +195,19 @@ Features/Manager/Commands/Roles/InsertRole/
 Features/Manager/Commands/Roles/UpdateRole/
  UpdateRoleCommand.cs
  UpdateRoleCommandHandler.cs
+Features/Manager/Commands/Users/InsertUser/
+ InsertUserCommand.cs
+ InsertUserCommandHandler.cs
+ InsertUserCommandValidator.cs
+Features/Manager/Commands/Users/ResetPassword/
+ ResetPasswordCommand.cs
+ ResetPasswordCommandHandler.cs
+Features/Manager/Commands/Users/UpdateUser/
+ UpdateUserCommand.cs
+ UpdateUserCommandHandler.cs
+Features/Manager/Commands/Users/UpdateUserClientExit/
+ UpdateUserClientExitCommand.cs
+ UpdateUserClientExitCommandHandler.cs
 Features/Manager/Queries/Functions/GetFuncAccType/
  GetFuncAccTypeQuery.cs
  GetFuncAccTypeQueryHandler.cs
@@ -234,6 +244,9 @@ Features/Manager/Queries/Roles/GetUserByRole/
 Features/Manager/Queries/Users/GetAllUsersByUsrId/
  GetAllUsersByUsrIdQuery.cs
  GetAllUsersByUsrIdQueryHandler.cs
+Features/Manager/Queries/Users/GetSysUsersUseClient/
+ GetSysUsersUseClientQuery.cs
+ GetSysUsersUseClientQueryHandler.cs
 Features/Manager/Queries/Users/GetUserByHostId/
  GetUserByHostIdQuery.cs
  GetUserByHostIdQueryHandler.cs
@@ -300,6 +313,9 @@ Features/User/
  Queries/GetActiveAndBlockedUsers/
   GetActiveAndBlockedUsersQuery.cs
   GetActiveAndBlockedUsersQueryHandler.cs
+ Queries/GetUserUseClient/
+  GetUserUseClientQuery.cs
+  GetUserUseClientQueryHandler.cs
  Services/IAuthenticationService.cs
 Features/Vigilanza/Commands/DeleteARA/
  DeleteARACommand.cs
@@ -380,7 +396,11 @@ Mappings/
   TransactionTipoResolver.cs
   TransactionVm.cs
  TransactionMov/TransactionMovVm.cs
- User/SysUsersActiveAndBlockedVm.cs
+ User/
+  InsertUserVm.cs
+  SysUsersActiveAndBlockedVm.cs
+  SysUsersUseClientVm.cs
+  UserProfile.cs
  Vigilanza/
   AppearerAllVm.cs
   HisAntirecAppearerVm.cs
@@ -392,6 +412,7 @@ obj/Debug/net10.0/
  .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
  eTeller.Application.AssemblyInfo.cs
  eTeller.Application.GlobalUsings.g.cs
+Shared/Utility.cs
 Validators/
  CaricaRequestValidator.cs
  GetSysRoleByFunIdQueryValidator.cs
@@ -399,7 +420,7 @@ Validators/
 
 [metadataReferences]
 ../eTeller.Domain/obj/Debug/net10.0/ref/eTeller.Domain.dll
-<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.5/ref/net10.0/
+<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.6/ref/net10.0/
  Microsoft.CSharp.dll
  Microsoft.VisualBasic.Core.dll
  Microsoft.VisualBasic.dll
@@ -568,8 +589,9 @@ Validators/
  System.Xml.XPath.XDocument.dll
  WindowsBase.dll
 <NUGET>/
- automapper/16.0.0/lib/net10.0/AutoMapper.dll
+ automapper/16.1.1/lib/net10.0/AutoMapper.dll
  fluentresults/4.0.0/lib/net9.0/FluentResults.dll
+ fluentvalidation.dependencyinjectionextensions/12.1.1/lib/net8.0/FluentValidation.DependencyInjectionExtensions.dll
  fluentvalidation/12.1.1/lib/net8.0/FluentValidation.dll
  mediatr.contracts/2.0.1/lib/netstandard2.0/MediatR.Contracts.dll
  mediatr/14.0.0/lib/net10.0/MediatR.dll
@@ -583,14 +605,14 @@ Validators/
  microsoft.identitymodel.tokens/8.14.0/lib/net9.0/Microsoft.IdentityModel.Tokens.dll
 
 [analyzerReferences]
-<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.5/analyzers/dotnet/cs/
+<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.6/analyzers/dotnet/cs/
  Microsoft.Interop.ComInterfaceGenerator.dll
  Microsoft.Interop.JavaScript.JSImportGenerator.dll
  Microsoft.Interop.LibraryImportGenerator.dll
  Microsoft.Interop.SourceGeneration.dll
  System.Text.Json.SourceGeneration.dll
  System.Text.RegularExpressions.Generator.dll
-<DOTNET>/sdk/10.0.201/Sdks/Microsoft.NET.Sdk/analyzers/
+<DOTNET>/sdk/10.0.202/Sdks/Microsoft.NET.Sdk/analyzers/
  Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
  Microsoft.CodeAnalysis.NetAnalyzers.dll
 <NUGET>/
@@ -598,5 +620,5 @@ Validators/
  microsoft.extensions.options/10.0.0/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Options.SourceGeneration.dll
 
 [analyzerConfigFiles]
-<DOTNET>/sdk/10.0.201/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_10_default.globalconfig
+<DOTNET>/sdk/10.0.202/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_10_default.globalconfig
 obj/Debug/net10.0/eTeller.Application.GeneratedMSBuildEditorConfig.editorconfig

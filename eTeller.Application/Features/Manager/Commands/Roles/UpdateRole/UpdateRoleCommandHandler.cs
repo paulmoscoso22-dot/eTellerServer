@@ -23,6 +23,7 @@ namespace eTeller.Application.Features.Manager.Commands.Roles.UpdateRole
         {
             try
             {
+
                 await _unitOfWork.BeginTransactionAsync();
                 _logger.LogInformation("Handling {CommandName}", nameof(UpdateRoleCommand));
 

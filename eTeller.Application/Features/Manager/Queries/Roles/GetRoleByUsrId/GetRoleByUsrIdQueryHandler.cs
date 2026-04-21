@@ -31,7 +31,7 @@ namespace eTeller.Application.Features.Manager.Queries.Roles.GetRoleByUsrId
             if (result == null || !result.Any())
             {
                 _logger.LogWarning("No roles found for UsrId: {UsrId}", request.UsrId);
-                throw new NotFoundException(nameof(GetRoleByUsrIdQuery), request.UsrId);
+                return Enumerable.Empty<SysRoleVm>();
             }
 
             _logger.LogInformation("Retrieved {Count} roles for UsrId: {UsrId}", result.Count(), request.UsrId);

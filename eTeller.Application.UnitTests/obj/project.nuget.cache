@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SFhrr1sTb0E=",
+  "dgSpecHash": "f9btCIJ6ACg=",
   "success": true,
   "projectFilePath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application.UnitTests\\eTeller.Application.UnitTests.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\amop\\.nuget\\packages\\automapper\\16.0.0\\automapper.16.0.0.nupkg.sha512",
+    "C:\\Users\\amop\\.nuget\\packages\\automapper\\16.1.1\\automapper.16.1.1.nupkg.sha512",
     "C:\\Users\\amop\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\amop\\.nuget\\packages\\coverlet.collector\\6.0.4\\coverlet.collector.6.0.4.nupkg.sha512",
     "C:\\Users\\amop\\.nuget\\packages\\fluentresults\\4.0.0\\fluentresults.4.0.0.nupkg.sha512",
@@ -36,18 +36,5 @@
     "C:\\Users\\amop\\.nuget\\packages\\xunit.extensibility.execution\\2.9.3\\xunit.extensibility.execution.2.9.3.nupkg.sha512",
     "C:\\Users\\amop\\.nuget\\packages\\xunit.runner.visualstudio\\3.1.4\\xunit.runner.visualstudio.3.1.4.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "message": "Package 'AutoMapper' 16.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
-      "projectPath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application.UnitTests\\eTeller.Application.UnitTests.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application.UnitTests\\eTeller.Application.UnitTests.csproj",
-      "libraryId": "AutoMapper",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  "logs": []
 }

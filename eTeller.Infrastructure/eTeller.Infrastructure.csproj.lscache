@@ -2,12 +2,10 @@ version=1
 
 # This file caches language service data to improve the performance of C# Dev Kit.
 # It is not intended for manual editing. It can safely be deleted and will be
-# regenerated automatically.
+# regenerated automatically. For more information, see https://aka.ms/lscache
 #
-# To exclude from version control, add *.lscache to your .gitignore file.
-#
-# To disable caching, add the following to your VS Code settings:
-#   "dotnet.projectsystem.enableLanguageServiceCache": false
+# To control where cache files are stored, use the following VS Code setting:
+#   "dotnet.projectsystem.cacheInProjectFolder": true
 
 [project]
 language=C#
@@ -63,32 +61,30 @@ obj/Debug/net10.0/
  eTeller.Infrastructure.AssemblyInfo.cs
  eTeller.Infrastructure.GlobalUsings.g.cs
 Repositories/
+ Account/AccountRepository.cs
+ AntirecAppearer/AntirecAppearerSelectRepository.cs
  BaseSimpleRepository.cs
- EntityFramework/
-  Client/ClientRepository.cs
-  GiornaleAntiriciclaggio/GiornaleAntiriciclaggioSpRepository.cs
-  Transaction/TransazioneRepository.cs
-  User/
-   UserRepository.cs
-   UserSessionRepository.cs
- StoreProcedures/
-  Account/AccountSpRepository.cs
-  AntirecAppearer/AntirecAppearerSelectRepository.cs
-  Client/ClientRepository.cs
-  Currency/CurrencySpRepository.cs
-  CustomerAccount/CustomerAccountSpRepository.cs
-  Customers/CustomersSpRepository.cs
-  Manager/ManagerSpRepository.cs
-  Operazioni/ContoCorrenti/Prelievo/ErrorCodeRepository.cs
-  Personalisation/PersonalisationSpRepository.cs
-  ST_CurrencyType/ST_CurrencyTypeSpRepository.cs
-  Tabella/TabellaRepository.cs
-  TotalicCassa/TotalicCassaSpRepository.cs
-  Trace/TraceSpRepository.cs
-  Transaction/TransactionSpRepository.cs
-  TransactionMov/TransactionMovSpRepository.cs
-  Vigilanza/VigilanzaSpRepository.cs
+ Client/ClientRepository.cs
+ Currency/CurrencyRepository.cs
+ CustomerAccount/CustomerAccountRepository.cs
+ Customers/CustomersRepository.cs
+ GiornaleAntiriciclaggio/GiornaleAntiriciclaggioSpRepository.cs
+ Manager/ManagerRepository.cs
+ Operazioni/ContoCorrenti/Prelievo/ErrorCodeRepository.cs
+ Personalisation/PersonalisationRepository.cs
+ ST_CurrencyType/ST_CurrencyTypeRepository.cs
+ Tabella/TabellaRepository.cs
+ TotalicCassa/TotalicCassaRepository.cs
+ Trace/TraceRepository.cs
+ Transaction/
+  TransactionSpRepository_.cs
+  TransazioneRepository.cs
+ TransactionMov/TransactionMovRepository.cs
  UnitOfWork.cs
+ User/
+  UserRepository.cs
+  UserSessionRepository.cs
+ Vigilanza/VigilanzaSpRepository.cs
 Services/
  AuthenticationService.cs
  ForexDomainService.cs
@@ -98,7 +94,7 @@ Services/
 ../
  eTeller.Application/obj/Debug/net10.0/ref/eTeller.Application.dll
  eTeller.Domain/obj/Debug/net10.0/ref/eTeller.Domain.dll
-<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.5/ref/net10.0/
+<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.6/ref/net10.0/
  Microsoft.CSharp.dll
  Microsoft.VisualBasic.Core.dll
  Microsoft.VisualBasic.dll
@@ -267,11 +263,12 @@ Services/
  System.Xml.XPath.XDocument.dll
  WindowsBase.dll
 <NUGET>/
- automapper/16.0.0/lib/net10.0/AutoMapper.dll
+ automapper/16.1.1/lib/net10.0/AutoMapper.dll
  azure.core/1.47.1/lib/net8.0/Azure.Core.dll
  azure.identity/1.14.2/lib/net8.0/Azure.Identity.dll
  dapper/2.1.15/lib/net5.0/Dapper.dll
  fluentresults/4.0.0/lib/net9.0/FluentResults.dll
+ fluentvalidation.dependencyinjectionextensions/12.1.1/lib/net8.0/FluentValidation.DependencyInjectionExtensions.dll
  fluentvalidation/12.1.1/lib/net8.0/FluentValidation.dll
  mediatr.contracts/2.0.1/lib/netstandard2.0/MediatR.Contracts.dll
  mediatr/14.0.0/lib/net10.0/MediatR.dll
@@ -307,14 +304,14 @@ Services/
  system.security.cryptography.protecteddata/9.0.4/lib/net9.0/System.Security.Cryptography.ProtectedData.dll
 
 [analyzerReferences]
-<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.5/analyzers/dotnet/cs/
+<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.6/analyzers/dotnet/cs/
  Microsoft.Interop.ComInterfaceGenerator.dll
  Microsoft.Interop.JavaScript.JSImportGenerator.dll
  Microsoft.Interop.LibraryImportGenerator.dll
  Microsoft.Interop.SourceGeneration.dll
  System.Text.Json.SourceGeneration.dll
  System.Text.RegularExpressions.Generator.dll
-<DOTNET>/sdk/10.0.201/Sdks/Microsoft.NET.Sdk/analyzers/
+<DOTNET>/sdk/10.0.202/Sdks/Microsoft.NET.Sdk/analyzers/
  Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
  Microsoft.CodeAnalysis.NetAnalyzers.dll
 <NUGET>/
@@ -324,5 +321,5 @@ Services/
  system.clientmodel/1.5.1/analyzers/dotnet/cs/System.ClientModel.SourceGeneration.dll
 
 [analyzerConfigFiles]
-<DOTNET>/sdk/10.0.201/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_10_default.globalconfig
+<DOTNET>/sdk/10.0.202/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_10_default.globalconfig
 obj/Debug/net10.0/eTeller.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
