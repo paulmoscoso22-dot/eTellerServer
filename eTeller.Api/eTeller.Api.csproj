@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <Folder Include="Controllers\Client\" />
+    <Folder Include="Controllers\Manager\Tabelle\" />
     <Folder Include="Controllers\Manager\Personalisation\" />
     <Folder Include="Controllers\Language\" />
     <Folder Include="Controllers\StatoEntita\" />

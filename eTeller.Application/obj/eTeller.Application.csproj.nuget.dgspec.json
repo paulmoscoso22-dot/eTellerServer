@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj": {}
+    "C:\\Software\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj": {}
   },
   "projects": {
-    "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj": {
+    "C:\\Software\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj",
+        "projectUniqueName": "C:\\Software\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj",
         "projectName": "eTeller.Application",
-        "projectPath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj",
-        "packagesPath": "C:\\Users\\amop\\.nuget\\packages\\",
-        "outputPath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\obj\\",
+        "projectPath": "C:\\Software\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj",
+        "packagesPath": "C:\\Users\\agil\\.nuget\\packages\\",
+        "outputPath": "C:\\Software\\eTellerServer\\eTeller.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\amop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\agil\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -33,8 +34,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj": {
-                "projectPath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj"
+              "C:\\Software\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj": {
+                "projectPath": "C:\\Software\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj"
               }
             }
           }
@@ -371,20 +372,20 @@
         }
       }
     },
-    "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj": {
+    "C:\\Software\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj",
+        "projectUniqueName": "C:\\Software\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj",
         "projectName": "eTeller.Domain",
-        "projectPath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj",
-        "packagesPath": "C:\\Users\\amop\\.nuget\\packages\\",
-        "outputPath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Domain\\obj\\",
+        "projectPath": "C:\\Software\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj",
+        "packagesPath": "C:\\Users\\agil\\.nuget\\packages\\",
+        "outputPath": "C:\\Software\\eTellerServer\\eTeller.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\amop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\agil\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -393,6 +394,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

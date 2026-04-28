@@ -26,6 +26,7 @@ using CurModelTrace = eTeller.Domain.Models;
 using eTeller.Domain.Common;
 using eTeller.Application.Mappings.Language;
 using eTeller.Application.Mappings.StatoEntita;
+using eTeller.Application.Mappings.Manager.Tabelle;
 
 namespace eTeller.Application.Mappings
 {
@@ -108,6 +109,7 @@ namespace eTeller.Application.Mappings
             CreateMap<USERS_AllAccess, USERS_AllAccessVm>();
             CreateMap<CurModel.Personalisation, PersonalisationVm>();
             CreateMap<CurModel.StFunAcctyp, StFunAcctypVm>();
+            CreateMap<CurModel.FUNZIONISCEDULE, FunzioniScheduleVm>();
         }
     }
 }
