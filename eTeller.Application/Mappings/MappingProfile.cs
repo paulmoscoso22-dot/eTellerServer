@@ -108,6 +108,7 @@ namespace eTeller.Application.Mappings
             CreateMap<USERS_AllAccess, USERS_AllAccessVm>();
             CreateMap<CurModel.Personalisation, PersonalisationVm>();
             CreateMap<CurModel.StFunAcctyp, StFunAcctypVm>();
+            CreateMap<CurModel.sys_DEVICE, eTeller.Application.Mappings.CassePeriferiche.DeviceVm>();
         }
     }
 }

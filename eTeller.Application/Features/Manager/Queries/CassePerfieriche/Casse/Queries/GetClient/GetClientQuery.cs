@@ -3,7 +3,5 @@ using MediatR;
 
 namespace eTeller.Application.Features.Client.Queries.GetClient
 {
-    public class GetClientQuery : IRequest<IEnumerable<ClientVm>>
-    {
-    }
+    public record GetClientQuery : IRequest<IEnumerable<ClientVm>>;
 }

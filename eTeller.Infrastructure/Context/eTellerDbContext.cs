@@ -43,6 +43,7 @@ namespace eTeller.Infrastructure.Context
         public virtual DbSet<FunctionRole> FunctionRole { get; set; }
         public virtual DbSet<StFunAcctyp> StFunAcctyp { get; set; }
         public virtual DbSet<UserRole> UserRole { get; set; }
+        public virtual DbSet<sys_DEVICE> SysDevices { get; set; }
 
         public eTellerDbContext(DbContextOptions options) : base(options)
         {
@@ -74,6 +75,8 @@ namespace eTeller.Infrastructure.Context
             modelBuilder.Entity<Trace>().HasNoKey();
             // Configure sys_ROLE entity with primary key
             modelBuilder.Entity<sys_ROLE>().HasKey(r => r.RoleId);
+            // Configure sys_DEVICE entity with primary key
+            modelBuilder.Entity<sys_DEVICE>().HasKey(d => d.DevId);
             modelBuilder.Entity<USERS_AllAccess>().HasNoKey();
 
             // Configure User entity with primary key

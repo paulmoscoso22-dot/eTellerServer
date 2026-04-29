@@ -24,6 +24,7 @@ namespace eTeller.Application.Contracts.Commons
 
 
             Task<T> GetByIdAsync(int id);
+            Task<T> GetByIdAsync(string id);
 
             Task<T> AddAsync(T entity, CancellationToken cancellationToken = default);
 

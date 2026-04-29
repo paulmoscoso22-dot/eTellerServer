@@ -16,6 +16,9 @@ using eTeller.Application.Contracts.ST_CurrencyType;
 using eTeller.Application.Contracts.Tabella;
 using eTeller.Infrastructure.Repositories.StoreProcedures.ST_CurrencyType;
 using eTeller.Infrastructure.Repositories.StoreProcedures.Tabella;
+using eTeller.Application.Contracts.Device;
+using eTeller.Application.Contracts.ClientDevice;
+using eTeller.Infrastructure.Repositories.ClientDevice;
 using System.Collections;
 using static eTeller.Application.Contracts.Commons.IBaseSimpleRepository;
 using Microsoft.Extensions.Logging;
@@ -23,8 +26,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using CustomersSpRepo = eTeller.Infrastructure.Repositories.StoreProcedures.CustomersRepository;
 using TotalicCassaSpRepo = eTeller.Infrastructure.Repositories.StoreProcedures.TotalicCassaRepository;
+using ClientSpRepo = eTeller.Infrastructure.Repositories.StoreProcedures.Client;
 using eTeller.Infrastructure.Repositories.User;
-using eTeller.Infrastructure.Repositories.StoreProcedures.Client;
 using eTeller.Infrastructure.Repositories.Transaction;
 using eTeller.Infrastructure.Repositories.GiornaleAntiriciclaggio;
 
@@ -45,7 +48,7 @@ namespace eTeller.Infrastructure.Repositories
         public IUserSessionRepository UserSessionRepository => _userSessionRepository ??= new UserSessionRepository(_context);
 
         private IClientRepository? _clientRepository;
-        //public IClientRepository ClientRepository => _clientRepository ??= new ClientRepository(_context);
+        public IClientRepository ClientRepository => _clientRepository ??= new StoreProcedures.Client.ClientRepository(_context);
 
         private IAccountRepository? _accountRepository;
         public IAccountRepository AccountRepository => _accountRepository ??= new AccountRepository(_context);
@@ -98,13 +101,17 @@ namespace eTeller.Infrastructure.Repositories
         private IPersonalisationRepository? _personalisationRepository;
         public IPersonalisationRepository PersonalisationRepository => _personalisationRepository ??= new PersonalisationRepository(_context);
 
+        private IDeviceRepository? _deviceRepository;
+        public IDeviceRepository DeviceRepository => _deviceRepository ??= new StoreProcedures.Device.DeviceRepository(_context);
+
+        private IClientDeviceRepository? _clientDeviceRepository;
+        public IClientDeviceRepository ClientDeviceRepository => _clientDeviceRepository ??= new ClientDeviceRepository(_context);
+
         private Application.Contracts.Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository? _errorCodeRepository;
         public Application.Contracts.Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository ErrorCodeRepository => _errorCodeRepository ??= new ErrorCodeRepository(
             _context, 
             _cache, 
             _loggerFactory.CreateLogger<ErrorCodeRepository>());
-
-        public IClientRepository ClientRepository => throw new NotImplementedException();
 
         public UnitOfWork(eTellerDbContext context, ILogger<UnitOfWork> logger, IMemoryCache cache, ILoggerFactory loggerFactory)
         {

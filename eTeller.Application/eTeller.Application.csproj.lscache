@@ -66,6 +66,7 @@ Contracts/
  Currency/ICurrencyRepository.cs
  CustomerAccount/ICustomerAccountRepository.cs
  Customers/ICustomersRepository.cs
+ Device/IDeviceRepository.cs
  GiornaleAntiriciclaggio/IGiornaleAntiriciclaggioRepository.cs
  IErrorCodeRepository.cs
  IHostCommunicationService.cs
@@ -151,9 +152,18 @@ Features/Branch/Queries/GetBranchById/
 Features/Branch/Queries/GetBranches/
  GetBranchesQuery.cs
  GetBranchesQueryHandler.cs
+Features/CassePeriferiche/Queries/GetDeviceByBraIdNotCliId/
+ GetDeviceByBraIdNotCliIdQuery.cs
+ GetDeviceByBraIdNotCliIdQueryHandler.cs
+Features/CassePeriferiche/Queries/GetDeviceByCliId/
+ GetDeviceByCliIdQuery.cs
+ GetDeviceByCliIdQueryHandler.cs
 Features/Client/Queries/GetClient/
  GetClientQuery.cs
  GetClientQueryHandler.cs
+Features/Client/Queries/GetClientById/
+ GetClientByIdQuery.cs
+ GetClientByIdQueryHandler.cs
 Features/ContiCorrenti/Prelievo/CaricaContoCorrenti/Commands/
  CaricaContiCorrentiCommand.cs
  CaricaContiCorrentiCommandHandler.cs
@@ -355,6 +365,7 @@ Mappings/Account/
  CustomerAccountVm.cs
 Mappings/
  Branch/BranchVm.cs
+ CassePeriferiche/DeviceVm.cs
  Client/ClientVm.cs
  CurrencyViewModels/CurrencyVm.cs
  CustomersVm.cs
@@ -420,7 +431,7 @@ Validators/
 
 [metadataReferences]
 ../eTeller.Domain/obj/Debug/net10.0/ref/eTeller.Domain.dll
-<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.6/ref/net10.0/
+<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.7/ref/net10.0/
  Microsoft.CSharp.dll
  Microsoft.VisualBasic.Core.dll
  Microsoft.VisualBasic.dll
@@ -605,14 +616,14 @@ Validators/
  microsoft.identitymodel.tokens/8.14.0/lib/net9.0/Microsoft.IdentityModel.Tokens.dll
 
 [analyzerReferences]
-<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.6/analyzers/dotnet/cs/
+<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.7/analyzers/dotnet/cs/
  Microsoft.Interop.ComInterfaceGenerator.dll
  Microsoft.Interop.JavaScript.JSImportGenerator.dll
  Microsoft.Interop.LibraryImportGenerator.dll
  Microsoft.Interop.SourceGeneration.dll
  System.Text.Json.SourceGeneration.dll
  System.Text.RegularExpressions.Generator.dll
-<DOTNET>/sdk/10.0.202/Sdks/Microsoft.NET.Sdk/analyzers/
+<DOTNET>/sdk/10.0.203/Sdks/Microsoft.NET.Sdk/analyzers/
  Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
  Microsoft.CodeAnalysis.NetAnalyzers.dll
 <NUGET>/
@@ -620,5 +631,5 @@ Validators/
  microsoft.extensions.options/10.0.0/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Options.SourceGeneration.dll
 
 [analyzerConfigFiles]
-<DOTNET>/sdk/10.0.202/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_10_default.globalconfig
+<DOTNET>/sdk/10.0.203/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_10_default.globalconfig
 obj/Debug/net10.0/eTeller.Application.GeneratedMSBuildEditorConfig.editorconfig

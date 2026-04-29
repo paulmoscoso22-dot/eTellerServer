@@ -1,5 +1,6 @@
 using eTeller.Application.Contracts;
 using eTeller.Application.Contracts.AntirecAppearer;
+using eTeller.Application.Contracts.ClientDevice;
 using eTeller.Application.Contracts.Manager;
 using eTeller.Application.Contracts.Operazioni.ContoCorrenti.Prelievo;
 using eTeller.Application.Contracts.Personalisation;
@@ -26,10 +27,12 @@ namespace eTeller.Application.Contracts
         IUserRepository UserRepository { get; }
         IUserSessionRepository UserSessionRepository { get; }
         IClientRepository ClientRepository { get; }
+        IClientDeviceRepository ClientDeviceRepository { get; }
         ICustomersRepository CustomersRepository { get; }
         ICustomerAccountRepository CustomerAccountRepository { get; }
         Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository ErrorCodeRepository { get; }
         IManagerRepository ManagerRepository { get; }
+        Application.Contracts.Device.IDeviceRepository DeviceRepository { get; }
         IPersonalisationRepository PersonalisationRepository { get; }
         IBaseSimpleRepository<TEntity> Repository<TEntity>() where TEntity : class;
         Task BeginTransactionAsync();

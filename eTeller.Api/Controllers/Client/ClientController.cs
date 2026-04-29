@@ -1,6 +1,8 @@
-using eTeller.Application.Features.Client.Queries.GetClient;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using eTeller.Application.Features.Manager.Commands.CassePeriferiche.Casse.UpdateClient;
+using eTeller.Application.Features.Client.Queries.GetClientById;
+using eTeller.Application.Features.Client.Queries.GetClient;
 
 namespace eTeller.Api.Controllers.Client
 {
@@ -22,5 +24,24 @@ namespace eTeller.Api.Controllers.Client
             var result = await _mediator.Send(new GetClientQuery());
             return Ok(result);
         }
+
+        [HttpPost]
+        [Route("GetClientById")]
+        public async Task<IActionResult> GetClientById([FromBody] GetClientByIdQuery query)
+        {
+            var result = await _mediator.Send(query);
+            return Ok(result);
+        }
+        [HttpPut]
+        [Route("UpdateClient")]
+        public async Task<IActionResult> UpdateClient([FromBody] UpdateClientCommand request)
+        {
+            var result = await _mediator.Send(request);
+           
+            if (result)
+                return NoContent();
+            return BadRequest("Update failed");
+        }
     }
 }
+
