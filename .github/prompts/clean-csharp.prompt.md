@@ -1,54 +1,68 @@
 ---
-description: "Refactoring e Clean Code per C# .NET – analizza il codice selezionato o un file e restituisce versione migliorata con spiegazione delle modifiche, anti-pattern trovati e suggerimenti ulteriori."
-name: "Clean C# Code"
-argument-hint: "Incolla il codice C# da analizzare, oppure indica il file"
-agent: "agent"
+name: Clean C# Code Refactoring
+description: Refattorizza il codice C# esistente applicando principi di Clean Code, best practice e architetture moderne, senza cambiare il comportamento funzionale dell’applicazione.
+agent: agent
+model: Auto (copilot)
+tools: [read, edit, search, agent, todo, execute]
 ---
 
-Agisci come un **Senior Software Engineer** esperto in refactoring, Clean Code e architetture .NET.
+# Clena C# Code Refactoring – Istruzioni per questo progetto
 
-## Obiettivo
+Obiettivo:
+Analizzare e migliorare il codice esistente applicando principi di Clean Code, best practice e architetture moderne, senza cambiare il comportamento funzionale dell’applicazione.
 
-Analizza e migliora il codice seguente applicando principi di **Clean Code**, **SOLID** e best practice .NET — **senza cambiare il comportamento funzionale**.
+## Linee guida principali:
 
-## Codice da analizzare
+* Migliora la leggibilità e manutenibilità del codice
+* Riduci complessità e duplicazioni (DRY)
+* Applica il principio KISS (Keep It Simple)
+* Applica principi SOLID
+* Mantieni coerenza nei naming
 
-$SELECTION
+## Cosa devi fare:
 
----
+* Refattorizza metodi troppo lunghi suddividendoli in metodi più piccoli
+* Rinomina variabili, metodi e classi per renderli più espressivi
+* Elimina codice duplicato
+* Rimuovi codice morto o non utilizzato
+* Riduci dipendenze inutili
+* Migliora la gestione delle eccezioni
+* Migliora la struttura delle classi (single responsibility)
 
-## Cosa fare
+## Best practice specifiche .NET:
 
-1. **Identifica anti-pattern** presenti (elencali prima di modificare).
-2. **Refactorizza** applicando:
-   - Metodi troppo lunghi → suddividi in metodi più piccoli con nomi espressivi
-   - Nomi generici (`data`, `temp`, `obj`, `result`) → nomi descrittivi
-   - Codice duplicato → estrai metodo o usa astrazione
-   - Codice morto / inutilizzato → rimuovi
-   - Dipendenze inutili → riduci
-   - Gestione eccezioni → migliora (no `catch (Exception e) {}` vuoti)
-   - Single Responsibility → una classe/metodo = una responsabilità
-3. **Best practice .NET specifiche**:
-   - `async/await` corretto (no `.Result`, no `.Wait()`)
-   - Dependency Injection via costruttore
-   - Nessuna logica di business nei controller
-   - EF Core: usa `AsNoTracking()` per query in sola lettura
-   - Usa `ILogger<T>` per il logging (no `Console.Write`)
+* Usa dependency injection correttamente
+* Evita logica nei controller (spostala nei servizi/application layer)
+* Evita logica nel data layer non necessaria
+* Usa async/await correttamente
+* Evita blocchi sincroni su codice asincrono
+* Migliora uso di Entity Framework Core (tracking, query efficienti)
 
-## Output richiesto
+Regole di qualità:
 
-### 🔴 Anti-pattern trovati
-Elenca brevemente ogni problema trovato.
+* Ogni metodo deve fare una sola cosa
+* Evita nomi generici (es: data, temp, obj)
+* Evita commenti inutili → il codice deve essere autoesplicativo
+* Usa commenti solo per spiegare "perché", non "cosa"
+* Preferisci codice esplicito a codice “furbo”
 
-### ✅ Codice refactorizzato
-Mostra il codice migliorato completo.
+## Output richiesto:
 
-### 📋 Modifiche applicate
-Spiega in 2-3 righe cosa è cambiato e perché.
+* Mostra PRIMA e DOPO il refactoring
+* Spiega brevemente le modifiche fatte
+* Evidenzia eventuali anti-pattern trovati
+* Suggerisci miglioramenti ulteriori (se presenti)
 
-### 💡 Suggerimenti ulteriori (opzionale)
-Se esistono miglioramenti aggiuntivi non applicati (es. richiederebbero refactoring più ampio), elencali brevemente.
+## Vincoli:
 
----
+* Non cambiare il comportamento del codice
+* Non introdurre nuove librerie se non strettamente necessario
+* Mantieni compatibilità con il progetto esistente
 
-> **Vincoli**: non introdurre nuove librerie, mantieni compatibilità con il progetto, non cambiare firme pubbliche senza motivo valido.
+## Se il codice è già buono:
+
+* Spiega perché è corretto
+* Suggerisci eventuali micro-miglioramenti
+
+Obiettivo finale:
+Rendere il codice più pulito, leggibile, testabile e mantenibile secondo i principi di Clean Code.
