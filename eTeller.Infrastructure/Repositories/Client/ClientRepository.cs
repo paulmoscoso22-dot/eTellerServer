@@ -45,6 +45,7 @@ public sealed class ClientRepository : BaseSimpleRepository<eTeller.Domain.Model
     /// <returns>Numero sequenziale giornaliero come stringa</returns>
     public async Task<string> GetNextCounterAsync(string clientId, CancellationToken cancellationToken = default)
     {
+        
         try
         {
             _logger.LogDebug("Richiesta sequenza giornaliera per cassa {ClientId}", clientId);
