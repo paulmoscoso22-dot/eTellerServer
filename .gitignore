@@ -110,3 +110,4 @@ secrets.json
 ## Backup
 *.bak
 *.backup
+.fake
