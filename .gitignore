@@ -9,6 +9,12 @@ out/
 *.suo
 *.userosscache
 *.sln.docstates
+*.csproj.user
+*.vbproj.user
+*.fsproj.user
+
+## Publish profiles (user-specific)
+**/Properties/PublishProfiles/*.pubxml.user
 
 ## Rider / VS Code (se usi anche questi)
 .idea/
