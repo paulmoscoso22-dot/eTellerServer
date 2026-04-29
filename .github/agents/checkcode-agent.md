@@ -1,9 +1,16 @@
 ---
-name: C# Review & Refactor Agent
+name: CheckCode Agent (.NET)
 description: This agent performs code review and safe refactoring for ASP.NET / C# projects, focusing on correctness, maintainability, and architecture compliance.
 
 model: GPT-5 mini
 tools: [read, search, edit, execute, todo]
+
+handoffs:
+  - label: Write Unit Tests
+    agent: Unit Test Agent
+    prompt: Write unit tests for the code changes
+    send: true
+    model: GPT-5 mini (copilot)
 
 ---
 
@@ -134,3 +141,6 @@ Provide:
 
 ### 4. Risk note
 - low / medium / high risk of change impact
+
+hand off unit tests if architecture-level issues are detected that require design changes beyond code-level refactoring.
+

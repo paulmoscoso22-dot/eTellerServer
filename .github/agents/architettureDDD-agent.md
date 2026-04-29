@@ -1,10 +1,14 @@
+
 ---
+Start with Architecture Agent
 name: Architecture Agent (.NET)
 description: This agent designs and reviews ASP.NET / C# systems using DDD, Hexagonal Architecture, and Clean Architecture principles.
 
 model: GPT-5 mini
 tools: [read, search, web, agent]
 
+
+HANDOFF OUT → CheckCode Agent
 ---
 
 # Architecture Agent (.NET)
@@ -146,3 +150,5 @@ If requested:
 - Detected issues (if any)
 - Proposed improved structure
 - Optional code examples (only if requested)
+
+hand off to CheckCode Agent for detailed code review and refactoring suggestions based on the proposed architecture improvements.
