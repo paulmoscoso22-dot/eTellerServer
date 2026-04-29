@@ -195,6 +195,21 @@ Features/Manager/Commands/Roles/InsertRole/
 Features/Manager/Commands/Roles/UpdateRole/
  UpdateRoleCommand.cs
  UpdateRoleCommandHandler.cs
+Features/Manager/Commands/Tabelle/DeleteFunzioneSchedule/
+ DeleteFunzioneScheduleCommand.cs
+ DeleteFunzioneScheduleCommandHandler.cs
+Features/Manager/Commands/Tabelle/InsertFunzioneSchedule/
+ InsertFunzioneScheduleCommand.cs
+ InsertFunzioneScheduleCommandHandler.cs
+Features/Manager/Commands/Tabelle/ResetFunctionError/
+ ResetFunctionErrorCommand.cs
+ ResetFunctionErrorCommandHandler.cs
+Features/Manager/Commands/Tabelle/ScheduleOneTimeTask/
+ ScheduleOneTimeTaskCommand.cs
+ ScheduleOneTimeTaskCommandHandler.cs
+Features/Manager/Commands/Tabelle/UpdateFunzioneSchedule/
+ UpdateFunzioneScheduleCommand.cs
+ UpdateFunzioneScheduleCommandHandler.cs
 Features/Manager/Commands/Users/InsertUser/
  InsertUserCommand.cs
  InsertUserCommandHandler.cs
@@ -241,6 +256,12 @@ Features/Manager/Queries/Roles/GetSysRoleByFunId/
 Features/Manager/Queries/Roles/GetUserByRole/
  GetUserByRoleQuery.cs
  GetUserByRoleQueryHandler.cs
+Features/Manager/Queries/Tabelle/GetFunzioniSchedule/
+ GetFunzioniScheduleQuery.cs
+ GetFunzioniScheduleQueryHandler.cs
+Features/Manager/Queries/Tabelle/GetFunzioniScheduleById/
+ GetFunzioniScheduleByIdQuery.cs
+ GetFunzioniScheduleByIdQueryHandler.cs
 Features/Manager/Queries/Users/GetAllUsersByUsrId/
  GetAllUsersByUsrIdQuery.cs
  GetAllUsersByUsrIdQueryHandler.cs
@@ -367,6 +388,7 @@ Mappings/
   SysFunctionsVm.cs
   SysRoleVm.cs
   SysUserByIdVm.cs
+  Tabelle/FunzioniScheduleVm.cs
   UserSelectRoleVm.cs
   UsersRoleFunctionVm.cs
   USERS_AllAccessVm.cs
@@ -420,7 +442,7 @@ Validators/
 
 [metadataReferences]
 ../eTeller.Domain/obj/Debug/net10.0/ref/eTeller.Domain.dll
-<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.6/ref/net10.0/
+<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.7/ref/net10.0/
  Microsoft.CSharp.dll
  Microsoft.VisualBasic.Core.dll
  Microsoft.VisualBasic.dll
@@ -605,14 +627,14 @@ Validators/
  microsoft.identitymodel.tokens/8.14.0/lib/net9.0/Microsoft.IdentityModel.Tokens.dll
 
 [analyzerReferences]
-<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.6/analyzers/dotnet/cs/
+<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.7/analyzers/dotnet/cs/
  Microsoft.Interop.ComInterfaceGenerator.dll
  Microsoft.Interop.JavaScript.JSImportGenerator.dll
  Microsoft.Interop.LibraryImportGenerator.dll
  Microsoft.Interop.SourceGeneration.dll
  System.Text.Json.SourceGeneration.dll
  System.Text.RegularExpressions.Generator.dll
-<DOTNET>/sdk/10.0.202/Sdks/Microsoft.NET.Sdk/analyzers/
+<DOTNET>/sdk/10.0.203/Sdks/Microsoft.NET.Sdk/analyzers/
  Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
  Microsoft.CodeAnalysis.NetAnalyzers.dll
 <NUGET>/
@@ -620,5 +642,5 @@ Validators/
  microsoft.extensions.options/10.0.0/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Options.SourceGeneration.dll
 
 [analyzerConfigFiles]
-<DOTNET>/sdk/10.0.202/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_10_default.globalconfig
+<DOTNET>/sdk/10.0.203/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_10_default.globalconfig
 obj/Debug/net10.0/eTeller.Application.GeneratedMSBuildEditorConfig.editorconfig

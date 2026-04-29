@@ -8,23 +8,23 @@
     "net10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\agil\\.nuget\\packages\\": {},
+    "C:\\Users\\amop\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Software\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj",
+      "projectUniqueName": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj",
       "projectName": "eTeller.Domain",
-      "projectPath": "C:\\Software\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj",
-      "packagesPath": "C:\\Users\\agil\\.nuget\\packages\\",
-      "outputPath": "C:\\Software\\eTellerServer\\eTeller.Domain\\obj\\",
+      "projectPath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj",
+      "packagesPath": "C:\\Users\\amop\\.nuget\\packages\\",
+      "outputPath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\agil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\amop\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -33,12 +33,10 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net10.0": {
-          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {}
         }
@@ -57,7 +55,6 @@
     },
     "frameworks": {
       "net10.0": {
-        "framework": "net10.0",
         "targetAlias": "net10.0",
         "imports": [
           "net461",
@@ -75,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

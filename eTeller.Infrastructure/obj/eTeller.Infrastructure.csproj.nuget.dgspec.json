@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Software\\eTellerServer\\eTeller.Infrastructure\\eTeller.Infrastructure.csproj": {}
+    "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Infrastructure\\eTeller.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Software\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj": {
+    "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Software\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj",
+        "projectUniqueName": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj",
         "projectName": "eTeller.Application",
-        "projectPath": "C:\\Software\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj",
-        "packagesPath": "C:\\Users\\agil\\.nuget\\packages\\",
-        "outputPath": "C:\\Software\\eTellerServer\\eTeller.Application\\obj\\",
+        "projectPath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj",
+        "packagesPath": "C:\\Users\\amop\\.nuget\\packages\\",
+        "outputPath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\agil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\amop\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,16 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
-            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Software\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj": {
-                "projectPath": "C:\\Software\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj"
+              "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj": {
+                "projectPath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj"
               }
             }
           }
@@ -54,7 +52,6 @@
       },
       "frameworks": {
         "net10.0": {
-          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
             "AutoMapper": {
@@ -94,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -372,20 +369,20 @@
         }
       }
     },
-    "C:\\Software\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj": {
+    "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Software\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj",
+        "projectUniqueName": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj",
         "projectName": "eTeller.Domain",
-        "projectPath": "C:\\Software\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj",
-        "packagesPath": "C:\\Users\\agil\\.nuget\\packages\\",
-        "outputPath": "C:\\Software\\eTellerServer\\eTeller.Domain\\obj\\",
+        "projectPath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Domain\\eTeller.Domain.csproj",
+        "packagesPath": "C:\\Users\\amop\\.nuget\\packages\\",
+        "outputPath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\agil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\amop\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -394,12 +391,10 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
-            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {}
           }
@@ -418,7 +413,6 @@
       },
       "frameworks": {
         "net10.0": {
-          "framework": "net10.0",
           "targetAlias": "net10.0",
           "imports": [
             "net461",
@@ -436,7 +430,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -714,20 +708,20 @@
         }
       }
     },
-    "C:\\Software\\eTellerServer\\eTeller.Infrastructure\\eTeller.Infrastructure.csproj": {
+    "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Infrastructure\\eTeller.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Software\\eTellerServer\\eTeller.Infrastructure\\eTeller.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Infrastructure\\eTeller.Infrastructure.csproj",
         "projectName": "eTeller.Infrastructure",
-        "projectPath": "C:\\Software\\eTellerServer\\eTeller.Infrastructure\\eTeller.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\agil\\.nuget\\packages\\",
-        "outputPath": "C:\\Software\\eTellerServer\\eTeller.Infrastructure\\obj\\",
+        "projectPath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Infrastructure\\eTeller.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\amop\\.nuget\\packages\\",
+        "outputPath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\agil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\amop\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -736,16 +730,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
-            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Software\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj": {
-                "projectPath": "C:\\Software\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj"
+              "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj": {
+                "projectPath": "C:\\Software\\eTeller2026\\eTellerServer\\eTeller.Application\\eTeller.Application.csproj"
               }
             }
           }
@@ -764,7 +756,6 @@
       },
       "frameworks": {
         "net10.0": {
-          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
             "Dapper": {
@@ -792,7 +783,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
