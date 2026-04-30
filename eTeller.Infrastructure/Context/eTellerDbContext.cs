@@ -44,6 +44,9 @@ namespace eTeller.Infrastructure.Context
         public virtual DbSet<StFunAcctyp> StFunAcctyp { get; set; }
         public virtual DbSet<UserRole> UserRole { get; set; }
         public virtual DbSet<FUNZIONISCEDULE> FUNZIONISCEDULE { get; set; }
+        public virtual DbSet<Device> Devices { get; set; }
+        public virtual DbSet<ClientDevice> ClientDevices { get; set; }
+        public virtual DbSet<DeviceType> DeviceTypes { get; set; }
 
         public eTellerDbContext(DbContextOptions options) : base(options)
         {
@@ -105,6 +108,10 @@ namespace eTeller.Infrastructure.Context
             modelBuilder.Entity<StFunAcctyp>().HasNoKey();
 
             modelBuilder.Entity<FUNZIONISCEDULE>().ToTable("FUNZIONISHEDULE").HasKey(f => f.FutId);
+
+            modelBuilder.Entity<Device>().HasKey(d => d.DevId);
+            modelBuilder.Entity<ClientDevice>().HasKey(cd => new { cd.CliId, cd.DevId });
+            modelBuilder.Entity<DeviceType>().HasKey(dt => dt.DtyId);
 
             //UserRole entity configuration
             modelBuilder.Entity<UserRole>().HasKey(e => new { e.UserId, e.RoleId });

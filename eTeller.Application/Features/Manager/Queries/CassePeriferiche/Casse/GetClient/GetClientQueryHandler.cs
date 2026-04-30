@@ -6,7 +6,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using static eTeller.Application.Contracts.Commons.IBaseSimpleRepository;
 
-namespace eTeller.Application.Features.Client.Queries.GetClient
+namespace eTeller.Application.Features.Manager.Queries.CassePeriferiche.Casse.GetClient
 {
     public class GetClientQueryHandler : IRequestHandler<GetClientQuery, IEnumerable<ClientVm>>
     {
@@ -25,7 +25,7 @@ namespace eTeller.Application.Features.Client.Queries.GetClient
         {
             _logger.LogInformation("Handling {QueryName}", nameof(GetClientQuery));
 
-            var repository = _unitOfWork.Repository<eTeller.Domain.Models.Client>();
+            var repository = _unitOfWork.Repository<Client>();
             var results = await repository.GetAllAsync();
 
             var vms = _mapper.Map<IEnumerable<ClientVm>>(results);

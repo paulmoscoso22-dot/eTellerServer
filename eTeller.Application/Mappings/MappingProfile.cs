@@ -27,6 +27,7 @@ using eTeller.Domain.Common;
 using eTeller.Application.Mappings.Language;
 using eTeller.Application.Mappings.StatoEntita;
 using eTeller.Application.Mappings.Manager.Tabelle;
+using eTeller.Application.Mappings.Device;
 
 namespace eTeller.Application.Mappings
 {
@@ -97,6 +98,7 @@ namespace eTeller.Application.Mappings
             CreateMap<CurModelTrace.ST_TRACE_FUNCTION, ST_TRACE_FUNCTIONVm>();
                 CreateMap<CurModel.ST_STATOENTITA, STStatoEntitaVm>();
             CreateMap<CurModel.Client, ClientVm>();
+            CreateMap<CurModel.Device, DeviceVm>();
             CreateMap<CurModel.Na_TabellaServVarchar, TabellaServVarcharVm>();
             CreateMap<CurModel.User, SysUsersActiveAndBlockedVm>();
             CreateMap<CurModel.User, SysUserByIdVm>();

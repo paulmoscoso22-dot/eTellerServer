@@ -31,7 +31,11 @@
   <ItemGroup>
     <Folder Include="Features\Archivi\Report\StoreProcedure\Queries\GetGiornaleCassa\" />
     <Folder Include="Features\Language\Commands\" />
+    <Folder Include="Features\Manager\Commands\CassePeriferiche\ContiCassa\" />
+    <Folder Include="Features\Manager\Commands\CassePeriferiche\Periferiche\" />
     <Folder Include="Features\Manager\Commands\Users\" />
+    <Folder Include="Features\Manager\Queries\CassePeriferiche\ContiCassa\" />
+    <Folder Include="Features\Manager\Queries\CassePeriferiche\Periferiche\" />
     <Folder Include="Features\User\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Shared\" />
