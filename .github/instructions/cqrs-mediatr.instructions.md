@@ -1,7 +1,8 @@
 ---
 description: "Use when creating or modifying Commands, Queries, Handlers, or Validators with MediatR and FluentValidation. Covers CQRS folder structure, naming conventions, IRequest patterns, IRequestHandler, AbstractValidator, and IUnitOfWork usage for this project."
 applyTo:
-  - "eTeller.Application/Features/**/*.cs"
+  eTeller.Application/Features/**/Commands/**/*
+  eTeller.Application/Features/**/Queries/**/*
 ---
 
 # CQRS / MediatR – Istruzioni per questo progetto
