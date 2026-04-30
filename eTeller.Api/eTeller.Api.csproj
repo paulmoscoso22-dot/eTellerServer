@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Client\" />
+    <Folder Include="Controllers\Manager\CassePeriferiche\Casse\Client\" />
     <Folder Include="Controllers\Manager\Tabelle\" />
     <Folder Include="Controllers\Manager\Personalisation\" />
     <Folder Include="Controllers\Language\" />
