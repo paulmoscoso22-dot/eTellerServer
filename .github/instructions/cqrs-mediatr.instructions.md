@@ -114,29 +114,32 @@ public record GetAccountsByIacIdQuery(int IacId) : IRequest<IEnumerable<AccountV
 ## QueryHandler
 
 ```csharp
-public class GetAccountsByIacIdQueryHandler : IRequestHandler<GetAccountsByIacIdQuery, IEnumerable<AccountVm>>
-{
-    private readonly IUnitOfWork _unitOfWork;
-    private readonly IMapper _mapper;
-    private readonly ILogger<GetAccountsByIacIdQueryHandler> _logger;
+  public class GetFuncAccTypeQueryHandler : IRequestHandler<GetFuncAccTypeQuery, IEnumerable<StFunAcctypVm>>
+  {
+      private readonly IUnitOfWork _unitOfWork;
+      private readonly IMapper _mapper;
+      private readonly ILogger<GetFuncAccTypeQueryHandler> _logger;
 
-    public GetAccountsByIacIdQueryHandler(IUnitOfWork unitOfWork, IMapper mapper,
-        ILogger<GetAccountsByIacIdQueryHandler> logger)
-    {
-        _unitOfWork = unitOfWork;
-        _mapper = mapper;
-        _logger = logger;
-    }
+      public GetFuncAccTypeQueryHandler(IUnitOfWork unitOfWork, IMapper mapper, ILogger<GetFuncAccTypeQueryHandler> logger)
+      {
+          _unitOfWork = unitOfWork;
+          _mapper = mapper;
+          _logger = logger;
+      }
 
-    public async Task<IEnumerable<AccountVm>> Handle(GetAccountsByIacIdQuery request, CancellationToken cancellationToken)
-    {
-        _logger.LogInformation("Handling {QueryName} IacId={IacId}", nameof(GetAccountsByIacIdQuery), request.IacId);
-        var entities = await _unitOfWork.AccountRepository.GetAccountByIacId(request.IacId);
-        var result = _mapper.Map<IEnumerable<AccountVm>>(entities);
-        _logger.LogInformation("Handled {QueryName}, count={Count}", nameof(GetAccountsByIacIdQuery), result?.Count() ?? 0);
-        return result;
-    }
-}
+      public async Task<IEnumerable<StFunAcctypVm>> Handle(GetFuncAccTypeQuery request, CancellationToken cancellationToken)
+      {
+          _logger.LogInformation("Handling {QueryName}", nameof(GetFuncAccTypeQuery));
+          var stFunAcctyp = await _unitOfWork.Repository<StFunAcctyp>().GetAllAsync();
+          var result = _mapper.Map<IEnumerable<StFunAcctypVm>>(stFunAcctyp);
+          if (result == null) {
+              _logger.LogError("La ricerca no ha prodotto nessnun resultato");
+              throw new Exception("La ricerca no ha prodotto nessnun resultato");
+          }     
+          _logger.LogInformation("Handled {QueryName}, returned {Count} items", nameof(GetFuncAccTypeQuery), result.Count());
+          return result;
+      }
+  }
 ```
 
 ## Regole rapide

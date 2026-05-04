@@ -31,6 +31,7 @@ namespace eTeller.Application.Contracts
         Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository ErrorCodeRepository { get; }
         IManagerRepository ManagerRepository { get; }
         IPersonalisationRepository PersonalisationRepository { get; }
+        ICurrencyRepository CurrencyRepository { get; }
         IBaseSimpleRepository<TEntity> Repository<TEntity>() where TEntity : class;
         Task BeginTransactionAsync();
         Task<int> Complete();

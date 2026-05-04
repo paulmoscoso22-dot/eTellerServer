@@ -55,5 +55,24 @@ namespace eTeller.Infrastructure.Repositories.StoreProcedures.Currency
         //        return result.ToList();
         //    }
         //}
+
+        public async Task<Domain.Models.Currency?> GetByKeyAsync(string curId, string curCutId)
+        {
+            return await _context.Currency
+                .Where(c => c.CurId == curId && c.CurCutId == curCutId)
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
+        }
+
+        public async Task<int> UpdateCurrencyAsync(string curId, string curCutId, decimal curMinamn, string curFinezza, decimal curTolrat)
+        {
+            return await _context.Database.ExecuteSqlInterpolatedAsync(
+                $@"UPDATE CURRENCY
+                   SET CUR_MINAMN = {curMinamn},
+                       CUR_FINEZZA = {curFinezza},
+                       CUR_TOLRAT  = {curTolrat},
+                       CUR_MODDAT  = GETDATE()
+                   WHERE CUR_ID = {curId} AND CUR_CUT_ID = {curCutId}");
+        }
     }
 }
