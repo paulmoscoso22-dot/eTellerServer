@@ -25,6 +25,7 @@ using CustomersSpRepo = eTeller.Infrastructure.Repositories.StoreProcedures.Cust
 using TotalicCassaSpRepo = eTeller.Infrastructure.Repositories.StoreProcedures.TotalicCassaRepository;
 using eTeller.Infrastructure.Repositories.User;
 using eTeller.Infrastructure.Repositories.StoreProcedures.Client;
+using eTeller.Infrastructure.Repositories.StoreProcedures.Currency;
 using eTeller.Infrastructure.Repositories.Transaction;
 using eTeller.Infrastructure.Repositories.GiornaleAntiriciclaggio;
 
@@ -97,6 +98,9 @@ namespace eTeller.Infrastructure.Repositories
 
         private IPersonalisationRepository? _personalisationRepository;
         public IPersonalisationRepository PersonalisationRepository => _personalisationRepository ??= new PersonalisationRepository(_context);
+
+        private ICurrencyRepository? _currencyRepository;
+        public ICurrencyRepository CurrencyRepository => _currencyRepository ??= new CurrencyRepository(_context);
 
         private Application.Contracts.Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository? _errorCodeRepository;
         public Application.Contracts.Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository ErrorCodeRepository => _errorCodeRepository ??= new ErrorCodeRepository(
