@@ -1,5 +1,6 @@
 using eTeller.Application.Contracts;
 using eTeller.Application.Contracts.AntirecAppearer;
+using eTeller.Application.Contracts.CurrencyCouple;
 using eTeller.Application.Contracts.Manager;
 using eTeller.Application.Contracts.Operazioni.ContoCorrenti.Prelievo;
 using eTeller.Application.Contracts.Personalisation;
@@ -32,6 +33,7 @@ namespace eTeller.Application.Contracts
         IManagerRepository ManagerRepository { get; }
         IPersonalisationRepository PersonalisationRepository { get; }
         ICurrencyRepository CurrencyRepository { get; }
+        ICurrencyCoupleRepository CurrencyCoupleRepository { get; }
         IBaseSimpleRepository<TEntity> Repository<TEntity>() where TEntity : class;
         Task BeginTransactionAsync();
         Task<int> Complete();

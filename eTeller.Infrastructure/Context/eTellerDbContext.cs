@@ -16,6 +16,7 @@ namespace eTeller.Infrastructure.Context
         public virtual DbSet<TransactionMov> TransactionMov { get; set; }
         public virtual DbSet<GiornaleAntiriciclaggio> GiornaleAntiriciclaggio { get; set; }
         public virtual DbSet<Currency> Currency { get; set; }
+        public virtual DbSet<CurrencyCouple> CurrencyCouple { get; set; }
         public virtual DbSet<Branch> Branch { get; set; }
         public virtual DbSet<ST_Categories> ST_Categories { get; set; }
         public virtual DbSet<ST_CurrencyType> ST_CurrencyType { get; set; }
@@ -62,6 +63,7 @@ namespace eTeller.Infrastructure.Context
             modelBuilder.Entity<Transaction>().HasNoKey();
             modelBuilder.Entity<TransactionMov>().HasNoKey();
             modelBuilder.Entity<Currency>().HasNoKey();
+            modelBuilder.Entity<CurrencyCouple>().HasKey(c => new { c.CucCur1, c.CucCur2 });
             modelBuilder.Entity<Branch>().HasNoKey();
             modelBuilder.Entity<ST_Categories>().HasNoKey();
             modelBuilder.Entity<ST_CurrencyType>().HasNoKey();

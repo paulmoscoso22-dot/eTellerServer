@@ -1,8 +1,5 @@
 using eTeller.Application.Contracts.Trace;
-using eTeller.Application.Mappings.Trace;
-using eTeller.Domain.Models;
 using eTeller.Infrastructure.Context;
-using eTeller.Infrastructure.Repositories;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Dapper;
