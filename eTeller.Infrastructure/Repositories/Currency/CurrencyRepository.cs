@@ -56,6 +56,23 @@ namespace eTeller.Infrastructure.Repositories.StoreProcedures.Currency
         //    }
         //}
 
+        public async Task<IEnumerable<Domain.Models.Currency>> GetAllAsync(string? curId, string? curLondes)
+        {
+            using var connection = new SqlConnection(_context.Database.GetConnectionString());
+            await connection.OpenAsync();
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@CUR_ID", curId);
+            parameters.Add("@CUR_LONDES", curLondes != null ? $"%{curLondes}%" : null);
+
+            var result = await connection.QueryAsync<Domain.Models.Currency>(
+                "dbo.sp_Currency_Select",
+                parameters,
+                commandType: System.Data.CommandType.StoredProcedure);
+
+            return result;
+        }
+
         public async Task<Domain.Models.Currency?> GetByKeyAsync(string curId, string curCutId)
         {
             return await _context.Currency

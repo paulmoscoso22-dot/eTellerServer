@@ -10,5 +10,6 @@ namespace eTeller.Application.Mappings.Currency
         public decimal CurTolrat { get; set; }
         public string CurFinezza { get; set; }
         public DateTime? CurModdat { get; set; }
+        public string? CurHostcod { get; set; }
     }
 }
