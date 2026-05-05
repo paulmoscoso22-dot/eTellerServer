@@ -60,7 +60,7 @@ eTeller.Api             → Controller ASP.NET Core, middleware, configurazione 
 - Ogni entità ha la sua interfaccia in `eTeller.Application/Contracts/`.
 - Le implementazioni stanno in `eTeller.Infrastructure/Repositories/`.
 - Usa `IUnitOfWork` per wrappare le transazioni – mai `SaveChanges()` direttamente negli handler.
-- Per stored procedure usa i repository in `StoreProcedures/` con Dapper.
+<!-- - Per stored procedure usa i repository in `StoreProcedures/` con Dapper. -->
 
 ---
 

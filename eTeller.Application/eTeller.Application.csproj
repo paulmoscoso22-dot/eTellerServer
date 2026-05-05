@@ -30,12 +30,19 @@
 
   <ItemGroup>
     <Folder Include="Features\Archivi\Report\StoreProcedure\Queries\GetGiornaleCassa\" />
+    <Folder Include="Features\CurrencyCouple\" />
     <Folder Include="Features\Language\Commands\" />
     <Folder Include="Features\Manager\Commands\CassePeriferiche\ContiCassa\" />
     <Folder Include="Features\Manager\Commands\CassePeriferiche\Periferiche\" />
+    <Folder Include="Features\Manager\Commands\Divise\AggiornaDatiAnagrafici\" />
+    <Folder Include="Features\Manager\Commands\Divise\Corsi\" />
+    <Folder Include="Features\Manager\Commands\Divise\DatiAnagrafici\" />
     <Folder Include="Features\Manager\Commands\Users\" />
     <Folder Include="Features\Manager\Queries\CassePeriferiche\ContiCassa\" />
     <Folder Include="Features\Manager\Queries\CassePeriferiche\Periferiche\" />
+    <Folder Include="Features\Manager\Queries\Divise\AggiornaDatiAnagrafici\" />
+    <Folder Include="Features\Manager\Queries\Divise\Corsi\" />
+    <Folder Include="Features\Manager\Queries\Divise\DatiAnagrafici\" />
     <Folder Include="Features\User\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Shared\" />
