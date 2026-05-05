@@ -148,7 +148,8 @@ public record GetAccountsByIacIdQuery(int IacId) : IRequest<IEnumerable<AccountV
 |---|---|
 | `record` per Command/Query | `class` mutabile |
 | `IUnitOfWork` negli handler | `DbContext` diretto |
-| `_mapper.Map<>()` per i ViewModel | mapping manuale nei controller |
+| `_mapper.Map<>()` per i ViewModel **nell'Handler** | mapping manuale nei controller o nel repository |
+| Repository ritorna `Domain.Models` | Repository ritorna ViewModel o DTO |
 | `FluentValidation` nel Validator | validazione nell'handler o nel controller |
 | `_logger.LogInformation/LogError` | `Console.Write` o `Debug.Write` |
 | `await _unitOfWork.Complete()` | `SaveChanges()` diretto |

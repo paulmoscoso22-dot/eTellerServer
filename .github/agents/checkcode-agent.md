@@ -3,14 +3,14 @@ name: CheckCode Agent (.NET)
 description: This agent performs code review and safe refactoring for ASP.NET / C# projects, focusing on correctness, maintainability, and architecture compliance.
 
 model: GPT-5 mini
-tools: [read, search, edit, execute, todo]
+tools: [vscode, execute, read, agent, edit, search, web, 'github/*']
 
-handoffs:
+<!-- handoffs:
   - label: Write Unit Tests
     agent: Unit Test Agent
     prompt: Write unit tests for the code changes
     send: true
-    model: GPT-5 mini (copilot)
+    model: GPT-5 mini (copilot) -->
 
 ---
 

@@ -24,12 +24,13 @@ using Microsoft.Extensions.Caching.Memory;
 using CustomersSpRepo = eTeller.Infrastructure.Repositories.StoreProcedures.CustomersRepository;
 using TotalicCassaSpRepo = eTeller.Infrastructure.Repositories.StoreProcedures.TotalicCassaRepository;
 using eTeller.Infrastructure.Repositories.User;
-using eTeller.Infrastructure.Repositories.StoreProcedures.Client;
-using eTeller.Infrastructure.Repositories.CurrencyCouple;
 using eTeller.Application.Contracts.CurrencyCouple;
+using eTeller.Infrastructure.Repositories.CurrencyCouple;
 using eTeller.Infrastructure.Repositories.Transaction;
 using eTeller.Infrastructure.Repositories.GiornaleAntiriciclaggio;
 using eTeller.Infrastructure.Repositories.StoreProcedures.Currency;
+using eTeller.Application.Contracts.Corsi;
+using eTeller.Infrastructure.Repositories.Corsi;
 
 namespace eTeller.Infrastructure.Repositories
 {
@@ -106,6 +107,9 @@ namespace eTeller.Infrastructure.Repositories
 
         private ICurrencyCoupleRepository? _currencyCoupleRepository;
         public ICurrencyCoupleRepository CurrencyCoupleRepository => _currencyCoupleRepository ??= new CurrencyCoupleRepository(_context);
+
+        private ICorsiRepository? _corsiRepository;
+        public ICorsiRepository CorsiRepository => _corsiRepository ??= new CorsiRepository(_context);
 
         private Application.Contracts.Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository? _errorCodeRepository;
         public Application.Contracts.Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository ErrorCodeRepository => _errorCodeRepository ??= new ErrorCodeRepository(

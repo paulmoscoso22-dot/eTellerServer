@@ -1,5 +1,6 @@
 using eTeller.Application.Contracts.CurrencyCouple;
 using eTeller.Application.Mappings.CurrencyCouple;
+using eTeller.Domain.Models;
 using eTeller.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,7 @@ namespace eTeller.Infrastructure.Repositories.CurrencyCouple
         {
             _context = context;
         }
+
 
         public async Task<IEnumerable<CurrencyCoupleVm>> GetAllAsync()
         {
@@ -89,5 +91,6 @@ namespace eTeller.Infrastructure.Repositories.CurrencyCouple
             CucSize   = e.CucSize,
             CucExcdir = e.CucExcdir
         };
+      
     }
 }
