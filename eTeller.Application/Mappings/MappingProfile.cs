@@ -35,6 +35,7 @@ namespace eTeller.Application.Mappings
     {
         public MappingProfile()
         {
+            CreateMap<CurModelSp.CorsiResult, CorsiVm>();
             CreateMap<CurModel.Account, AccountVm>();
             CreateMap<CurModel.CustomerAccount, CustomerAccountVm>();
             CreateMap<CurModel.Customers, CustomersVm>();
