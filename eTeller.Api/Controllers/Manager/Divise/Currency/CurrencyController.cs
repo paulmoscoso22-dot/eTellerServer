@@ -19,9 +19,8 @@ namespace eTeller.Api.Controllers.Currency
 
         [HttpPost]
         [Route("GetAllCurrencies")]
-        public async Task<IActionResult> GetAllCurrencies()
+        public async Task<IActionResult> GetAllCurrencies([FromBody] GetAllCurrenciesQuery query)
         {
-            var query = new GetAllCurrenciesQuery();
             var result = await _mediator.Send(query);
             return Ok(result);
         }

@@ -3,7 +3,5 @@ using MediatR;
 
 namespace eTeller.Application.Features.Currency.Queries.GetAllCurrencies
 {
-    public class GetAllCurrenciesQuery : IRequest<IEnumerable<CurrencyVm>>
-    {
-    }
+    public record GetAllCurrenciesQuery(string? CurId, string? CurLondes) : IRequest<IEnumerable<CurrencyVm>>;
 }
