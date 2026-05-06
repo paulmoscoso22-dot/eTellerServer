@@ -20,6 +20,17 @@ Segui queste istruzioni per creare o aggiornare le classi Repository. L'obiettiv
 - **No Business Logic:** Non inserire validazioni o calcoli. Se serve logica, questa va nell'Handler dell'Application.
 - **No SaveChanges:** Non chiamare mai `_context.SaveChangesAsync()`. Il salvataggio è responsabilità della **Unit of Work** richiamata dall'Handler.
 - **Solo Accesso Dati:** Il metodo deve limitarsi a interrogare o preparare lo stato del database.
+- **SP su tabella singola → NO repository dedicato:** Se una stored procedure (o query) coinvolge **una sola tabella**, non creare un repository dedicato. Usa direttamente `_unitOfWork.Repository<TEntity>()` nell'Handler. Aggiungi l'entità al `DbContext` con la configurazione EF Core appropriata (`ToTable`, `HasKey`, ecc.).
+
+### Quando creare un repository dedicato (Dapper)
+
+| Scenario | Approccio |
+|---|---|
+| SP su **1 tabella** — SELECT/INSERT/UPDATE/DELETE semplice | `_unitOfWork.Repository<T>()` nell'Handler — **nessun repository** |
+| SP su **2+ tabelle** (join, logica cross-entity) | Repository dedicato con Dapper (`IXxxRepository` + implementazione) |
+| SP con **output parameters** o logica complessa | Repository dedicato con Dapper |
+
+> ⚠️ **Anti-pattern:** creare un `IXxxRepository` con metodi `GetAllAsync()`, `InsertAsync()`, `UpdateAsync()` che wrappano SP su tabella singola è ridondante. EF Core via `Repository<T>` è sufficiente e più coerente con il resto del progetto.
 
 > ⚠️ **Anti-pattern da evitare:** Qualsiasi `using` su namespace `Mappings.*` o `Contracts.*` dentro un file Repository è un segnale di errore. Il mapping avviene nel **QueryHandler** tramite `_mapper.Map<>()`.
 

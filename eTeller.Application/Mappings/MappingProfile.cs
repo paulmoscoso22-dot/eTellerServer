@@ -16,7 +16,6 @@ using eTeller.Domain.Models.View;
 using eTeller.Application.Mappings.Manager;
 
 using eTeller.Application.Mappings.Account;
-using eTeller.Application.Mappings.Manager;
 using eTeller.Application.Mappings.Trace;
 using eTeller.Application.Mappings.Client;
 using eTeller.Application.Mappings.Tabella;
@@ -28,6 +27,7 @@ using eTeller.Application.Mappings.Language;
 using eTeller.Application.Mappings.StatoEntita;
 using eTeller.Application.Mappings.Manager.Tabelle;
 using eTeller.Application.Mappings.Device;
+using eTeller.Application.Mappings.BookingRc;
 
 namespace eTeller.Application.Mappings
 {
@@ -36,6 +36,8 @@ namespace eTeller.Application.Mappings
         public MappingProfile()
         {
             CreateMap<CurModelSp.CorsiResult, CorsiVm>();
+            CreateMap<CurModel.StBookingRc, BookingRcVm>();
+            CreateMap<CurModel.StAccountType, AccountTypeVm>();
             CreateMap<CurModel.Account, AccountVm>();
             CreateMap<CurModel.CustomerAccount, CustomerAccountVm>();
             CreateMap<CurModel.Customers, CustomersVm>();
