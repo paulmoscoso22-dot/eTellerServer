@@ -28,6 +28,7 @@ using eTeller.Application.Mappings.StatoEntita;
 using eTeller.Application.Mappings.Manager.Tabelle;
 using eTeller.Application.Mappings.Device;
 using eTeller.Application.Mappings.BookingRc;
+using eTeller.Application.Mappings.ForceTrx;
 
 namespace eTeller.Application.Mappings
 {
@@ -36,6 +37,7 @@ namespace eTeller.Application.Mappings
         public MappingProfile()
         {
             CreateMap<CurModelSp.CorsiResult, CorsiVm>();
+            CreateMap<CurModelSp.ForceTrxResult, ForceTrxVm>();
             CreateMap<CurModel.StBookingRc, BookingRcVm>();
             CreateMap<CurModel.StAccountType, AccountTypeVm>();
             CreateMap<CurModel.Account, AccountVm>();

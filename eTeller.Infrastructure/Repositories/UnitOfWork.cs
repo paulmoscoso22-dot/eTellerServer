@@ -31,6 +31,8 @@ using eTeller.Infrastructure.Repositories.GiornaleAntiriciclaggio;
 using eTeller.Infrastructure.Repositories.StoreProcedures.Currency;
 using eTeller.Application.Contracts.Corsi;
 using eTeller.Infrastructure.Repositories.Corsi;
+using eTeller.Application.Contracts.ForceTrx;
+using eTeller.Infrastructure.Repositories.ForceTrx;
 
 namespace eTeller.Infrastructure.Repositories
 {
@@ -110,6 +112,9 @@ namespace eTeller.Infrastructure.Repositories
 
         private ICorsiRepository? _corsiRepository;
         public ICorsiRepository CorsiRepository => _corsiRepository ??= new CorsiRepository(_context);
+
+        private IForceTrxRepository? _forceTrxRepository;
+        public IForceTrxRepository ForceTrxRepository => _forceTrxRepository ??= new ForceTrxRepository(_context);
 
         private Application.Contracts.Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository? _errorCodeRepository;
         public Application.Contracts.Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository ErrorCodeRepository => _errorCodeRepository ??= new ErrorCodeRepository(
