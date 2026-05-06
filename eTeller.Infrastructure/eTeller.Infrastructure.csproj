@@ -16,8 +16,4 @@
     <ProjectReference Include="..\eTeller.Application\eTeller.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositories\Tabella\" />
-  </ItemGroup>
-
 </Project>
