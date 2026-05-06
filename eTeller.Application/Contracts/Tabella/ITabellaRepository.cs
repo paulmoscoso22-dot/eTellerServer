@@ -6,5 +6,7 @@ namespace eTeller.Application.Contracts.Tabella
     {
         Task<IEnumerable<Na_TabellaServVarchar>> GetTabellaServVarchar(string nomeTabella, string? id, string? desLike);
         Task<Na_TabellaServVarchar?> GetTabellaServVarcharById(string id, string nomeTabella);
+        Task InsertTabellaServVarchar(string nomeTabella, string id, string des);
+        Task<bool> UpdateTabellaServVarchar(string nomeTabella, string id, string des);
     }
 }

@@ -15,7 +15,6 @@ using eTeller.Infrastructure.Repositories.StoreProcedures.Vigilanza;
 using eTeller.Application.Contracts.ST_CurrencyType;
 using eTeller.Application.Contracts.Tabella;
 using eTeller.Infrastructure.Repositories.StoreProcedures.ST_CurrencyType;
-using eTeller.Infrastructure.Repositories.StoreProcedures.Tabella;
 using System.Collections;
 using static eTeller.Application.Contracts.Commons.IBaseSimpleRepository;
 using Microsoft.Extensions.Logging;
@@ -33,6 +32,7 @@ using eTeller.Application.Contracts.Corsi;
 using eTeller.Infrastructure.Repositories.Corsi;
 using eTeller.Application.Contracts.ForceTrx;
 using eTeller.Infrastructure.Repositories.ForceTrx;
+using eTeller.Infrastructure.Ripositories.Tabella;
 
 namespace eTeller.Infrastructure.Repositories
 {
