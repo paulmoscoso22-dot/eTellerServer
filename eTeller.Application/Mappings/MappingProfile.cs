@@ -29,6 +29,7 @@ using eTeller.Application.Mappings.Manager.Tabelle;
 using eTeller.Application.Mappings.Device;
 using eTeller.Application.Mappings.BookingRc;
 using eTeller.Application.Mappings.ForceTrx;
+using eTeller.Application.Mappings.GestioneErrori;
 
 namespace eTeller.Application.Mappings
 {
@@ -117,6 +118,10 @@ namespace eTeller.Application.Mappings
             CreateMap<CurModel.Personalisation, PersonalisationVm>();
             CreateMap<CurModel.StFunAcctyp, StFunAcctypVm>();
             CreateMap<CurModel.FUNZIONISCEDULE, FunzioniScheduleVm>();
+
+            // GestioneErrori mappings
+            CreateMap<CurModel.ErrorCode, GestioneErroriVm>();
+            CreateMap<CurModel.StForceCode, ForceCodeVm>();
         }
     }
 }

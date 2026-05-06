@@ -50,6 +50,7 @@ namespace eTeller.Infrastructure.Context
         public virtual DbSet<DeviceType> DeviceTypes { get; set; }
         public virtual DbSet<StBookingRc> StBookingRc { get; set; }
         public virtual DbSet<StAccountType> StAccountType { get; set; }
+        public virtual DbSet<StForceCode> StForceCodes { get; set; }
 
         public eTellerDbContext(DbContextOptions options) : base(options)
         {
@@ -115,6 +116,9 @@ namespace eTeller.Infrastructure.Context
 
             modelBuilder.Entity<StBookingRc>().ToTable("ST_BOOKING_RC").HasKey(x => new { x.BrcCutId, x.BrcOptId, x.BrcActId });
             modelBuilder.Entity<StAccountType>().ToTable("ST_ACCOUNTTYPE").HasKey(x => x.ActId);
+
+            // Configure StForceCode entity with primary key
+            modelBuilder.Entity<StForceCode>().HasKey(f => f.FocId);
 
             modelBuilder.Entity<Device>().HasKey(d => d.DevId);
             modelBuilder.Entity<ClientDevice>().HasKey(cd => new { cd.CliId, cd.DevId });
