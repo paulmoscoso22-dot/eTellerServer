@@ -8,5 +8,9 @@ namespace eTeller.Application.Contracts.Tabella
         Task<Na_TabellaServVarchar?> GetTabellaServVarcharById(string id, string nomeTabella);
         Task InsertTabellaServVarchar(string nomeTabella, string id, string des);
         Task<bool> UpdateTabellaServVarchar(string nomeTabella, string id, string des);
+
+        Task<IEnumerable<Na_TabellaServInt>> GetTabellaServInt(string nomeTabella, int? id, string? desLike);
+        Task InsertTabellaServInt(string nomeTabella, int id, string des);
+        Task<bool> UpdateTabellaServInt(string nomeTabella, int id, string des);
     }
 }

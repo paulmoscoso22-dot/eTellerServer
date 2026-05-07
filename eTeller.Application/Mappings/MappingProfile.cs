@@ -106,6 +106,7 @@ namespace eTeller.Application.Mappings
             CreateMap<CurModel.Client, ClientVm>();
             CreateMap<CurModel.Device, DeviceVm>();
             CreateMap<CurModel.Na_TabellaServVarchar, TabellaServVarcharVm>();
+            CreateMap<CurModel.Na_TabellaServInt, TabellaServIntVm>();
             CreateMap<CurModel.User, SysUsersActiveAndBlockedVm>();
             CreateMap<CurModel.User, SysUserByIdVm>();
             CreateMap<CurModel.User, InsertUserVm>();
