@@ -43,7 +43,7 @@ namespace eTeller.Infrastructure.Ripositories.Tabella
             var rows = await _context.Database.ExecuteSqlInterpolatedAsync(
                 $"EXEC [dbo].[na_TabellaServVarchar_Update] @NOMETABELLA = {nomeTabella}, @ID = {id}, @DES = {des}");
 
-            return rows >= 0;
+            return true;
         }
 
         public async Task<IEnumerable<Na_TabellaServInt>> GetTabellaServInt(string nomeTabella, int? id, string? desLike)
