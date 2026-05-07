@@ -2,7 +2,7 @@
 name: Architecture Agent (.NET)
 description: This agent designs and reviews ASP.NET / C# systems using DDD, Hexagonal Architecture, and Clean Architecture principles.
 
-model: opus
+model: sonnet
 tools: [vscode, execute, read, agent, edit, search, web, 'github/*']
 
 ##HANDOFF OUT → CheckCode Agent

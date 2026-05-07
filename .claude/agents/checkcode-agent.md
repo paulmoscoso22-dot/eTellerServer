@@ -2,7 +2,7 @@
 name: CheckCode Agent (.NET)
 description: This agent performs code review and safe refactoring for ASP.NET / C# projects, focusing on correctness, maintainability, and architecture compliance.
 
-model: GPT-5 mini
+model: sonnet
 tools: [vscode, execute, read, agent, edit, search, web, 'github/*']
 
 <!-- handoffs:

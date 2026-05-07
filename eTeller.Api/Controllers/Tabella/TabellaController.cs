@@ -1,5 +1,9 @@
+using eTeller.Application.Features.Tabella.Commands.InsertOperationType;
 using eTeller.Application.Features.Tabella.Commands.InsertTabellaServVarchar;
+using eTeller.Application.Features.Tabella.Commands.UpdateOperationType;
 using eTeller.Application.Features.Tabella.Commands.UpdateTabellaServVarchar;
+using eTeller.Application.Features.Tabella.Queries.GetOperationTypeById;
+using eTeller.Application.Features.Tabella.Queries.GetOperationTypes;
 using eTeller.Application.Features.Tabella.Queries.GetTabellaServVarchar;
 using eTeller.Application.Features.Tabella.Queries.GetTabellaServVarcharById;
 using MediatR;
@@ -45,6 +49,38 @@ namespace eTeller.Api.Controllers.Tabella
         [HttpPost]
         [Route("UpdateTabellaServVarchar")]
         public async Task<IActionResult> UpdateTabellaServVarchar([FromBody] UpdateTabellaServVarcharCommand request)
+        {
+            var result = await _mediator.Send(request);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [Route("GetOperationTypes")]
+        public async Task<IActionResult> GetOperationTypes([FromBody] GetOperationTypesQuery request)
+        {
+            var result = await _mediator.Send(request);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [Route("GetOperationTypeById")]
+        public async Task<IActionResult> GetOperationTypeById([FromBody] GetOperationTypeByIdQuery request)
+        {
+            var result = await _mediator.Send(request);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [Route("InsertOperationType")]
+        public async Task<IActionResult> InsertOperationType([FromBody] InsertOperationTypeCommand request)
+        {
+            var result = await _mediator.Send(request);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [Route("UpdateOperationType")]
+        public async Task<IActionResult> UpdateOperationType([FromBody] UpdateOperationTypeCommand request)
         {
             var result = await _mediator.Send(request);
             return Ok(result);
