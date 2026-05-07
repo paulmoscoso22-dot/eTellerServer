@@ -1,3 +1,5 @@
+using eTeller.Application.Features.Tabella.Commands.InsertTabellaServVarchar;
+using eTeller.Application.Features.Tabella.Commands.UpdateTabellaServVarchar;
 using eTeller.Application.Features.Tabella.Queries.GetTabellaServVarchar;
 using eTeller.Application.Features.Tabella.Queries.GetTabellaServVarcharById;
 using MediatR;
@@ -31,5 +33,22 @@ namespace eTeller.Api.Controllers.Tabella
             var result = await _mediator.Send(request);
             return Ok(result);
         }
+
+        [HttpPost]
+        [Route("InsertTabellaServVarchar")]
+        public async Task<IActionResult> InsertTabellaServVarchar([FromBody] InsertTabellaServVarcharCommand request)
+        {
+            var result = await _mediator.Send(request);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [Route("UpdateTabellaServVarchar")]
+        public async Task<IActionResult> UpdateTabellaServVarchar([FromBody] UpdateTabellaServVarcharCommand request)
+        {
+            var result = await _mediator.Send(request);
+            return Ok(result);
+        }
     }
 }
+
