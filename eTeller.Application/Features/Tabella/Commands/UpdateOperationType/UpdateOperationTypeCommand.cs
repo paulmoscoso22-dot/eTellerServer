@@ -1,6 +1,8 @@
-namespace eTeller.Application.Mappings.ST_OperationType
+using MediatR;
+
+namespace eTeller.Application.Features.Tabella.Commands.UpdateOperationType
 {
-    public class ST_OperationTypeVm
+    public class UpdateOperationTypeCommand : IRequest<bool>
     {
         public string OptId { get; set; }
         public string OptDes { get; set; }
@@ -9,5 +11,7 @@ namespace eTeller.Application.Mappings.ST_OperationType
         public string OptAptId { get; set; }
         public bool OptPrtdv { get; set; }
         public string? OptAdvId { get; set; }
+        public string TraUser { get; set; }
+        public string TraStation { get; set; }
     }
 }
