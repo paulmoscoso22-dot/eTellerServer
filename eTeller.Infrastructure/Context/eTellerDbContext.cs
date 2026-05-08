@@ -53,7 +53,6 @@ namespace eTeller.Infrastructure.Context
         public virtual DbSet<StAccountType> StAccountType { get; set; }
         public virtual DbSet<StForceCode> StForceCodes { get; set; }
         public virtual DbSet<ST_PERIODICITA> ST_PERIODICITA { get; set; }
-
         public eTellerDbContext(DbContextOptions options) : base(options)
         {
 

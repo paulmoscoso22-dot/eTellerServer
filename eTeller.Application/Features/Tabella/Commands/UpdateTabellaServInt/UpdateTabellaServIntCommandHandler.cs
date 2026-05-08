@@ -26,7 +26,7 @@ namespace eTeller.Application.Features.Tabella.Commands.UpdateTabellaServInt
                 request.Des
             );
 
-            _logger.LogInformation("Handled {CommandName} with result: {Result}", nameof(UpdateTabellaServIntCommand), result);
+            _logger.LogInformation("Handled {CommandName}, success: {Result}", nameof(UpdateTabellaServIntCommand), result);
 
             return result;
         }

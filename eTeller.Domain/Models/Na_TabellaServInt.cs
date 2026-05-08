@@ -6,9 +6,9 @@ namespace eTeller.Domain.Models
     public class Na_TabellaServInt
     {
         [Column("ID")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
-        [Column("DES")]
+        [Column("DES")] public string Name { get; set; }
         public string? Des { get; set; }
     }
 }

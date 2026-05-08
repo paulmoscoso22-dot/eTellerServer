@@ -21,13 +21,13 @@ namespace eTeller.Application.Features.Tabella.Queries.GetTabellaServInt
 
         public async Task<IEnumerable<TabellaServIntVm>> Handle(GetTabellaServIntQuery request, CancellationToken cancellationToken)
         {
-            _logger.LogInformation("Handling {QueryName} with NomeTabella: {NomeTabella}, Id: {Id}, Des: {Des}",
-                nameof(GetTabellaServIntQuery), request.NomeTabella, request.Id, request.Des);
+            _logger.LogInformation("Handling {QueryName} with NomeTabella: {NomeTabella}, Id: {Id}, DesLike: {DesLike}",
+                nameof(GetTabellaServIntQuery), request.NomeTabella, request.Id, request.DesLike);
 
             var results = await _unitOfWork.TabellaRepository.GetTabellaServInt(
                 request.NomeTabella,
                 request.Id,
-                request.Des
+                request.DesLike
             );
 
             var vms = _mapper.Map<IEnumerable<TabellaServIntVm>>(results);

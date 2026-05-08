@@ -4,7 +4,7 @@ using eTeller.Infrastructure.Context;
 using eTeller.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace eTeller.Infrastructure.Ripositories.Tabella
+namespace eTeller.Infrastructure.Repositories.Tabella
 {
     public class TabellaRepository : BaseSimpleRepository<Na_TabellaServVarchar>, ITabellaRepository
     {
