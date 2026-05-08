@@ -51,6 +51,7 @@ namespace eTeller.Infrastructure.Context
         public virtual DbSet<StBookingRc> StBookingRc { get; set; }
         public virtual DbSet<StAccountType> StAccountType { get; set; }
         public virtual DbSet<StForceCode> StForceCodes { get; set; }
+        public virtual DbSet<Na_TabellaServInt> Na_TabellaServInt { get; set; }
 
         public eTellerDbContext(DbContextOptions options) : base(options)
         {
@@ -138,6 +139,8 @@ namespace eTeller.Infrastructure.Context
                 .HasColumnName("ROLE_ID")
                 .IsRequired();
             //fine user role configuration
+
+            modelBuilder.Entity<Na_TabellaServInt>().HasNoKey();
 
         }
     }

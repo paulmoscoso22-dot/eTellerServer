@@ -4,7 +4,7 @@ using eTeller.Infrastructure.Context;
 using eTeller.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace eTeller.Infrastructure.Ripositories.Tabella
+namespace eTeller.Infrastructure.Repositories.Tabella
 {
     public class TabellaRepository : BaseSimpleRepository<Na_TabellaServVarchar>, ITabellaRepository
     {
@@ -42,6 +42,30 @@ namespace eTeller.Infrastructure.Ripositories.Tabella
         {
             var rows = await _context.Database.ExecuteSqlInterpolatedAsync(
                 $"EXEC [dbo].[na_TabellaServVarchar_Update] @NOMETABELLA = {nomeTabella}, @ID = {id}, @DES = {des}");
+
+            return rows >= 0;
+        }
+
+        public async Task<IEnumerable<Na_TabellaServInt>> GetTabellaServInt(string nomeTabella, int? id, string? desLike)
+        {
+            var result = await _context.Set<Na_TabellaServInt>()
+                .FromSqlInterpolated($"EXEC [dbo].[na_TabellaServInt_Select] @NOMETABELLA = {nomeTabella}, @ID = {id}, @DES_LIKE = {desLike}")
+                .AsNoTracking()
+                .ToListAsync();
+
+            return result;
+        }
+
+        public async Task InsertTabellaServInt(string nomeTabella, int id, string des)
+        {
+            await _context.Database.ExecuteSqlInterpolatedAsync(
+                $"EXEC [dbo].[na_TabellaServInt_Insert] @NOMETABELLA = {nomeTabella}, @ID = {id}, @DES = {des}");
+        }
+
+        public async Task<bool> UpdateTabellaServInt(string nomeTabella, int id, string des)
+        {
+            var rows = await _context.Database.ExecuteSqlInterpolatedAsync(
+                $"EXEC [dbo].[na_TabellaServInt_Update] @NOMETABELLA = {nomeTabella}, @ID = {id}, @DES = {des}");
 
             return rows >= 0;
         }

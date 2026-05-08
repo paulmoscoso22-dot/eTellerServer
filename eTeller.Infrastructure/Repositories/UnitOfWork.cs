@@ -32,7 +32,8 @@ using eTeller.Application.Contracts.Corsi;
 using eTeller.Infrastructure.Repositories.Corsi;
 using eTeller.Application.Contracts.ForceTrx;
 using eTeller.Infrastructure.Repositories.ForceTrx;
-using eTeller.Infrastructure.Ripositories.Tabella;
+using eTeller.Infrastructure.Repositories.Tabella;
+//using eTeller.Infrastructure.Ripositories.Tabella;
 
 namespace eTeller.Infrastructure.Repositories
 {
