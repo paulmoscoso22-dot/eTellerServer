@@ -128,6 +128,9 @@ namespace eTeller.Application.Mappings
             CreateMap<CurModel.ST_PERIODICITA, PeriodTypeVm>()
                 .ForMember(d => d.Id, o => o.MapFrom(s => s.PeriodicId))
                 .ForMember(d => d.Des, o => o.MapFrom(s => s.PeriodicDes));
+
+            // SERVIZI mappings
+            CreateMap<CurModel.SERVIZI, ServiziVm>();
         }
     }
 }
