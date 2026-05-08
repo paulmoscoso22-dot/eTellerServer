@@ -5,6 +5,7 @@ using eTeller.Application.Features.Manager.Commands.Tabelle.ScheduleOneTimeTask;
 using eTeller.Application.Features.Manager.Commands.Tabelle.UpdateFunzioneSchedule;
 using eTeller.Application.Features.Manager.Queries.Tabelle.GetFunzioniSchedule;
 using eTeller.Application.Features.Manager.Queries.Tabelle.GetFunzioniScheduleById;
+using eTeller.Application.Features.Manager.Queries.Tabelle.GetPeriodTypes;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -82,6 +83,15 @@ namespace eTeller.Api.Controllers.Manager.Tabelle
         public async Task<IActionResult> ScheduleOneTimeTask([FromBody] ScheduleOneTimeTaskCommand command)
         {
             var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        /// <summary>Recupera i tipi di periodicità per le scheduled tasks.</summary>
+        [HttpGet]
+        [Route("GetPeriodTypes")]
+        public async Task<IActionResult> GetPeriodTypes()
+        {
+            var result = await _mediator.Send(new GetPeriodTypesQuery());
             return Ok(result);
         }
     }

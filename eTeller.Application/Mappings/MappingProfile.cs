@@ -123,6 +123,11 @@ namespace eTeller.Application.Mappings
             // GestioneErrori mappings
             CreateMap<CurModel.ErrorCode, GestioneErroriVm>();
             CreateMap<CurModel.StForceCode, ForceCodeVm>();
+
+            // ST_PERIODICITA mappings
+            CreateMap<CurModel.ST_PERIODICITA, PeriodTypeVm>()
+                .ForMember(d => d.Id, o => o.MapFrom(s => s.PeriodicId))
+                .ForMember(d => d.Des, o => o.MapFrom(s => s.PeriodicDes));
         }
     }
 }
