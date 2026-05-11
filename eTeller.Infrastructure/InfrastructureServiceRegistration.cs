@@ -1,5 +1,6 @@
 using eTeller.Application.Behaviours;
 using eTeller.Application.Contracts;
+using eTeller.Application.Contracts.Auth;
 using eTeller.Application.Contracts.Manager;
 using eTeller.Application.Contracts.Operazioni.ContoCorrenti.Prelievo;
 using eTeller.Application.Contracts.Vigilanza;
@@ -18,6 +19,7 @@ using eTeller.Infrastructure.Repositories.StoreProcedures.Manager;
 using eTeller.Infrastructure.Repositories.StoreProcedures.Operazioni.ContoCorrenti.Prelievo;
 using eTeller.Infrastructure.Repositories.StoreProcedures.Vigilanza;
 using eTeller.Infrastructure.Services;
+using eTeller.Infrastructure.Services.Auth;
 using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -33,6 +35,7 @@ namespace eTeller.Infrastructure
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<eTellerDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("ConnectionStringEteller")));
+            services.AddHostedService<DatabaseInitializer>();
             services.AddMemoryCache();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient(typeof(IBaseSimpleRepository<>), typeof(BaseSimpleRepository<>));
@@ -40,6 +43,12 @@ namespace eTeller.Infrastructure
 
             // Register Authentication Service
             services.AddScoped<IAuthenticationService, AuthenticationService>();
+
+            // Register JWT Token Service
+            services.AddScoped<ITokenService, JwtTokenService>();
+
+            // Register Password History Repository
+            services.AddScoped<IPasswordHistoryRepository, PasswordHistoryRepository>();
 
             // Register validators
             services.AddScoped<IValidator<CaricaContiCorrentiCommand>, CaricaContiCorrentiValidator>();
