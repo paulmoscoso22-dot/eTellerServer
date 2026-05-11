@@ -14,11 +14,14 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4" />
     <PackageReference Include="Moq" Version="4.20.72" />
     <PackageReference Include="AutoMapper" Version="16.1.1" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\eTeller.Application\eTeller.Application.csproj" />
     <ProjectReference Include="..\eTeller.Domain\eTeller.Domain.csproj" />
+    <ProjectReference Include="..\eTeller.Auth\eTeller.Auth.csproj" />
   </ItemGroup>
 
   <ItemGroup>

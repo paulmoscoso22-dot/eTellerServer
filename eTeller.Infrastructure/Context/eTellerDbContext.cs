@@ -54,6 +54,7 @@ namespace eTeller.Infrastructure.Context
         public virtual DbSet<StForceCode> StForceCodes { get; set; }
         public virtual DbSet<ST_PERIODICITA> ST_PERIODICITA { get; set; }
         public virtual DbSet<SERVIZI> SERVIZI { get; set; }
+        public virtual DbSet<InformationSchemaTable> InformationSchemaTables { get; set; }
 
         public eTellerDbContext(DbContextOptions options) : base(options)
         {
@@ -117,6 +118,9 @@ namespace eTeller.Infrastructure.Context
             modelBuilder.Entity<StFunAcctyp>().HasNoKey();
 
             modelBuilder.Entity<FUNZIONISCEDULE>().ToTable("FUNZIONISHEDULE").HasKey(f => f.FutId);
+
+            // Vista di sistema — sola lettura, usata per controlli di esistenza tabella
+            modelBuilder.Entity<InformationSchemaTable>().HasNoKey().ToView("TABLES", "INFORMATION_SCHEMA");
 
             modelBuilder.Entity<StBookingRc>().ToTable("ST_BOOKING_RC").HasKey(x => new { x.BrcCutId, x.BrcOptId, x.BrcActId });
             modelBuilder.Entity<StAccountType>().ToTable("ST_ACCOUNTTYPE").HasKey(x => x.ActId);

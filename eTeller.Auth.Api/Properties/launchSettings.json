@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "eTeller.Auth.Api": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:52944;http://localhost:52945"
+    }
+  }
+}

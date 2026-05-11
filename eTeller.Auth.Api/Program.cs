@@ -1,38 +1,34 @@
 using System.Text;
-using eTeller.Api.Middleware;
+using eTeller.Auth;
 using eTeller.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
-builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddEndpointsApiExplorer();
-
-// Swagger con supporto Bearer token
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new() { Title = "eTeller API", Version = "v1" });
-    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    c.SwaggerDoc("v1", new() { Title = "eTeller Auth API", Version = "v1" });
+    c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
     {
         Name = "Authorization",
-        Type = SecuritySchemeType.Http,
+        Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
         Scheme = "bearer",
         BearerFormat = "JWT",
-        In = ParameterLocation.Header,
-        Description = "Inserire il token JWT: Bearer {token}"
+        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+        Description = "Inserire il token JWT nel campo: Bearer {token}"
     });
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    c.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
     {
         {
-            new OpenApiSecurityScheme
+            new Microsoft.OpenApi.Models.OpenApiSecurityScheme
             {
-                Reference = new OpenApiReference
+                Reference = new Microsoft.OpenApi.Models.OpenApiReference
                 {
-                    Type = ReferenceType.SecurityScheme,
+                    Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
                     Id = "Bearer"
                 }
             },
@@ -41,7 +37,10 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// CORS — origini consentite da configurazione
+builder.Services.AddInfrastructureServices(builder.Configuration);
+builder.Services.AddAuthServices();
+
+// CORS — origini consentite da configurazione ("AllowedOrigins" in appsettings / env var)
 var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>()
     ?? Array.Empty<string>();
 
@@ -56,7 +55,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-// JWT Bearer authentication
+// JWT Bearer authentication — SecretKey deve essere configurata via user-secrets (dev) o env var (prod)
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -76,7 +75,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 var app = builder.Build();
 
-// CORS deve precedere Authentication/Authorization
+// CORS — deve precedere Authentication/Authorization
 app.UseCors("AllowConfiguredOrigins");
 
 if (app.Environment.IsDevelopment())
@@ -84,15 +83,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "eTeller API v1");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "eTeller Auth API v1");
         c.RoutePrefix = "swagger";
     });
 }
 
-app.UseMiddleware<JsonWindowsPathMiddleware>();
-app.UseMiddleware<ExceptionMiddleware>();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-app.MapControllers().RequireAuthorization();
+app.MapControllers();
+
 app.Run();
+
