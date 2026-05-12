@@ -8,7 +8,17 @@ description: >
 argument-hint: Una funzionalità di autenticazione, un flow di login, una struttura JWT o un contratto API da progettare.
 model: GPT-4.1 (copilot)
 applyTo: "eTellerServer/**"
-tools: [vscode, execute, read, agent, edit, search, web, 'github/*']
+tools:
+  - read_file
+  - list_dir
+  - grep_search
+  - file_search
+  - semantic_search
+instructions:
+  - eTellerServer/.github/instructions/important-rules.instructions.md
+  - eTellerServer/.github/instructions/cqrs-mediatr.instructions.md
+  - eTellerServer/.github/instructions/csharp.instructions.md
+  - eTellerServer/.github/instructions/general.md
 ---
 
 ## 🏛️ Agent — Auth Architect (.NET)

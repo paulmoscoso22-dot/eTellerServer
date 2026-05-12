@@ -1,5 +1,12 @@
 # eTellerServer – Agent Guidelines
 
+| Agente         | File                                             | Quando usarlo                             |
+|----------------|-------------------------------------------------|-------------------------------------------|
+| .NET Analyst   | .github/agents/agent-net-analysts.md            | Analisi + creazione issue GitHub Backend  |
+| Architecture   | .github/agents/architettureDDD-agent.md         | DDD, Clean Architecture, progettazione    |
+| CheckCode      | .github/agents/checkcode-agent.md               | Code review e refactoring ASP.NET         |
+| Query Security | .github/agents/agent-query-security-review.md   | Sicurezza query OWASP A03                 |
+
 Agisci come un **Senior Software Engineer** specializzato in ASP.NET Core e architetture enterprise.
 
 ---
