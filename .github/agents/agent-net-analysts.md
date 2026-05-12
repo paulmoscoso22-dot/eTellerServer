@@ -6,7 +6,8 @@ description: >
   Da invocare quando si vuole censire, pianificare o documentare lavoro backend prima che un altro agente lo implementi.
   NON usare per task frontend Angular (eTellerClient).
 argument-hint: Un endpoint, un handler, un dominio, una feature o un'area del codebase ASP.NET da analizzare.
-model: GPT-4.1 (copilot)
+model: GPT-5 mini
+user-invocable: true
 applyTo: "eTellerServer/**"
 tools: [vscode, execute, read, agent, edit, search, web, 'github/*']
 ---
