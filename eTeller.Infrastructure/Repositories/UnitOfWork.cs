@@ -31,7 +31,9 @@ using eTeller.Infrastructure.Repositories.StoreProcedures.Currency;
 using eTeller.Application.Contracts.Corsi;
 using eTeller.Infrastructure.Repositories.Corsi;
 using eTeller.Application.Contracts.ForceTrx;
+using eTeller.Application.Contracts.Help;
 using eTeller.Infrastructure.Repositories.ForceTrx;
+using eTeller.Infrastructure.Repositories.Help;
 using eTeller.Infrastructure.Repositories.Tabella;
 //using eTeller.Infrastructure.Ripositories.Tabella;
 
@@ -116,6 +118,9 @@ namespace eTeller.Infrastructure.Repositories
 
         private IForceTrxRepository? _forceTrxRepository;
         public IForceTrxRepository ForceTrxRepository => _forceTrxRepository ??= new ForceTrxRepository(_context);
+
+        private IHelpInfoRepository? _helpInfoRepository;
+        public IHelpInfoRepository HelpInfoRepository => _helpInfoRepository ??= new HelpInfoRepository(_context);
 
         private Application.Contracts.Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository? _errorCodeRepository;
         public Application.Contracts.Operazioni.ContoCorrenti.Prelievo.IErrorCodeRepository ErrorCodeRepository => _errorCodeRepository ??= new ErrorCodeRepository(

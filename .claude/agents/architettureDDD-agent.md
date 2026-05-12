@@ -1,11 +1,22 @@
 ---
 name: Architecture Agent (.NET)
 description: This agent designs and reviews ASP.NET / C# systems using DDD, Hexagonal Architecture, and Clean Architecture principles.
-
-model: sonnet
-tools: [vscode, execute, read, agent, edit, search, web, 'github/*']
-
-##HANDOFF OUT → CheckCode Agent
+model: GPT-4.1 (copilot)
+applyTo: "eTellerServer/**"
+tools:
+  - read_file
+  - list_dir
+  - grep_search
+  - file_search
+  - semantic_search
+  - replace_string_in_file
+  - create_file
+instructions:
+  - eTellerServer/.github/instructions/important-rules.instructions.md
+  - eTellerServer/.github/instructions/cqrs-mediatr.instructions.md
+  - eTellerServer/.github/instructions/repository-instructions.md
+  - eTellerServer/.github/instructions/csharp.instructions.md
+  - eTellerServer/.github/instructions/general.md
 ---
 
 

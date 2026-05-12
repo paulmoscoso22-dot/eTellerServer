@@ -7,7 +7,15 @@ description: >
 argument-hint: File o area di codice di autenticazione/sicurezza da revisionare.
 model: GPT-4.1 (copilot)
 applyTo: "eTellerServer/**"
-tools: [vscode, execute, read, agent, edit, search, web, 'github/*']
+tools:
+  - read_file
+  - list_dir
+  - grep_search
+  - file_search
+  - semantic_search
+instructions:
+  - eTellerServer/.github/instructions/important-rules.instructions.md
+  - eTellerServer/.github/instructions/csharp.instructions.md
 ---
 
 ## 🔐 Agent — Auth Security Review (.NET)

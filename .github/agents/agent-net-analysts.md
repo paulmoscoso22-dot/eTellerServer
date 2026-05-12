@@ -7,8 +7,22 @@ description: >
   NON usare per task frontend Angular (eTellerClient).
 argument-hint: Un endpoint, un handler, un dominio, una feature o un'area del codebase ASP.NET da analizzare.
 model: GPT-4.1 (copilot)
+user-invocable: true
 applyTo: "eTellerServer/**"
-tools: [vscode, execute, read, agent, edit, search, web, 'github/*']
+tools:
+  - read_file
+  - list_dir
+  - grep_search
+  - file_search
+  - semantic_search
+  - mcp_io_github_git_issue_write
+  - mcp_io_github_git_search_issues
+instructions:
+  - eTellerServer/.github/instructions/important-rules.instructions.md
+  - eTellerServer/.github/instructions/cqrs-mediatr.instructions.md
+  - eTellerServer/.github/instructions/repository-instructions.md
+  - eTellerServer/.github/instructions/csharp.instructions.md
+  - eTellerServer/.github/instructions/general.md
 ---
 
 ## 🔍 Agent — ASP.NET Analyst & Issue Creator
@@ -149,35 +163,3 @@ Al termine dell'analisi fornire:
 - Rispettare sempre le regole di `important-rules.instructions.md` (es. `GetAllAsync()` senza `CancellationToken`).
 
 ➡️ HANDOFF TO: `architettureDDD-agent` per il design della soluzione, poi `checkcode-agent` per la validazione.
-
-##### Tabella Labels
-
-| Tipo attività | Labels |
-|---|---|
-| Nuova feature UI | `enhancement`, `angular`, `frontend` |
-| Bug visivo / comportamentale | `bug`, `angular`, `frontend` |
-| Refactoring / clean code | `refactoring`, `angular` |
-| Migrazione da ASP.NET | `migration`, `angular`, `frontend` |
-| Performance / bundle | `performance`, `angular` |
-| Test Angular | `testing`, `angular` |
-| DevExtreme specifico | `devextreme`, `angular`, `frontend` |
-
----
-
-### Output obbligatorio
-
-Al termine dell'analisi fornire:
-
-1. **Riepilogo attività** — tabella con tutte le attività identificate (titolo, tipo, priorità, stima).
-2. **Issue create** — lista degli URL delle issue aperte su GitHub.
-3. **Note di contesto** — eventuali dipendenze tra attività o rischi rilevati.
-
----
-
-### Regole
-- Prefissa **sempre** il titolo issue con `[Angular]`.
-- Non creare issue per attività backend (ASP.NET / `eTellerServer`) — quelle spettano ad altri agenti.
-- Se un'attività è ambigua, chiedere **una sola domanda di chiarimento** prima di procedere.
-- Le issue devono essere **autonome**: chiunque legga il corpo deve poter lavorare senza chiedere ulteriori spiegazioni.
-
-➡️ HANDOFF TO: `agent-angular-expert` per l'implementazione delle issue create.

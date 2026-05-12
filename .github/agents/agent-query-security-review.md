@@ -10,7 +10,17 @@ argument-hint: >
   Esempio: eTellerServer/eTeller.Infrastructure/Repositories/User/UserSessionRepository.cs
 model: GPT-4.1 (copilot)
 applyTo: "eTellerServer/**"
-tools: [vscode, execute, read, agent, edit, search, web, 'github/*']
+tools:
+  - read_file
+  - list_dir
+  - grep_search
+  - file_search
+  - semantic_search
+  - replace_string_in_file
+instructions:
+  - eTellerServer/.github/instructions/important-rules.instructions.md
+  - eTellerServer/.github/instructions/cqrs-mediatr.instructions.md
+  - eTellerServer/.github/instructions/csharp.instructions.md
 ---
 
 ## 🔍 Agent — Query Security Review (.NET)

@@ -1,6 +1,7 @@
 using eTeller.Application.Behaviours;
 using eTeller.Application.Contracts;
 using eTeller.Application.Contracts.Auth;
+using eTeller.Application.Contracts.Help;
 using eTeller.Application.Contracts.Manager;
 using eTeller.Application.Contracts.Operazioni.ContoCorrenti.Prelievo;
 using eTeller.Application.Contracts.Vigilanza;
@@ -13,6 +14,7 @@ using eTeller.Application.Validators;
 using eTeller.Domain.Services;
 using eTeller.Infrastructure.Context;
 using eTeller.Infrastructure.Repositories;
+using eTeller.Infrastructure.Repositories.Help;
 using eTeller.Infrastructure.Repositories.StoreProcedures;
 using eTeller.Infrastructure.Repositories.StoreProcedures.Currency;
 using eTeller.Infrastructure.Repositories.StoreProcedures.Manager;
@@ -40,6 +42,7 @@ namespace eTeller.Infrastructure
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient(typeof(IBaseSimpleRepository<>), typeof(BaseSimpleRepository<>));
             services.AddScoped<ICurrencyRepository, CurrencyRepository>();
+            services.AddScoped<IHelpInfoRepository, HelpInfoRepository>();
 
             // Register Authentication Service
             services.AddScoped<IAuthenticationService, AuthenticationService>();
