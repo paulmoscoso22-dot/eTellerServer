@@ -104,3 +104,13 @@ dotnet run --project eTeller.Api/
 ```
 
 I test unitari si trovano in `eTeller.Application.UnitTests/Feature/`.
+
+---
+
+## Registro Agenti (Backend)
+
+- **.NET Analyst — agent-net-analysts**: `eTellerServer/.github/agents/agent-net-analysts.md`
+  - Responsabilità: analisi del codebase ASP.NET 10, identificazione attività (feature, bug, refactor, migrazione, test), creazione di issue GitHub dettagliate con acceptance criteria e stime per il repository `paulmoscoso22-dot/eTellerServer`.
+  - Quando usarlo: ogni volta che è necessario censire, pianificare o documentare lavoro backend prima dell'implementazione.
+
+Le regole operative e il template delle issue sono definiti nel file agente corrispondente. L'orchestratore prosegue delegando a questo agente durante la fase di pianificazione.
