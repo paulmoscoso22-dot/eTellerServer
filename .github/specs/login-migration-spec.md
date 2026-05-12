@@ -5,10 +5,10 @@
 
 | Campo | Valore |
 |---|---|
-| Versione | 0.2 — APPROVATO |
+| Versione | 0.3 — APPROVATO |
 | Data creazione | 2026-05-11 |
-| Ultimo aggiornamento | 2026-05-11 |
-| Stato | 🟢 APPROVATO — procedi con la creazione delle issue |
+| Ultimo aggiornamento | 2026-05-12 |
+| Stato | 🟢 APPROVATO — Backend completo, Frontend in esecuzione |
 | Responsabile revisione | Utente / Team |
 
 ---
@@ -212,14 +212,28 @@ I parametri di policy vengono letti dalla tabella `PERSONALISATION` del database
 
 | # | Titolo Issue | URL | Agenti | Dipende da | Stima |
 |---|---|---|---|---|---|
-| 6 | `[Auth] Modulo Angular auth standalone — login, force-login, change-password` | [#43](https://github.com/paulmoscoso22-dot/eTellerClient/issues/43) | `agent-angular-expert` → `agent-refactor` → `agent-code-review` | #30 (contratto API) | L (2-3gg) |
+| AUTH-01 | `[AUTH-01] Setup modulo auth — struttura cartelle, routing lazy-loaded, app.config.ts` | [#44](https://github.com/paulmoscoso22-dot/eTellerClient/issues/44) | `agent-auth-angular` → `agent-refactor` → `agent-code-review` | — | XS (2h) |
+| AUTH-02 | `[AUTH-02] LoginComponent — form DevExtreme, validazione, gestione ResultCode` | [#45](https://github.com/paulmoscoso22-dot/eTellerClient/issues/45) | `agent-auth-angular` → `agent-refactor` → `agent-code-review` → `agent-angular-tester` → `agent-frontend-security-review` | AUTH-01, AUTH-03, AUTH-09 | S (4h) |
+| AUTH-03 | `[AUTH-03] AuthService + AuthStore — chiamate HTTP e Signals globali` | [#46](https://github.com/paulmoscoso22-dot/eTellerClient/issues/46) | `agent-auth-angular` → `agent-refactor` → `agent-code-review` → `agent-angular-tester` → `agent-frontend-security-review` | AUTH-01, AUTH-09 | S (4h) |
+| AUTH-04 | `[AUTH-04] ForceLoginComponent — dialog conferma force login` | [#47](https://github.com/paulmoscoso22-dot/eTellerClient/issues/47) | `agent-auth-angular` → `agent-refactor` → `agent-code-review` → `agent-angular-tester` → `agent-frontend-security-review` | AUTH-02, AUTH-03 | XS (3h) |
+| AUTH-05 | `[AUTH-05] ChangePasswordComponent — cambio password obbligatorio e volontario` | [#48](https://github.com/paulmoscoso22-dot/eTellerClient/issues/48) | `agent-auth-angular` → `agent-refactor` → `agent-code-review` → `agent-angular-tester` → `agent-frontend-security-review` | AUTH-01, AUTH-03 | S (4h) |
+| AUTH-06 | `[AUTH-06] HTTP Interceptors — authInterceptor, logInterceptor, errorInterceptor` | [#49](https://github.com/paulmoscoso22-dot/eTellerClient/issues/49) | `agent-auth-angular` → `agent-refactor` → `agent-code-review` → `agent-angular-tester` → `agent-frontend-security-review` | AUTH-01, AUTH-03 | S (3h) |
+| AUTH-07 | `[AUTH-07] AuthGuard e RoleGuard — protezione route con JWT` | [#50](https://github.com/paulmoscoso22-dot/eTellerClient/issues/50) | `agent-auth-angular` → `agent-refactor` → `agent-code-review` → `agent-angular-tester` → `agent-frontend-security-review` | AUTH-03 | XS (2h) |
+| AUTH-08 | `[AUTH-08] ErrorHandlerService e GlobalErrorHandler — gestione centralizzata errori UI` | [#51](https://github.com/paulmoscoso22-dot/eTellerClient/issues/51) | `agent-auth-angular` → `agent-refactor` → `agent-code-review` → `agent-angular-tester` → `agent-frontend-security-review` | AUTH-01 | XS (2h) |
+| AUTH-09 | `[AUTH-09] Contratti TypeScript — modelli auth condivisi` | [#52](https://github.com/paulmoscoso22-dot/eTellerClient/issues/52) | `agent-auth-angular` → `agent-code-review` | — | XS (1h) |
+| AUTH-10 | `[AUTH-10] Logout — pulsante, chiamata backend e cleanup sessione` | [#53](https://github.com/paulmoscoso22-dot/eTellerClient/issues/53) | `agent-auth-angular` → `agent-refactor` → `agent-code-review` → `agent-angular-tester` → `agent-frontend-security-review` | AUTH-03 | XS (2h) |
+| AUTH-11 | `[AUTH-11] Test Jest — copertura completa modulo auth Angular (9 file spec)` | [#54](https://github.com/paulmoscoso22-dot/eTellerClient/issues/54) | `agent-angular-tester` → `agent-frontend-security-review` | AUTH-02…AUTH-10 | M (8h) |
 
 ### Sequenza di Esecuzione
 
 ```
-Issue 1 → Issue 2 → Issue 3 → Issue 4 → Issue 5
+Issue 1 → Issue 2 → Issue 3 → Issue 4 → Issue 5  [COMPLETATI ✅]
                   ↘
-                   Issue 6 (Frontend — dopo approvazione contratto API da Issue 2)
+                   AUTH-09 → AUTH-01 → AUTH-03 → AUTH-08
+                                            ↓
+                              AUTH-02 → AUTH-04 → AUTH-06 → AUTH-07 → AUTH-10 → AUTH-05
+                                            ↓
+                                        AUTH-11  (test — dipende da tutti)
 ```
 
 ---
@@ -287,15 +301,18 @@ Issue 1 → Issue 2 → Issue 3 → Issue 4 → Issue 5
 | Agente | File | Ruolo in questo spec |
 |---|---|---|
 | .NET Analyst | `eTellerServer/.github/agents/agent-net-analysts.md` | Crea issue Backend 1–5 |
-| Angular Analyst | `eTellerClient/.github/agents/agent-angular-analysts.md` | Crea issue Frontend 6 |
+| Angular Analyst | `eTellerClient/.github/agents/agent-angular-analysts.md` | Crea issue Frontend AUTH-01…AUTH-11 |
 | Architecture Agent | `eTellerServer/.github/agents/architettureDDD-agent.md` | Issue 1 — struttura progetto |
 | CheckCode Agent | `eTellerServer/.github/agents/checkcode-agent.md` | Issue 1 — review struttura |
 | Auth Architect | `eTellerServer/.github/agents/agent-auth-architect.md` | Issue 2 — architettura CQRS |
 | Auth Implementor | `eTellerServer/.github/agents/agent-auth-implementor.md` | Issue 3, 4 — implementazione |
-| Auth Security Review | `eTellerServer/.github/agents/agent-auth-security-review.md` | Issue 5 — review OWASP |
-| Angular Expert | `eTellerClient/.github/agents/agent-angular-expert.md` | Issue 6 — design modulo Angular |
-| Refactor | `eTellerClient/.github/agents/agent-refactor.md` | Issue 6 — ottimizzazione |
-| Code Review | `eTellerClient/.github/agents/agent-code-review.md` | Issue 6 — validazione standard |
+| Auth Security Review | `eTellerServer/.github/agents/agent-auth-security-review.md` | Issue 5 — review OWASP Backend |
+| Angular Expert | `eTellerClient/.github/agents/agent-angular-expert.md` | Riservato per moduli non-auth |
+| **auth-angular** | `eTellerClient/.github/agents/agent-auth-angular.md` | **NUOVO** — implementa tutti i componenti auth Angular |
+| Refactor | `eTellerClient/.github/agents/agent-refactor.md` | Ottimizzazione + verifica memory leak (skill-memory-management) |
+| Code Review | `eTellerClient/.github/agents/agent-code-review.md` | Validazione standard Angular |
+| **angular-tester** | `eTellerClient/.github/agents/agent-angular-tester.md` | **NUOVO** — scrive i test Jest per il modulo auth |
+| **frontend-security-review** | `eTellerClient/.github/agents/agent-frontend-security-review.md` | **NUOVO** — step finale OBBLIGATORIO per ogni issue auth Angular, review OWASP |
 
 ---
 
@@ -305,17 +322,56 @@ Issue 1 → Issue 2 → Issue 3 → Issue 4 → Issue 5
 |---|---|---|---|
 | Q1 | Il progetto `eTeller.Auth.Api` deve girare sulla stessa porta di `eTeller.Api` o su una porta dedicata? | Architettura deploy | 🔴 Aperta |
 | Q2 | La strategia migrazione MD5→BCrypt (lazy al primo login) è approvata? | Sicurezza Issue 5 | 🔴 Aperta |
-| Q3 | Il modulo Angular `auth/` deve essere un'applicazione Angular separata o un modulo lazy-loaded nella stessa app? | Struttura frontend Issue 6 | 🔴 Aperta |
+| Q3 | Il modulo Angular `auth/` deve essere un'applicazione Angular separata o un modulo lazy-loaded nella stessa app? | Struttura frontend Issue 6 | � Risolta — modulo lazy-loaded nella stessa app (`src/app/auth/`) |
 | Q4 | La durata del token JWT (8h proposta) è corretta per l'orario lavorativo bancario? | Contratto JWT | 🔴 Aperta |
 | Q5 | La verifica `PCisCassa` (cassa con MAC address + stampante fiche) deve essere mantenuta nel nuovo sistema? | Logica business Issue 3 | 🔴 Aperta |
 | Q6 | La tabella `sys_USERSuseClient` (sessioni attive) rimane nel DB esistente o si crea una nuova struttura? | Repository Issue 3 | 🔴 Aperta |
 
 ---
 
-## 10. Storico Revisioni
+## 11. Contratto TypeScript Frontend
+
+> Allineato al §7 Contratto API. File di riferimento: `src/app/core/auth/auth.models.ts` (issue AUTH-09).
+
+### Interfacce
+
+| Interfaccia | File | Utilizzo |
+|---|---|---|
+| `ILoginRequest` | `auth.models.ts` | Body per POST `/api/auth/login` e `/api/auth/force-login` |
+| `ILoginResponse` | `auth.models.ts` | Risposta da `AuthService.login()` e `forceLogin()` |
+| `IUserSession` | `auth.models.ts` | Stato utente decodificato dal JWT, conservato in `AuthStore` |
+| `IChangePasswordRequest` | `auth.models.ts` | Body per POST `/api/auth/change-password` |
+| `IChangePasswordResponse` | `auth.models.ts` | Risposta da `AuthService.changePassword()` |
+
+### Mapping Claims JWT → IUserSession
+
+| Claim JWT (Backend) | Campo TypeScript | Note |
+|---|---|---|
+| `sub` | `userId` | |
+| `name` | `name` | |
+| `branch_id` | `branchId` | |
+| `language` | `language` | |
+| `can_use_teller` | `canUseTeller` | `boolean` — usato da `RoleGuard` |
+| `cash_desk_id` | `cashDeskId` | opzionale |
+| `session_id` | `sessionId` | GUID sessione |
+| `exp` | `tokenExpiry` | Unix timestamp |
+
+### Token JWT — Storage e Ciclo di Vita
+
+| Aspetto | Decisione |
+|---|---|
+| Storage | In-memory — `AuthStore.token` Signal — **mai** `localStorage` (XSS risk) |
+| Scadenza | Al 401 → `AuthStore.reset()` + redirect `/auth/login` |
+| Refresh token | ❌ Non implementato — no rinnovo automatico |
+| Logout | `AuthService.logout()` → backend invalida sessione → `AuthStore.reset()` sempre |
+
+---
+
+## 12. Storico Revisioni
 
 | Data | Versione | Autore | Modifica |
 |---|---|---|---|
 | 2026-05-11 | 0.1 | Orchestratore | Creazione documento — bozza da piano di pianificazione |
 | 2026-05-11 | 0.2 | Utente | Approvazione spec — autorizzazione creazione issue GitHub |
+| 2026-05-12 | 0.3 | Orchestratore | Backend completato (issue #29–#33 + test #39–#45 chiuse). Aggiunta infrastruttura Frontend: §6 aggiornato con 11 issue AUTH-01…AUTH-11 (#44–#54), §8 aggiornato con 3 nuovi agenti Angular, §11 nuovo (contratto TypeScript), §9 Q3 risolta |
 | 2026-05-11 | 0.3 | Orchestratore | Aggiornamento URL issue GitHub create (#29-#33 eTellerServer, #43 eTellerClient) |

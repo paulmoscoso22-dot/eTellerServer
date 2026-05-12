@@ -4,7 +4,7 @@ namespace eTeller.Application.Features.User.DTOs
     {
         public required string UserId { get; set; }
         public required string Password { get; set; }
-        public required string IpAddress { get; set; }
+        public string? IpAddress { get; set; }
         public bool IsCashDesk { get; set; }
         public string? CashDeskId { get; set; }
         public string? BranchId { get; set; }
