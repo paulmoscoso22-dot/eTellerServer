@@ -4,6 +4,7 @@ using eTeller.Application.Mappings.HelpInfoViewModels;
 using eTeller.Domain.Models;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using System.Linq;
 
 namespace eTeller.Application.Features.Help.Queries.GetHelpInfo
 {
@@ -28,10 +29,9 @@ namespace eTeller.Application.Features.Help.Queries.GetHelpInfo
             _logger.LogInformation("Handling {QueryName} for CliId={CliId}", nameof(GetHelpInfoQuery), request.CliId);
 
             // Ultimo utente uscito dalla cassa (singola tabella)
-            var lastUsers = await _unitOfWork.Repository<SysUsersUseClient>().GetAsync(
-                predicate: u => u.CliId == request.CliId && u.Logout,
-                orderBy: q => q.OrderByDescending(u => u.DataOut));
-            var lastUser = lastUsers.FirstOrDefault();
+            var lastUsersList = await _unitOfWork.Repository<SysUsersUseClient>().GetAsync(
+                u => u.CliId == request.CliId && u.Logout);
+            var lastUser = lastUsersList.OrderByDescending(u => u.DataOut).FirstOrDefault();
 
             // Lingua di sistema: CLI_LINGUA da sys_CLIENT → descrizione da ST_LANGUAGE (due tabelle separate)
             var clients = await _unitOfWork.Repository<Client>().GetAsync(c => c.CliId == request.CliId);
